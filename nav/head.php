@@ -1,11 +1,4 @@
 <!DOCTYPE html>
-<!--
-Template Name: Oleald
-Author: <a href="https://www.os-templates.com/">OS Templates</a>
-Author URI: https://www.os-templates.com/
-Licence: Free to use under our free template licence terms
-Licence URI: https://www.os-templates.com/template-terms
--->
 <html lang="EN">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
@@ -28,8 +21,8 @@ Licence URI: https://www.os-templates.com/template-terms
       <div class="fl_left"> 
         <!-- ################################################################################################ -->
         <ul class="nospace">
-          <li><i class="fa fa-phone"></i> +2020643643</li>
-          <li><i class="fa fa-envelope-o"></i> info@skyvisionairline.com</li>
+          <li><i class="fa fa-phone"></i> +201065114432</li>
+          <li><i class="fa fa-envelope-o"></i>info@skyvisionairline.com</li>
         </ul>
         <!-- ################################################################################################ -->
       </div>
