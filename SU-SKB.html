@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>sky-vision-airline</title>
+  <link rel="icon" href="images/demo/sky-vision-logo.png" type="image/png" id="favicon-svg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <style type="text/css">
+    .fleet-section {
+      padding: 50px 0;
+      background-color: #f9f9f9;
+    }
+    .fleet-box {
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .fleet-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .fleet-box img {
+      width: 100%;
+      border-radius: 10px;
+      height: 600px;
+      object-fit: cover;
+    }
+    .fleet-box h5 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-top: 15px;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: #333;
+    }
+  </style>
+  <script>
+    AOS.init(); // تفعيل مكتبة AOS
+  </script>
+</head>
+<body id="top">
+
+  <!-- Top Bar Section -->
+  <div class="bgded overlay light" style="background-image:url('images/demo/backgrounds/New-Background-2-1920w.jpg');"> 
+    <div class="wrapper row0">
+      <div id="topbar" class="hoc clear"> 
+        <div class="fl_left"> 
+          <ul class="nospace">
+            <li><i class="fa fa-phone"></i> +2020643643</li>
+            <li><i class="fa fa-envelope-o"></i> info@skyvisionairline.com</li>
+          </ul>
+        </div>
+        <div class="fl_right"> 
+          <ul class="nospace">
+            <li><a href="index.html"><i class="fa fa-lg fa-home"></i></a></li>
+            <li><a href="#" title="Help Centre"><i class="fa fa-life-bouy"></i></a></li>
+            <li><a href="#" title="Login"><i class="fa fa-lg fa-sign-in"></i></a></li>
+            <li><a href="#" title="Sign Up"><i class="fa fa-lg fa-edit"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation Section -->
+    <div class="wrapper row1">
+      <header id="header" class="hoc clear"> 
+        <div id="logo" class="fl_left">
+          <h1>Sky Vision Airlines</h1>
+        </div>
+        <nav id="mainav" class="fl_right">
+          <ul class="clear">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="certificate.html">Certificate</a></li>
+            <li><a href="fleet.html">Fleet</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+  </div>
+
+  <!-- Fleet Section -->
+  <div class="fleet-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Fleet</h2>
+        <p>Discover our modern and well-maintained aircraft.</p>
+      </div>
+      <!-- <div class="row row-cols-1 row-cols-md-2 g-4"> -->
+        <div class="col">
+          <div class="fleet-box">
+            <div id="planeCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="images/demo/SU-SKB.jpg" class="d-block w-100" alt="SU-SKB">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/demo/whatspic/WhatsApp Image 2025-02-17 at 3.10.41 PM (1).jpeg" class="d-block w-100" alt="SU-SKB">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/demo/whatspic/WhatsApp Image 2025-02-17 at 4.52.23 PM.jpeg" class="d-block w-100" alt="SU-SKB">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/demo/whatspic/WhatsApp Image 2025-02-17 at 4.52.24 PM (2).jpeg" class="d-block w-100" alt="SU-SKB">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#planeCarousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#planeCarousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </a>
+            </div>
+            <h5>SU-SKB</h5>
+            <p>AIRCRAFT TYPE: A320 232</p>
+            <p>AIRCRAFT REG.: SU-SKB</p>
+            <p>A/C CONF.: 180Y</p>
+            <p>MTOW: 77,000 KG</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <div class="wrapper row4" style="background-image:url('images/demo/backgrounds/images (2).jpg');">
+    <footer id="footer" class="hoc clear"> 
+      <article class="one_quarter first">
+        <h6 class="heading">This is Sky Vision Airlines Story</h6>
+        <p>SKY VISION Airlines, established in 2022, operates a fleet of 5 aircraft. We provide comfortable and safe flights between Egypt, Europe, and the Middle East, and specialize in air freight...</p>
+        <p class="nospace"><a href="#">Read More</a></p>
+      </article>
+      <div class="one_quarter">
+        <h6 class="heading">Contact Us</h6>
+        <ul class="nospace btmspace-30 linklist contact">
+          <li><i class="fa fa-map-marker"></i><address><a href="https://www.google.com/maps/dir/30.096495666704204,31.38126058441599" target="_blank">Building 4 extension of Ebad Alrahman St. Off Mustafa Refaat, Cairo</a></address></li>
+          <li><i class="fa fa-phone"></i> +2020643643</li>
+          <li><i class="fa fa-envelope-o"></i> info@skyvisionairline.com</li>
+        </ul>
+        <ul class="faico clear">
+          <li><a class="faicon-facebook" href="https://www.facebook.com/Sky-Vision-Airlines-107785321997316?_rdc=1&_rdr"><i class="fa fa-facebook"></i></a></li>
+          <li><a class="faicon-instagram" href="https://www.instagram.com/sky.visions.airlines/"><i class="fa fa-instagram"></i></a></li>
+          <li><a class="faicon-linkedin" href="https://www.linkedin.com/company/sky-vision-airline/"><i class="fa fa-linkedin"></i></a></li>
+        </ul>
+      </div>
+      <div class="one_quarter">
+        <h6 class="heading">Policy</h6>
+        <ul class="nospace linklist">
+          <li><a href="SafetyPolicy.html">Safety Policy</a></li>
+          <li><a href="Reporting-Policy.html">Non-Punitive/ Just Culture Reporting Policy</a></li>
+          <li><a href="DrugalcoholPolicy.html">Drug Alcohol Policy</a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
