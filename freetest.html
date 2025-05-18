@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Button with Animation</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* الزر الثابت في جانب الصفحة */
+.static-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #ff5722;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.static-btn:hover {
+    background: #e64a19;
+}
+
+/* تصميم الـ Popup */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 50%;
+    max-width: 400px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    visibility: hidden;
+    transition: transform 0.3s ease-in-out, visibility 0.3s;
+}
+
+.popup-content {
+    position: relative;
+}
+
+/* زر الإغلاق */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* إظهار الـ Popup عند النقر */
+.popup.show {
+    transform: translate(-50%, -50%) scale(1);
+    visibility: visible;
+}
+
+</style>
+</head>
+<body>
+
+    <button id="openPopup" class="static-btn">📌 اضغط هنا</button>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span id="closePopup" class="close-btn">&times;</span>
+            <h2>مرحبا بك!</h2>
+            <p>هذا هو المحتوى الذي يظهر في منتصف الشاشة مع Animation.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const openPopup = document.getElementById("openPopup");
+    const closePopup = document.getElementById("closePopup");
+    const popup = document.getElementById("popup");
+
+    openPopup.addEventListener("click", function() {
+        popup.classList.add("show");
+    });
+
+    closePopup.addEventListener("click", function() {
+        popup.classList.remove("show");
+    });
+
+    // إغلاق الـ popup عند النقر خارج المحتوى
+    window.addEventListener("click", function(event) {
+        if (event.target === popup) {
+            popup.classList.remove("show");
+        }
+    });
+});
+
+    </script>
+</body>
+</html>
