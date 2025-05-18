@@ -16,8 +16,178 @@ Licence URI: https://www.os-templates.com/template-terms
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<style>
+  /* الزر الثابت في جانب الشاشة */
+  .static-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 100px;
+      background: #88036a;
+      color: white;
+      border: none;
+      padding: 15px 20px;
+      border-radius: 50px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      z-index: 9999;
+  }
+
+  .static-btn:hover {
+      background: #77035e;
+  }
+
+  /* تصميم الـ Popup */
+  .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 85%;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      visibility: hidden;
+      transition: transform 0.3s ease-in-out, visibility 0.3s;
+      z-index: 9999;
+  }
+
+  .popup.show {
+      transform: translate(-50%, -50%) scale(1);
+      visibility: visible;
+  }
+
+  .popup-content {
+      position: relative;
+  }
+
+  .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+  }
+
+  /* تصميم العناصر داخل Popup */
+  .popup-content-item {
+      display: none;
+      grid-template-columns: repeat(4, 1fr); /* 4 أعمدة متساوية */
+      gap: 10px; /* مسافة بين العناصر */
+      margin-top: 10px;
+  }
+
+  .popup-content-item input,
+  .popup-content-item select,
+  .popup-content-item textarea,
+  .popup-content-item button {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+  }
+
+  .popup-content-item textarea {
+      grid-column: span 4; /* جعل حقل النصوص الطويلة يأخذ الصف بالكامل */
+  }
+
+  .popup-content-item button {
+      grid-column: span 2; /* جعل الزر يأخذ عمودين */
+      background-color: #00a160;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+  }
+
+  /* ترتيب الأزرار جنب بعض */
+  .button-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 10px;
+  }
+
+  .button-group button {
+      width: 45%;
+      padding: 10px;
+      background: #88036a;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+
+  .button-group button:hover {
+      background: #77035e;
+  }
+</style>
 </head>
+<!-- ############################################################################################################ -->
 <body id="top">
+  <button id="openPopup" class="static-btn">📌 Get a quote</button>
+
+  <div id="popup" class="popup">
+      <div class="popup-content">
+          <span id="closePopup" class="close-btn">&times;</span>
+          <h2>Request a quote
+
+            Select a form</h2>
+
+          <!-- الأزرار التي ستكون جنب بعض -->
+          <div class="button-group">
+              <button id="btn1">Air Cargo Charter</button>
+              <button id="btn2">Aircraft Leasing</button>
+          </div>
+
+          <!-- محتوى الزر الأول -->
+          <div id="content1" class="popup-content-item">
+              <input type="text" placeholder="الاسم">
+              <input type="text" placeholder="الوجهة">
+              <input type="date" placeholder="التاريخ">
+              <input type="time" placeholder="الوقت">
+
+              <input type="text" placeholder="نوع الطائرة">
+              <input type="text" placeholder="الحمولة">
+              <input type="email" placeholder="البريد الإلكتروني">
+              <input type="tel" placeholder="رقم الهاتف">
+
+              <textarea placeholder="أدخل ملاحظاتك هنا"></textarea>
+              <button type="submit">إرسال</button>
+          </div>
+
+          <!-- محتوى الزر الثاني -->
+          <div id="content2" class="popup-content-item">
+              <select>
+                  <option value="">اختر نوع الإيجار</option>
+                  <option value="1">إيجار طويل الأمد</option>
+                  <option value="2">إيجار قصير الأمد</option>
+              </select>
+
+              <input type="text" placeholder="اسم الشركة">
+              <input type="text" placeholder="نوع الطائرة">
+              <input type="email" placeholder="البريد الإلكتروني">
+              <input type="tel" placeholder="رقم الهاتف">
+
+              <input type="text" placeholder="الوجهة">
+              <select>
+                  <option value="">اختيار مدة الإيجار</option>
+                  <option value="1">شهر</option>
+                  <option value="2">سنة</option>
+              </select>
+
+              <input type="date" placeholder="تاريخ البدء">
+              <input type="date" placeholder="تاريخ الانتهاء">
+              <input type="text" placeholder="الاحتياجات الخاصة">
+              <input type="text" placeholder="الملاحظات">
+
+              <button type="submit">إرسال</button>
+          </div>
+      </div>
+  </div>
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -62,6 +232,9 @@ Licence URI: https://www.os-templates.com/template-terms
       <nav id="mainav" class="fl_right">
         <ul class="clear">
           <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="">Air Cargo</a></li>
+          <li><a href="">Aircraft Leasing</a></li>
+          <!-- ############################################################################################################ -->
           <!-- <li><a class="drop" href="#">Dropdown</a>
           <ul>
               <li><a href="#">Level 2</a></li>
@@ -73,11 +246,28 @@ Licence URI: https://www.os-templates.com/template-terms
                 </ul>
             </li>
             <li><a href="#">Level 2</a></li>
+        </ul> -->
+        <!-- ####################################################################################################################### -->
+          <li><a class="drop" href="fleet.html">Fleet</a>
+          <ul>
+              <li><a href="SU-SKB.html">SU-SKB</a></li>
+              <li><a href="SU-SKC.html">SU-SKC</a></li>
+              <li><a href="SU-SKD.html">SU-SKD</a></li>
+              <li><a href="SU-SKE.html">SU-SKE</a></li>
+              <li><a href="SU-SKF.html">SU-SKF</a></li>
+              <!-- <li><a class="drop" href="#">Level 2 + Drop</a>
+              <ul>
+                  <li><a href="#">Level 3</a></li>
+                  <li><a href="#">Level 3</a></li>
+                  <li><a href="#">Level 3</a></li>
+                </ul>
+            </li> -->
         </ul>
-    </li> -->
+    </li> 
     <li><a href="service.html">services</a></li>
     <li><a href="certificate.html">certificate</a></li>
-    <li><a href="fleet.html">fleet</a></li>
+    <!-- <li><a href="fleet.html">fleet</a></li> -->
+    <li><a href="">About Us</a></li>
     <!-- <li><a class="drop" href="#">Policies</a>
       <ul>
         <li><a href="pages/gallery.html">Gallery</a></li>
@@ -114,6 +304,8 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
+
+    <!-- #####################################################################? -->
 <div class="wrapper row3">
   <main class="hoc container clear"> 
     <!-- main body -->
@@ -331,6 +523,33 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
+<script>
+  // فتح وإغلاق النافذة المنبثقة
+  document.getElementById("openPopup").addEventListener("click", function () {
+      document.getElementById("popup").classList.add("show");
+  });
+
+  document.getElementById("closePopup").addEventListener("click", function () {
+      document.getElementById("popup").classList.remove("show");
+  });
+
+  // تبديل المحتوى بين الزرين
+  document.getElementById("btn1").addEventListener("click", function () {
+      document.getElementById("content1").style.display = "grid";
+      document.getElementById("content2").style.display = "none";
+  });
+
+  document.getElementById("btn2").addEventListener("click", function () {
+      document.getElementById("content1").style.display = "none";
+      document.getElementById("content2").style.display = "grid";
+  });
+
+  // إخفاء المحتويات عند فتح النموذج لأول مرة
+  window.onload = function () {
+      document.getElementById("content1").style.display = "none";
+      document.getElementById("content2").style.display = "none";
+  };
+</script>
 <script src="layout/scripts/jquery.min.js"></script>
 <script src="layout/scripts/jquery.backtotop.js"></script>
 <script src="layout/scripts/jquery.mobilemenu.js"></script>
