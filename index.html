@@ -127,7 +127,7 @@ Licence URI: https://www.os-templates.com/template-terms
 </head>
 <!-- ############################################################################################################ -->
 <body id="top">
-  <button id="openPopup" class="static-btn">📌 Get a quote</button>
+  <button id="openPopup" class="static-btn">📌 Request a Quote</button>
 
   <div id="popup" class="popup">
       <div class="popup-content">
@@ -159,6 +159,7 @@ Licence URI: https://www.os-templates.com/template-terms
           </div>
 
           <!-- محتوى الزر الثاني -->
+          <form action="req.php" method="POST">
           <div id="content2" class="popup-content-item">
               <select>
                   <option value="">اختر نوع الإيجار</option>
@@ -184,8 +185,9 @@ Licence URI: https://www.os-templates.com/template-terms
               <input type="text" placeholder="الملاحظات">
 
               <button type="submit">إرسال</button>
+            </div>
+          </form>
           </div>
-      </div>
   </div>
 
 <!-- ################################################################################################ -->
@@ -232,8 +234,8 @@ Licence URI: https://www.os-templates.com/template-terms
       <nav id="mainav" class="fl_right">
         <ul class="clear">
           <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="">Air Cargo</a></li>
-          <li><a href="">Aircraft Leasing</a></li>
+          <!-- <li><a href="">Air Cargo</a></li> -->
+          <!-- <li><a href="">Aircraft Leasing</a></li> -->
           <!-- ############################################################################################################ -->
           <!-- <li><a class="drop" href="#">Dropdown</a>
           <ul>
@@ -247,14 +249,13 @@ Licence URI: https://www.os-templates.com/template-terms
             </li>
             <li><a href="#">Level 2</a></li>
         </ul> -->
-        <!-- ####################################################################################################################### -->
-          <li><a class="drop" href="fleet.html">Fleet</a>
+ <li><a class="drop" href="">Policies</a>
           <ul>
-              <li><a href="SU-SKB.html">SU-SKB</a></li>
-              <li><a href="SU-SKC.html">SU-SKC</a></li>
-              <li><a href="SU-SKD.html">SU-SKD</a></li>
-              <li><a href="SU-SKE.html">SU-SKE</a></li>
-              <li><a href="SU-SKF.html">SU-SKF</a></li>
+              <li><a href="SVI Certificates/Airline Policy Statement (1).pdf">Airline Policy Statement</a></li>
+              <li><a href="SVI Certificates/Compliance Monitoring Policy Statement (1).pdf">Compliance Monitoring Policy Statement</a></li>
+              <li><a href="SVI Certificates/Drug alcohol Policy Arabic& English Date 14_01_2025.pdf">Drug alcohol Policy</a></li>
+              <li><a href="SVI Certificates/Non-Punitive _ Just Culture Dec. 2024 Date 13_01_2025.pdf">Non-Punitive _ Just Culture</a></li>
+              <li><a href="SVI Certificates/Safety Policy Dec. 2024 Date 13_01_2025.pdf">Safety Policy</a></li>
               <!-- <li><a class="drop" href="#">Level 2 + Drop</a>
               <ul>
                   <li><a href="#">Level 3</a></li>
@@ -264,8 +265,29 @@ Licence URI: https://www.os-templates.com/template-terms
             </li> -->
         </ul>
     </li> 
-    <li><a href="service.html">services</a></li>
-    <li><a href="certificate.html">certificate</a></li>
+
+
+
+        <!-- ####################################################################################################################### -->
+          <li><a class="drop" href="fleet.html">Fleet</a>
+          <ul>
+              <li><a href="SU-SKB.html">SU-SKB</a></li>
+              <li><a href="SU-SKC.html">SU-SKC</a></li>
+              <li><a href="SU-SKD.html">SU-SKD</a></li>
+              <li><a href="SU-SKE.html">SU-SKE</a></li>
+              <li><a href="SU-SKF.html">SU-SKF</a></li>
+              <li><a href="SU-SKG.html">SU-SKG</a></li>
+              <!-- <li><a class="drop" href="#">Level 2 + Drop</a>
+              <ul>
+                  <li><a href="#">Level 3</a></li>
+                  <li><a href="#">Level 3</a></li>
+                  <li><a href="#">Level 3</a></li>
+                </ul>
+            </li> -->
+        </ul>
+    </li> 
+    <li><a href="service.html">Services</a></li>
+    <li><a href="certificate.html">Certificate</a></li>
     <!-- <li><a href="fleet.html">fleet</a></li> -->
     <li><a href="">About Us</a></li>
     <!-- <li><a class="drop" href="#">Policies</a>
@@ -289,12 +311,14 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- ################################################################################################ -->
     <article>
       <h3 class="heading"><br>
-        It’s time to fly.
-        Life is a journey, travel it well.
-        </h3>
-      <p>Fly With Sky Vision, fly safe and soar towards your vision. 
-      </p>
-      <footer><a class="btn" href="service.html">services details</a></footer>
+       It’s Time to Fly. Life is a Journey—Travel it Well.
+      </h3>
+       <p>
+Fly with Sky Vision—Travel Safely and Soar Toward Your Dreams.
+</p>
+<!-- 
+  Fly With Sky Vision, fly safe and soar towards your vision.  -->
+      <footer><a class="btn" href="service.html">SERVICES DETAILS</a></footer>
     </article>
     <!-- ################################################################################################ -->
   </div>
@@ -314,18 +338,21 @@ Licence URI: https://www.os-templates.com/template-terms
       <h2 class="heading">our team</h2>
       <article class="one_third first"><a class="imgover btmspace-30" href="images/demo/1672647577678.jpg"><img src="images/demo/1672647577678.jpg" alt=""></a>
         <h6 class="heading">Pilots & Cabin Crew</h6>
-        <p>Our team of highly skilled pilots and cabin crew is dedicated to delivering the highest standards of safety, comfort, and luxury for our passengers on every flight.&hellip;</p>
-        <footer><a href="#">our team &raquo;</a></footer>
+        <p>
+Our team of highly skilled pilots and cabin crew are committed to delivering the highest standards of safety, comfort, and luxury on every flight.
+</p>
+        <footer><a href="ourteam.php">Our team &raquo;</a></footer>
       </article>
       <article class="one_third"><a class="imgover btmspace-30" href="images/demo/815.jpg"><img src="images/demo/815.jpg" alt=""></a>
         <h6 class="heading">Airport Operations Team</h6>
-        <p>Our aviation operations team works around the clock to ensure seamless flight execution, from routine aircraft maintenance to full pre-flight preparation, guaranteeing a smooth and hassle-free travel experience.&hellip;</p>
-        <footer><a href="#">our team &raquo;</a></footer>
+        <p>Our airport operations team works around the clock to ensure the seamless execution of every flight — from routine aircraft maintenance to comprehensive pre-flight preparations — all to guarantee a smooth and stress-free travel experience.</p>
+        <footer><a href="ourteam.php">Our team &raquo;</a></footer>
       </article>
       <article class="one_third"><a class="imgover btmspace-30" href="images/demo/1672647577526.jpg"><img src="images/demo/1672647577526.jpg" alt=""></a>
         <h6 class="heading">Ground Services Team</h6>
-        <p>Our ground services team is the backbone of an exceptional travel experience, providing comprehensive passenger support from check-in to boarding with efficiency and professionalism.&hellip;</p>
-        <footer><a href="#">our team &raquo;</a></footer>
+        <p>
+Our ground services team forms the backbone of an exceptional travel experience, delivering seamless passenger support — from check-in to boarding — with efficiency, courtesy, and professionalism.</p>
+        <footer><a href="ourteam.php">Our team &raquo;</a></footer>
       </article>
     </div>
     <!-- ################################################################################################ -->
@@ -351,7 +378,7 @@ Licence URI: https://www.os-templates.com/template-terms
       <li class="one_third"><a class="imgover" href="SVI Certificates/250107 ACC3 Sky Vision Airlines Cairo approval letter.pdf"><img src="images/demo/download.png" alt=""></a></li>
       <li class="one_third"><a class="imgover" href="SVI Certificates/EASA TCO Authorization EGY-0027.01.pdf"><img src="images/demo/download (1).png" alt=""></a></li>
     </ul>
-    <footer class="center"><a class="btn" href="certificate.html">certificate</a></footer>
+    <footer class="center"><a class="btn" href="certificate.html">View Certificate</a></footer>
     <!-- ################################################################################################ -->
   </figure>
 </div>
@@ -367,7 +394,9 @@ Licence URI: https://www.os-templates.com/template-terms
     </div>
     <ul class="nospace group btmspace-80">
       <li class="one_half first">
-        <blockquote>With a vision for innovation and excellence, I am committed to elevating Sky Vision Airlines to new heights, ensuring top-tier service and customer satisfaction.</blockquote>
+        <blockquote><h3>Amr Elsayed Abdelzaher</h3>
+          Accountable Executive (CEO)<br>Experienced aviation executive with a strong background in airline management, commercial operations, flight scheduling, and regulatory compliance. Over 18 years of expertise in the aviation industry, holding leadership roles in multiple airlines, including CEO, Commercial Director, and Accountable Executive. Proven ability to oversee strategic planning, scheduling, and compliance with international aviation regulations, Skilled in-flight operations, crew rostering, and station coordination across various airports in Egypt. Strong leadership and problem-solving abilities, with a deep understanding of safety management systems (SMS) and aviation security. Committed to operational excellence and efficiency, with a track record of optimizing airline performance while ensuring compliance with regulatory requirements
+       for CAAC and all for CCAR-129.</blockquote>
         <figure class="clear"><img src="images/demo/amr-abd-el-zaher.jpg" alt="" style="
           height: 60px;
           width: 60px;
@@ -378,7 +407,13 @@ Licence URI: https://www.os-templates.com/template-terms
         </figure>
       </li>
       <li class="one_half">
-        <blockquote>Behind every successful flight lies a strong foundation of teamwork and precision. We continuously strive to streamline operations and maintain superior service quality, reinforcing professionalism and trust in our company</blockquote>
+        <blockquote><h3>Assem Abdel Mawla Mansour</h3>
+        Director of operation    <br>                                                                   Experienced and results-driven Director of Operations with over 4 years of expertise in leading and optimizing day-to-day operations across diverse industries.
+Proven track record in streamlining processes, enhancing operational efficiency, and driving cost savings while ensuring high levels of customer satisfaction.
+Strong leadership and team management skills, adept at building high-performing teams, fostering a collaborative environment, and aligning operations with
+strategic company goals. Expertise in budgeting, resource allocation, compliance, and implementing innovative solutions to improve productivity. Passionate
+about delivering operational excellence and contributing to organizational growth
+        </blockquote>
         <figure class="clear"><img src="" alt=""style="
           height: 60px;
           width: 60px;
@@ -389,7 +424,7 @@ Licence URI: https://www.os-templates.com/template-terms
         </figure>
       </li>
     </ul>
-    <footer class="center"><a class="btn" href="#">View More &raquo;</a></footer>
+    <footer class="center"><a class="btn" href="ourteam.php">View More &raquo;</a></footer>
     <!-- ################################################################################################ -->
   </section>
 </div>
@@ -407,12 +442,15 @@ Licence URI: https://www.os-templates.com/template-terms
       <article class="one_third first"><a class="imgover btmspace-30" href="images/demo/320x240.png"><img src="images/demo/320x240.png" alt=""
         ></a>
         <ul class="nospace meta">
-          <li><i class="fa fa-user"></i> <a href="https://www.linkedin.com/in/msolix/">Chief Inspector</a></li>
+          <li><i class="fa fa-user"></i> <a href="https://www.linkedin.com/in/msolix/">Chief Pilot </a></li>
           <li><i class="fa fa-tag"></i> <a href="#">Tag Name</a></li>
         </ul>
-        <h6 class="heading"> Eng:Yousif Eid</h6>
-        <p>Responsible for overseeing technical inspections and ensuring compliance with quality and safety standards. He reviews operations and procedures to guarantee adherence to approved regulations and supervises inspection teams to ensure tasks are carried out efficiently and accurately.&hellip;</p>
-        <footer><a href="#">Read More</a></footer>
+        <h6 class="heading"> SAMEH NAGY IBRAHIM</h6>
+        <p>Experienced Chief Pilot with 13 Months of leadership in aviation operations, managing flight crews and ensuring the highest standards of safety, compliance,
+and efficiency. Adept at overseeing flight schedules, conducting safety briefings, and training pilots to ensure adherence to company protocols and industry
+regulations. Proven ability to handle operational challenges, maintain smooth communication across departments, and enhance overall flight team
+performance. I am skilled in risk management, aircraft performance analysis, and ensuring the organization’s operational goals are met</p>
+        <!-- <footer><a href="#">Read More</a></footer> -->
         <!-- style="height:240px;width: 320px;" -->
       </article>
       <article class="one_third"><a class="imgover btmspace-30" href="#"><img src="images/demo/Farag Nazmy.jpeg" alt=""
@@ -423,20 +461,26 @@ Licence URI: https://www.os-templates.com/template-terms
           <li><i class="fa fa-tag"></i> <a href="#">Tag Name</a></li>
         </ul>
         <h6 class="heading">C:Farag Nazmy</h6>
-        <p>Specialized in developing and implementing safety policies and procedures within the company. He assesses potential risks and creates strategies to minimize them while ensuring that employees are trained in safety protocols to maintain a secure work environment.&hellip;</p>
-        <footer><a href="#">Read More</a></footer>
+        <p>responsible for overseeing the implementation and management of safety programs to ensure a safe working environment. Their duties include
+conducting risk assessments, developing safety policies and procedures, leading safety training initiatives, monitoring compliance with safety
+regulations, investigating accidents and incidents, and promoting a culture of safety within the organization. They also collaborate with various
+departments to identify safety issues and implement corrective actions</p>
+        <!-- <footer><a href="#">Read More</a></footer> -->
       </article>
       <article class="one_third"><a class="imgover btmspace-30" href="#"><img src="images/demo/320x240.png" alt=""></a>
         <ul class="nospace meta">
-          <li><i class="fa fa-user"></i> <a href="#">Technical director</a></li>
+          <li><i class="fa fa-user"></i> <a href="#">Operation Training Manager</a></li>
           <li><i class="fa fa-tag"></i> <a href="#">Tag Name</a></li>
         </ul>
-        <h6 class="heading">Tarek Abd Elalim</h6>
-        <p>Oversees the technical and engineering operations within the organization, ensuring that projects are executed according to the highest quality standards. He stays updated with the latest technological advancements to enhance performance and productivity while addressing technical challenges faced by different teams.&hellip;</p>
-        <footer><a href="#">Read More</a></footer>
+        <h6 class="heading">Mohamed Azzam</h6>
+        <p>Dedicated and results-driven Operations Training Manager and Captain with extensive experience in aviation training, flight operations, and
+compliance. Proven ability to implement effective training strategies, maintain regulatory compliance (ECAA, ECARs), and enhance operational
+efficiency. Strong expertise in flight training development, instructor management, aviation safety, and operational leadership. Adept at leading
+teams, monitoring third-party training providers, and ensuring adherence to industry best practices.</p>
+        <!-- <footer><a href="#">Read More</a></footer> -->
       </article>
     </div>
-    <footer class="center"><a class="btn" href="#">go to &raquo;</a></footer>
+    <footer class="center"><a class="btn" href="ourteam.php">go to &raquo;</a></footer>
     <!-- ################################################################################################ -->
   </section>
 </div>
@@ -455,26 +499,32 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- ################################################################################################ -->
     <article class="one_quarter first">
       <h6 class="heading">this is sky-vision-airline story</h6>
-      <p>SKY VISION Airlines, established in 2022, currently operates a fleet of 5 aircraft, including 
-        3 passenger aircraft that provide comfortable and safe flights between Egypt, Europe, and the 
-        Middle East, and 2 cargo aircraft dedicated to facilitating Additionally, a third cargo aircraft is 
-        scheduled to join the fleet in the coming days, further enhancing the company's capacity to handle 
-        air freight trade more efficiently.</p>
-      <p>Our focus lies on serving the regional market with narrow-body aircraft, perfectly suited for short-haul and medium-haul flights. We also cater to the needs of large national projects, providing 
-        innovative solutions and exceptional aviation services.&hellip;</p>
-      <p class="nospace"><a href="#">Read More</a></p>
+      <h3>
+Sky Vision Airlines
+      </h3> 
+      <p>
+
+Founded in 2022, SKY VISION Airlines is a dynamic aviation company dedicated to delivering exceptional passenger and cargo services. Our fleet currently comprises Six (6) aircraft — including three modern passenger jets that ensure comfortable and safe travel between Egypt, Europe, and the Middle East, and two cargo aircraft committed to supporting regional and international air freight logistics.
+
+To further strengthen our cargo operations, a fourth cargo aircraft is scheduled to join our fleet in the coming days. This addition will enhance our ability to serve the growing demands of global trade and improve the efficiency of our logistics network.
+
+Our operations are tailored to the regional market, utilizing narrow-body aircraft ideally suited for short- and medium-haul routes. In addition to scheduled services, we proudly support large national projects, offering innovative, flexible, and reliable aviation solutions that meet a wide range of operational needs.
+
+At SKY VISION Airlines, our mission is to be a trusted partner in the air, delivering value through safety, efficiency, and customer-centric service.</p>
+      <!-- <p class="nospace"><a href="#">Read More</a></p> -->
     </article>
     <div class="one_quarter">
       <h6 class="heading">Contact Us</h6>
       <ul class="nospace btmspace-30 linklist contact">
         <li><i class="fa fa-map-marker"></i>
           <address><a href="https://www.google.com/maps/dir/30.096495666704204, 31.38126058441599" target="_blank">  
-            Building 4 extension of Ebad Alrahman St. Off Mustafa Refaat، department، St، قسم النزهة، محافظة القاهرة
+          Building 4 Ext. of Ebad AlRahman St., of Mostafa Refaat St., Sheraton, Cairo - Egypt
           </a>
           </address>
         </li>
-        <li><i class="fa fa-phone"></i> +2020643643</li>
-        <li><i class="fa fa-envelope-o"></i>info@skyvisionairline.com</li>
+        <li><i class="fa fa-phone"></i> +20 2 20643643 </li>
+        <li><i class="fa fa-fax"></i> +20 2 20643644</li>
+        <li><i class="fa fa-envelope-o" aria-hidden="true"></i>info@skyvisionairline.com</li>
       </ul>
       <ul class="faico clear">
         <li><a class="faicon-facebook" href="https://www.facebook.com/Sky-Vision-Airlines-107785321997316?_rdc=1&_rdr"><i class="fa fa-facebook" ></i></a></li>
