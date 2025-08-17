@@ -272,7 +272,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#04DEE0;}
 
 .overlay{color:#FFFFFF; background-color:inherit;}
 .overlay::after{color:inherit; background-color:rgba(0,0,0,.8);}
-.overlay.light::after{background-color:rgba(0,0,0,.55);}
+.overlay.light::after{background-color:rgba(0,0,0,.2);}
 
 .btn, .btn.inverse:hover{color:#FFFFFF; background-color:#88036a ; border-color:#88036a ;}
 .btn:hover, .btn.inverse{color:inherit; background-color:transparent; border-color:inherit;}
