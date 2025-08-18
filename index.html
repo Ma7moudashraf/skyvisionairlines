@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<!--
+Template Name: Oleald
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+<html lang="EN">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>sky-vision-airline</title>
+<meta charset="utf-8">
+<link rel="icon" href="images/demo/sky-vision-logo.png" type="image/png" id="favicon-svg">
+<!-- <link rel="icon" href="images/demo/backgrounds/sky-vision-logo.png" type="image/x-icon"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<style>
+  /* الزر الثابت في جانب الشاشة */
+  .static-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 100px;
+      background: #88036a;
+      color: white;
+      border: none;
+      padding: 15px 20px;
+      border-radius: 50px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      z-index: 9999;
+  }
+
+  .static-btn:hover {
+      background: #77035e;
+  }
+
+  /* تصميم الـ Popup */
+  .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 85%;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      visibility: hidden;
+      transition: transform 0.3s ease-in-out, visibility 0.3s;
+      z-index: 9999;
+  }
+
+  .popup.show {
+      transform: translate(-50%, -50%) scale(1);
+      visibility: visible;
+  }
+
+  .popup-content {
+      position: relative;
+  }
+
+  .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+  }
+
+  /* تصميم العناصر داخل Popup */
+  .popup-content-item {
+      display: none;
+      grid-template-columns: repeat(4, 1fr); /* 4 أعمدة متساوية */
+      gap: 10px; /* مسافة بين العناصر */
+      margin-top: 10px;
+  }
+
+  .popup-content-item input,
+  .popup-content-item select,
+  .popup-content-item textarea,
+  .popup-content-item button {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+  }
+
+  .popup-content-item textarea {
+      grid-column: span 4; /* جعل حقل النصوص الطويلة يأخذ الصف بالكامل */
+  }
+
+  .popup-content-item button {
+      grid-column: span 2; /* جعل الزر يأخذ عمودين */
+      background-color: #00a160;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+  }
+
+  /* ترتيب الأزرار جنب بعض */
+  .button-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 10px;
+  }
+
+  .button-group button {
+      width: 45%;
+      padding: 10px;
+      background: #88036a;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+
+  .button-group button:hover {
+      background: #77035e;
+  }
+</style>
+</head>
+<!-- ############################################################################################################ -->
+<body id="top">
+  <button id="openPopup" class="static-btn">📌 Request a Quote</button>
+
+  <div id="popup" class="popup">
+      <div class="popup-content">
+          <span id="closePopup" class="close-btn">&times;</span>
+          <h2>Request a quote
+
+            Select a form</h2>
+
+          <!-- الأزرار التي ستكون جنب بعض -->
+          <div class="button-group">
+              <button id="btn1">Air Cargo Charter</button>
+              <button id="btn2">Aircraft Leasing</button>
+          </div>
+
+          <!-- محتوى الزر الأول -->
+          <div id="content1" class="popup-content-item">
+              <input type="text" placeholder="Name">
+              <input type="text" placeholder="Destination">
+              <input type="date" placeholder="Date">
+              <input type="time" placeholder="Time">
+
+              <input type="text" placeholder="Aircraft Type">
+              <input type="text" placeholder="Cargo">
+              <input type="email" placeholder="E.mail">
+              <input type="tel" placeholder="Phone-Num.">
+
+              <textarea placeholder="Notes"></textarea>
+              <button type="submit">Send</button>
+          </div>
+
+          <!-- محتوى الزر الثاني -->
+          <form action="req.php" method="POST">
+          <div id="content2" class="popup-content-item">
+              <select>
+                  <option value="">Select Rental Type</option>
+                  <option value="1">Long-Term Rental</option>
+                  <option value="2">Short-Term Rental</option>
+              </select>
+
+              <input type="text" placeholder="Company Name">
+              <input type="text" placeholder="Aircraft Type">
+              <input type="email" placeholder="E.mail">
+              <input type="tel" placeholder="Phone Number">
+
+              <input type="text" placeholder="Destination">
+              <select>
+                  <option value="">Select Rental Duration</option>
+                  <option value="1">One month</option>
+                  <option value="2">one year</option>
+              </select>
+
+              <input type="date" placeholder="Start Date ">
+              <input type="date" placeholder="End daye">
+              <input type="text" placeholder="Special Requirements ">
+              <input type="text" placeholder="Notes">
+
+              <button type="submit">send</button>
+            </div>
+          </form>
+          </div>
+  </div>
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- Top Background Image Wrapper -->
+<div class="bgded overlay light" style="background-image:url('images/demo/backgrounds/New-Background-2-1920w.jpg');"> 
+  <!-- ################################################################################################ -->
+  <div class="wrapper row0">
+    <div id="topbar" class="hoc clear"> 
+      <!-- ################################################################################################ -->
+      <div class="fl_left"> 
+        <!-- ################################################################################################ -->
+        <ul class="nospace">
+<li>
+  <a href="tel:+2020643643">
+    <i class="fa fa-phone"></i> 02-22679456
+  </a>
+</li>
+
+
+          <li>
+            <i class="fa fa-envelope-o"></i> info@skyvisionairline.com</li>
+        </ul>
+        <!-- ################################################################################################ -->
+      </div>
+      <div class="fl_right"> 
+        <!-- ################################################################################################ -->
+        <ul class="nospace">
+          <li><a href="index.html"><i class="fa fa-lg fa-home"></i></a></li>
+          <li><a href="#" title="Help Centre"><i class="fa fa-life-bouy"></i></a></li>
+          <li><a href="#" title="Login"><i class="fa fa-lg fa-sign-in"></i></a></li>
+          <li><a href="#" title="Sign Up"><i class="fa fa-lg fa-edit"></i></a></li>
+        </ul>
+        <!-- ################################################################################################ -->
+      </div>
+      <!-- ################################################################################################ -->
+    </div>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear"> 
+      <!-- ################################################################################################ -->
+      <div id="logo" class="fl_left">
+        <!-- <h1><a href="index.html"><img src="images/demo/sky-vision-logo.png" alt=""> -->
+          Sky Vision Airlines
+        </a></h1>
+      </div>
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li class="active"><a href="index.html">Home</a></li>
+          <!-- <li><a href="">Air Cargo</a></li> -->
+          <!-- <li><a href="">Aircraft Leasing</a></li> -->
+          <!-- ############################################################################################################ -->
+          <!-- <li><a class="drop" href="#">Dropdown</a>
+          <ul>
+              <li><a href="#">Level 2</a></li>
+              <li><a class="drop" href="#">Level 2 + Drop</a>
+              <ul>
+                  <li><a href="#">Level 3</a></li>
+                  <li><a href="#">Level 3</a></li>
+                  <li><a href="#">Level 3</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Level 2</a></li>
+        </ul> -->
+ <li><a class="drop" href="">Policies</a>
+          <ul>
+              <li><a href="SVI Certificates/Airline Policy Statement (1).pdf">Airline Policy Statement</a></li>
+              <li><a href="SVI Certificates/Compliance Monitoring Policy Statement (1).pdf">Compliance Monitoring Policy Statement</a></li>
+              <li><a href="SVI Certificates/Drug alcohol Policy Arabic& English Date 14_01_2025.pdf">Drug alcohol Policy</a></li>
+              <li><a href="SVI Certificates/Non-Punitive _ Just Culture Dec. 2024 Date 13_01_2025.pdf">Non-Punitive _ Just Culture</a></li>
+              <li><a href="SVI Certificates/Safety Policy Dec. 2024 Date 13_01_2025.pdf">Safety Policy</a></li>
+              <li><a href="#">sec Policy</a></li>
+              <!-- <li><a class="drop" href="#">Level 2 + Drop</a>
+              <ul>
+                  <li><a href="#">Level 3</a></li>
+                  <li><a href="#">Level 3</a></li>
+                  <li><a href="#">Level 3</a></li>
+                </ul>
+            </li> -->
+        </ul>
+    </li> 
+
+
+
+        <!-- ####################################################################################################################### -->
+          <li><a class="drop" href="fleet.html">Fleet</a>
+          <ul>
+              <li><a href="SU-SKB.html">SU-SKB</a></li>
+              <li><a href="SU-SKC.html">SU-SKC</a></li>
+              <li><a href="SU-SKD.html">SU-SKD</a></li>
+              <li><a href="SU-SKE.html">SU-SKE</a></li>
+              <li><a href="SU-SKF.html">SU-SKF</a></li>
+              <li><a href="SU-SKG.html">SU-SKG</a></li>
+              <!-- <li><a class="drop" href="#">Level 2 + Drop</a>
+              <ul>
+                  <li><a href="#">Level 3</a></li>
+                  <li><a href="#">Level 3</a></li>
+                  <li><a href="#">Level 3</a></li>
+                </ul>
+            </li> -->
+        </ul>
+    </li> 
+    <li><a href="service.html">Services</a></li>
+    <li><a href="certificate.html">Certificate</a></li>
+    <!-- <li><a href="fleet.html">fleet</a></li> -->
+    <li><a href="">About Us</a></li>
+    <!-- <li><a class="drop" href="#">Policies</a>
+      <ul>
+        <li><a href="pages/gallery.html">Gallery</a></li>
+        <li><a href="pages/full-width.html">Full Width</a></li>
+        <li><a href="pages/sidebar-left.html">Sidebar Left</a></li>
+        <li><a href="pages/sidebar-right.html">Sidebar Right</a></li>
+        <li><a href="SafetyPolicy.html">Safety Policy</a></li>
+      </ul>
+    </li>-->
+        </ul>
+      </nav>
+      <!-- ################################################################################################ -->
+    </header>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div id="pageintro" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <article>
+      <h3 class="heading"><br>
+       It’s Time to Fly. Life is a Journey—Travel it Well.
+      </h3>
+       <p>
+Fly with Sky Vision—Travel Safely and Soar Toward Your Dreams.
+</p>
+<!-- 
+  Fly With Sky Vision, fly safe and soar towards your vision.  -->
+      <footer><a class="btn" href="service.html">SERVICES DETAILS</a></footer>
+    </article>
+    <!-- ################################################################################################ -->
+  </div>
+  <!-- ################################################################################################ -->
+</div>
+<!-- End Top Background Image Wrapper -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+    <!-- #####################################################################? -->
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="group excerpt">
+      <h2 class="heading">our team</h2>
+      <article class="one_third first"><a class="imgover btmspace-30" href="images/demo/1672647577678.jpg"><img src="images/demo/1672647577678.jpg" alt=""></a>
+        <h6 class="heading">Pilots & Cabin Crew</h6>
+        <p>
+Our team of highly skilled pilots and cabin crew are committed to delivering the highest standards of safety, comfort, and luxury on every flight.
+</p>
+        <footer><a href="ourteam.html">Our team &raquo;</a></footer>
+      </article>
+      <article class="one_third"><a class="imgover btmspace-30" href="images/demo/815.jpg"><img src="images/demo/815.jpg" alt=""></a>
+        <h6 class="heading">Airport Operations Team</h6>
+        <p>Our airport operations team works around the clock to ensure the seamless execution of every flight — from routine aircraft maintenance to comprehensive pre-flight preparations — all to guarantee a smooth and stress-free travel experience.</p>
+        <footer><a href="ourteam.html">Our team &raquo;</a></footer>
+      </article>
+      <article class="one_third"><a class="imgover btmspace-30" href="images/demo/1672647577526.jpg"><img src="images/demo/1672647577526.jpg" alt=""></a>
+        <h6 class="heading">Ground Services Team</h6>
+        <p>
+Our ground services team forms the backbone of an exceptional travel experience, delivering seamless passenger support — from check-in to boarding — with efficiency, courtesy, and professionalism.</p>
+        <footer><a href="ourteam.html">Our team &raquo;</a></footer>
+      </article>
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <figure class="hoc container clear"> 
+    <!-- ################################################################################################ -->
+    <figcaption class="sectiontitle">
+      <h6 class="heading">Certificates</h6>
+      <!-- <p>article head</p> -->
+    </figcaption>
+    <ul class="nospace group center overview">
+      <li class="one_third"><a class="imgover" href="SVI Certificates/AOC Sky Vision No. 94 up to 17 Dec. 2025.pdf"><img src="images/demo/download.jpg" alt=""></a></li>
+      <li class="one_third"><a class="imgover" href="SVI Certificates/250107 ACC3 Sky Vision Airlines Cairo approval letter.pdf"><img src="images/demo/download.png" alt=""></a></li>
+      <li class="one_third"><a class="imgover" href="SVI Certificates/EASA TCO Authorization EGY-0027.01.pdf"><img src="images/demo/download (1).png" alt=""></a></li>
+    </ul>
+    <footer class="center"><a class="btn" href="certificate.html">View Certificate</a></footer>
+    <!-- ################################################################################################ -->
+  </figure>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row2 bgded overlay" style="background-image:url('images/demo/backgrounds/03.png');">
+  <section class="hoc container clear testimonials"> 
+    <!-- ################################################################################################ -->
+    <div class="sectiontitle">
+      <h4 class="heading">Leadership & Excellence in Aviation ✈️</h4>
+      <p> At Sky Vision Airlines, we believe that effective leadership and superior management are the foundation of success and sustainability in the aviation industry. Our executive team is dedicated to innovation, operational excellence, and delivering world-class services.</p>
+    </div>
+    <ul class="nospace group btmspace-80">
+      <li class="one_half first">
+        <blockquote><h3>Amr Elsayed Abdelzaher</h3>
+          Accountable Executive (CEO)<br>Experienced aviation executive with a strong background in airline management, commercial operations, flight scheduling, and regulatory compliance. Over 18 years of expertise in the aviation industry, holding leadership roles in multiple airlines, including CEO, Commercial Director, and Accountable Executive. Proven ability to oversee strategic planning, scheduling, and compliance with international aviation regulations, Skilled in-flight operations, crew rostering, and station coordination across various airports in Egypt. Strong leadership and problem-solving abilities, with a deep understanding of safety management systems (SMS) and aviation security. Committed to operational excellence and efficiency, with a track record of optimizing airline performance while ensuring compliance with regulatory requirements
+       for CAAC and all for CCAR-129.</blockquote>
+        <figure class="clear"><img src="images/demo/amr-abd-el-zaher.jpg" alt="" style="
+          height: 60px;
+          width: 60px;
+      ">
+          <figcaption>
+            <h6 class="heading">AMR Abd El-Zaher</h6>
+            <em>Chief Executive Officer (CEO)</em></figcaption>
+        </figure>
+      </li>
+      <li class="one_half">
+        <blockquote><h3>Assem Abdel Mawla Mansour</h3>
+        Director of operation    <br>                                                                   Experienced and results-driven Director of Operations with over 4 years of expertise in leading and optimizing day-to-day operations across diverse industries.
+Proven track record in streamlining processes, enhancing operational efficiency, and driving cost savings while ensuring high levels of customer satisfaction.
+Strong leadership and team management skills, adept at building high-performing teams, fostering a collaborative environment, and aligning operations with
+strategic company goals. Expertise in budgeting, resource allocation, compliance, and implementing innovative solutions to improve productivity. Passionate
+about delivering operational excellence and contributing to organizational growth
+        </blockquote>
+        <figure class="clear"><img src="" alt=""style="
+          height: 60px;
+          width: 60px;
+      ">
+          <figcaption>
+            <h6 class="heading">C:Assem</h6>
+            <em>Director of Operations</em></figcaption>
+        </figure>
+      </li>
+    </ul>
+    <footer class="center"><a class="btn" href="ourteam.html">View More &raquo;</a></footer>
+    <!-- ################################################################################################ -->
+  </section>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper">
+  <section class="hoc container clear">
+    <!-- ################################################################################################ -->
+    <div class="sectiontitle">
+      <!-- <h6 class="heading">header</h6> -->
+      <!-- <p>header to dis</p> -->
+    </div>
+    <div class="group excerpt btmspace-80">
+      <article class="one_third first"><a class="imgover btmspace-30" href="images/demo/320x240.png"><img src="images/demo/320x240.png" alt=""
+        ></a>
+        <ul class="nospace meta">
+          <li><i class="fa fa-user"></i> <a href="https://www.linkedin.com/in/msolix/">Chief Pilot </a></li>
+          <li><i class="fa fa-tag"></i> <a href="#">Tag Name</a></li>
+        </ul>
+        <h6 class="heading"> SAMEH NAGY IBRAHIM</h6>
+        <p>Experienced Chief Pilot with 13 Months of leadership in aviation operations, managing flight crews and ensuring the highest standards of safety, compliance,
+and efficiency. Adept at overseeing flight schedules, conducting safety briefings, and training pilots to ensure adherence to company protocols and industry
+regulations. Proven ability to handle operational challenges, maintain smooth communication across departments, and enhance overall flight team
+performance. I am skilled in risk management, aircraft performance analysis, and ensuring the organization’s operational goals are met</p>
+        <!-- <footer><a href="#">Read More</a></footer> -->
+        <!-- style="height:240px;width: 320px;" -->
+      </article>
+      <article class="one_third"><a class="imgover btmspace-30" href="#"><img src="images/demo/Farag Nazmy.jpeg" alt=""
+        style="height:240px;width: 320px;"
+        ></a>
+        <ul class="nospace meta">
+          <li><i class="fa fa-user"></i> <a href="https://www.linkedin.com/in/farag-nazmy-4a986123/">Safety Manager</a></li>
+          <li><i class="fa fa-tag"></i> <a href="#">Tag Name</a></li>
+        </ul>
+        <h6 class="heading">C:Farag Nazmy</h6>
+        <p>responsible for overseeing the implementation and management of safety programs to ensure a safe working environment. Their duties include
+conducting risk assessments, developing safety policies and procedures, leading safety training initiatives, monitoring compliance with safety
+regulations, investigating accidents and incidents, and promoting a culture of safety within the organization. They also collaborate with various
+departments to identify safety issues and implement corrective actions</p>
+        <!-- <footer><a href="#">Read More</a></footer> -->
+      </article>
+      <article class="one_third"><a class="imgover btmspace-30" href="#"><img src="images/demo/320x240.png" alt=""></a>
+        <ul class="nospace meta">
+          <li><i class="fa fa-user"></i> <a href="#">Operation Training Manager</a></li>
+          <li><i class="fa fa-tag"></i> <a href="#">Tag Name</a></li>
+        </ul>
+        <h6 class="heading">Mohamed Azzam</h6>
+        <p>Dedicated and results-driven Operations Training Manager and Captain with extensive experience in aviation training, flight operations, and
+compliance. Proven ability to implement effective training strategies, maintain regulatory compliance (ECAA, ECARs), and enhance operational
+efficiency. Strong expertise in flight training development, instructor management, aviation safety, and operational leadership. Adept at leading
+teams, monitoring third-party training providers, and ensuring adherence to industry best practices.</p>
+        <!-- <footer><a href="#">Read More</a></footer> -->
+      </article>
+    </div>
+    <footer class="center"><a class="btn" href="ourteam.html">go to &raquo;</a></footer>
+    <!-- ################################################################################################ -->
+  </section>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- <div class="wrapper row2 bgded overlay" style="background-image:url('images/demo/backgrounds/04.png');"> -->
+  <!-- <section class="hoc cta clear">  -->
+    <!-- ################################################################################################ -->
+    
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row4" style="background-image:url('images/demo/backgrounds/images (2).jpg');">
+  <footer id="footer" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <article class="one_quarter first">
+      <h6 class="heading">this is sky-vision-airline story</h6>
+      <h3>
+Sky Vision Airlines
+      </h3> 
+      <p>
+
+Founded in 2022, SKY VISION Airlines is a dynamic aviation company dedicated to delivering exceptional passenger and cargo services. Our fleet currently comprises Six (6) aircraft — including three modern passenger jets that ensure comfortable and safe travel between Egypt, Europe, and the Middle East, and two cargo aircraft committed to supporting regional and international air freight logistics.
+
+To further strengthen our cargo operations, a fourth cargo aircraft is scheduled to join our fleet in the coming days. This addition will enhance our ability to serve the growing demands of global trade and improve the efficiency of our logistics network.
+
+Our operations are tailored to the regional market, utilizing narrow-body aircraft ideally suited for short- and medium-haul routes. In addition to scheduled services, we proudly support large national projects, offering innovative, flexible, and reliable aviation solutions that meet a wide range of operational needs.
+
+At SKY VISION Airlines, our mission is to be a trusted partner in the air, delivering value through safety, efficiency, and customer-centric service.</p>
+      <!-- <p class="nospace"><a href="#">Read More</a></p> -->
+    </article>
+    <div class="one_quarter">
+      <h6 class="heading">Contact Us</h6>
+      <ul class="nospace btmspace-30 linklist contact">
+        <li><i class="fa fa-map-marker"></i>
+          <address><a href="https://www.google.com/maps/dir/30.096495666704204, 31.38126058441599" target="_blank">  
+          Building 4 Ext. of Ebad AlRahman St., of Mostafa Refaat St., Sheraton, Cairo - Egypt
+          </a>
+          </address>
+        </li>
+        <li><i class="fa fa-phone"></i> +20 2 20643643 </li>
+        <li><i class="fa fa-fax"></i> +20 2 20643644</li>
+        <li><i class="fa fa-envelope-o" aria-hidden="true"></i>info@skyvisionairline.com</li>
+      </ul>
+      <ul class="faico clear">
+        <li><a class="faicon-facebook" href="https://www.facebook.com/Sky-Vision-Airlines-107785321997316?_rdc=1&_rdr"><i class="fa fa-facebook" ></i></a></li>
+        <li><a class="faicon-instagram" href="https://www.instagram.com/sky.visions.airlines/"><i class="fa fa-instagram"></i></a></li>
+        <!-- <li><a class="faicon-dribble" href="#"><i class="fa fa-dribbble"></i></a></li> -->
+        <li><a class="faicon-linkedin" href="https://www.linkedin.com/company/sky-vision-airline/"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+    <div class="one_quarter">
+      <h6 class="heading">policy</h6>
+      <ul class="nospace linklist">
+      <li><a href="SafetyPolicy.html">Safety Policy</a></li>
+      <li><a href="Reporting-Policy.html">Non-Punitive/ Just Culture Reporting Policy</a></li>
+        <li><a href="DrugalcoholPolicy.html">Drug al cohol Policy</a></li>
+        <!-- <li><a href="#">Vel elit eleifend</a></li> -->
+        <!-- <li><a href="#">Sollicitudin morbi feugiat</a></li> -->
+      </ul>
+    </div>
+    <div class="one_quarter">
+      <h6 class="heading">Erat id sem fringilla</h6>
+      <ul class="nospace linklist">
+        <li><a href="certificate.html">Certificate</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="fleet.html">Fleet</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+        <!-- <li><a href="#">Mi a velit tincidunt</a></li> -->
+        <!-- <li><a href="#">Aliquam vel sit amet</a></li> -->
+      </ul>
+    </div>
+    <!-- ################################################################################################ -->
+  </footer>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2025 - All Rights Reserved - <a href="index.html">sky-vision-airline</a></p>
+    <!-- <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p> -->
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script>
+  // فتح وإغلاق النافذة المنبثقة
+  document.getElementById("openPopup").addEventListener("click", function () {
+      document.getElementById("popup").classList.add("show");
+  });
+
+  document.getElementById("closePopup").addEventListener("click", function () {
+      document.getElementById("popup").classList.remove("show");
+  });
+
+  // تبديل المحتوى بين الزرين
+  document.getElementById("btn1").addEventListener("click", function () {
+      document.getElementById("content1").style.display = "grid";
+      document.getElementById("content2").style.display = "none";
+  });
+
+  document.getElementById("btn2").addEventListener("click", function () {
+      document.getElementById("content1").style.display = "none";
+      document.getElementById("content2").style.display = "grid";
+  });
+
+  // إخفاء المحتويات عند فتح النموذج لأول مرة
+  window.onload = function () {
+      document.getElementById("content1").style.display = "none";
+      document.getElementById("content2").style.display = "none";
+  };
+</script>
+<script src="layout/scripts/jquery.min.js"></script>
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>
