@@ -1,315 +1,300 @@
 <!DOCTYPE html>
-<!--
-  Template Name: Oleald
-  Author: <a href="https://www.os-templates.com/">OS Templates</a>
-  Author URI: https://www.os-templates.com/
-  Licence: Free to use under our free template licence terms
-  Licence URI: https://www.os-templates.com/template-terms
-  -->
-  <html lang="EN">
-    <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
-    <head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sky Vision Airlines - Fleet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/demo/sky-vision-logo.png" type="image/png">
+
+  <!-- Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-<title>sky-vision-airline</title>
-<meta charset="utf-8">
-<link rel="icon" href="images/demo/sky-vision-logo.png" type="image/png" id="favicon-svg">
-<!-- <link rel="icon" href="images/demo/backgrounds/sky-vision-logo.png" type="image/x-icon"> -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+
+  <style>
+    /* === General Styles === */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    /* === Navbar === */
+    #mainav ul li a {
+      color: #fff;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    #mainav ul li a:hover,
+    #mainav ul li.active a {
+      color: white;
+    }
+
+    /* === Fleet Intro === */
+    .fleet-intro {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                  url('images/demo/backgrounds/New-Background-2-1920w.jpg') center/cover;
+      color: white;
+    }
+
+    .fleet-intro h2 {
+      color: white;
+      letter-spacing: 1px;
+    }
+
+    /* === Card Styling === */
+    .card {
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .card-img-top {
+      height: 220px;
+      object-fit: cover;
+    }
+
+    /* === Section Titles === */
+    .fleet-section h2 {
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    /* === Footer === */
+    footer {
+      color: #fff;
+    }
+    footer a {
+      color: #fff;
+    }
+    footer a:hover {
+      color: #ffffff;
+    }
+  </style>
 </head>
+
 <body id="top">
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- Top Background Image Wrapper -->
-<div class="bgded overlay light" style="background-image:url('images/demo/backgrounds/New-Background-2-1920w.jpg');"> 
-  <!-- ################################################################################################ -->
-  <div class="wrapper row0">
-    <div id="topbar" class="hoc clear"> 
-      <!-- ################################################################################################ -->
-      <div class="fl_left"> 
-        <!-- ################################################################################################ -->
-        <ul class="nospace">
-          <li><i class="fa fa-phone"></i> +2020643643</li>
-          <li><i class="fa fa-envelope-o"></i> info@skyvisionairline.com</li>
-        </ul>
-        <!-- ################################################################################################ -->
-      </div>
-      <div class="fl_right"> 
-        <!-- ################################################################################################ -->
-        <ul class="nospace">
-          <li><a href="index.html"><i class="fa fa-lg fa-home"></i></a></li>
-          <li><a href="#" title="Help Centre"><i class="fa fa-life-bouy"></i></a></li>
-          <li><a href="#" title="Login"><i class="fa fa-lg fa-sign-in"></i></a></li>
-          <li><a href="#" title="Sign Up"><i class="fa fa-lg fa-edit"></i></a></li>
-        </ul>
-        <!-- ################################################################################################ -->
-      </div>
-      <!-- ################################################################################################ -->
-    </div>
-  </div>
-  <!-- ################################################################################################ -->
-  <!-- ################################################################################################ -->
-  <!-- ################################################################################################ -->
-  <div class="wrapper row1">
-    <header id="header" class="hoc clear"> 
-      <!-- ################################################################################################ -->
+  <!-- ==================== Navbar ==================== -->
+  <div class="bgded overlay light" style="background-color: #001f3f;">
+ <div class="wrapper row1">
+    <header id="header" class="hoc clear">
       <div id="logo" class="fl_left">
-        <!-- <h1><a href="index.html"><img src="images/demo/sky-vision-logo.png" alt=""> -->
-          Sky Vision Airlines
-        </a></h1>
+        <h1><a href="index.html">Sky Vision Airlines</a></h1>
       </div>
       <nav id="mainav" class="fl_right">
         <ul class="clear">
-          <li class="active"><a href="index.html">Home</a></li>
-          <!-- <li><a class="drop" href="#">Dropdown</a>
-          <ul>
-              <li><a href="#">Level 2</a></li>
-              <li><a class="drop" href="#">Level 2 + Drop</a>
-              <ul>
-                  <li><a href="#">Level 3</a></li>
-                  <li><a href="#">Level 3</a></li>
-                  <li><a href="#">Level 3</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Level 2</a></li>
-        </ul>
-    </li> -->
-    <li><a href="service.html">services</a></li>
-    <li><a href="certificate.html">certificate</a></li>
-    <li><a href="fleet.html">fleet</a></li>
-    <!-- <li><a class="drop" href="#">Policies</a>
-      <ul>
-        <li><a href="pages/gallery.html">Gallery</a></li>
-        <li><a href="pages/full-width.html">Full Width</a></li>
-        <li><a href="pages/sidebar-left.html">Sidebar Left</a></li>
-        <li><a href="pages/sidebar-right.html">Sidebar Right</a></li>
-        <li><a href="SafetyPolicy.html">Safety Policy</a></li>
-      </ul>
-    </li>-->
+          <li><a href="index.html">Home</a></li>
+          <li class="active"><a class="drop" href="fleet.html">Fleet</a>
+            <ul>
+              <li><a href="PassengerAircraft.html">Passenger Aircraft</a></li>
+              <li><a href="CargoAircraft.html">Cargo Aircraft</a></li>
+            </ul>
+          </li>
+          <!-- <li><a href="certificate.html">certificate</a></li> -->
+          <li><a href="service.html">Services</a></li>
+          <li><a href="contact-us.html">About Us</a></li>
         </ul>
       </nav>
-      <!-- ################################################################################################ -->
     </header>
-</div>
-<style type="text/css">
-  .fleet-section {
-    padding: 50px 0;
-    background-color: #f9f9f9;
-  }
-  .fleet-box {
-    background: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      padding: 20px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .fleet-box:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-    .fleet-box img {
-      width: 100%;
-      border-radius: 10px;
-      height: 250px;
-      object-fit: cover;
-    }
-    .fleet-box h5 {
-      font-size: 1.5rem;
-      color: #333;
-      margin-top: 15px;
-    }
-    .section-title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .section-title h2 {
-      font-size: 2.5rem;
-      color: #333;
-    }
-</style>
-<div id="breadcrumb" class="hoc clear"> 
-  <!-- ################################################################################################ -->
-  <!-- <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Lorem</a></li>
-    <li><a href="#">Ipsum</a></li>
-    <li><a href="#">Dolor</a></li>
-  </ul> -->
-  <!-- ################################################################################################ -->
-</div>
-<!-- ################################################################################################ -->
-</div>
-
-
-<!-- </head> -->
-<!-- <body> -->
   </div>
-</div>
-<div class="fleet-section">
+  </div>
+
+  <!-- ==================== Fleet Intro ==================== -->
+  <section class="fleet-intro py-5 text-center">
+    <div class="container" data-aos="fade-up">
+      <h2 class="display-5 fw-bold">Our Fleet</h2>
+      <p class="lead mb-4">Modern aircraft equipped with the latest technology to ensure safe and comfortable flights.</p>
+
+      <h4 class="fw-semibold mb-3">Sky Vision Aircraft — Modern Aviation Excellence</h4>
+      <p class="mb-4">
+        Our fleet comprises six modern aircraft, including three passenger jets ensuring comfortable and safe travel between 
+        Egypt, Europe, and the Middle East. We also operate three cargo aircraft supporting regional and international air freight logistics.
+      </p>
+
+      <div class="row mt-4 justify-content-center">
+        <div class="col-md-3" data-aos="zoom-in"><h3 class="text-warning fw-bold">6</h3><p>Total Fleet Size</p></div>
+        <div class="col-md-3" data-aos="zoom-in"><h3 class="text-success fw-bold">3</h3><p>Passenger Jets</p></div>
+        <div class="col-md-3" data-aos="zoom-in"><h3 class="text-danger fw-bold">3</h3><p>Cargo Aircraft</p></div>
+      </div>
+
+      <a href="#" class="btn btn-outline-light mt-4 px-4 py-2">View Detailed Fleet Information</a>
+    </div>
+  </section>
+
+  <!-- ==================== Passenger Aircraft ==================== -->
+  <section class="fleet-section py-5 bg-white">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="text-primary">✈️ Passenger Aircraft</h2>
+        <p>Comfortable, efficient, and reliable aircraft serving Egypt, Europe, and the Middle East.</p>
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col" data-aos="zoom-in">
+          <div class="card shadow-sm">
+            <img src="images/demo/SU-SKB.jpg" class="card-img-top" alt="SU-SKB">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold">SU-SKB</h5>
+              <p>AIRCRAFT TYPE: A320-232</p>
+              <p>CONFIG: 180Y | MTOW: 77,000 KG</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card shadow-sm">
+            <img src="images/demo/SU-SKC.jpg" class="card-img-top" alt="SU-SKC">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold">SU-SKC</h5>
+              <p>AIRCRAFT TYPE: A320-232</p>
+              <p>CONFIG: 180Y | MTOW: 77,000 KG</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card shadow-sm">
+            <img src="images/demo/SU-SKE.jpg" class="card-img-top" alt="SU-SKE">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold">SU-SKE</h5>
+              <p>AIRCRAFT TYPE: A320-232</p>
+              <p>CONFIG: 180Y | MTOW: 73,500 KG</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Cargo Aircraft ==================== -->
+  <section class="fleet-section py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="text-danger">🚚 Cargo Aircraft</h2>
+        <p>Efficient and high-capacity aircraft supporting regional and international logistics operations.</p>
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col" data-aos="zoom-in">
+          <div class="card shadow-sm">
+            <img src="images/demo/SU-SKD.jpg" class="card-img-top" alt="SU-SKD">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold">SU-SKD</h5>
+              <p>AIRCRAFT TYPE: A320 P2F</p>
+              <p>MAX PAYLOAD: 21 TONS | MTOW: 77,000 KG</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card shadow-sm">
+            <img src="images/demo/SU-SKF.jpg" class="card-img-top" alt="SU-SKF">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold">SU-SKF</h5>
+              <p>AIRCRAFT TYPE: A321 P2F</p>
+              <p>MAX PAYLOAD: 23 TONS | MTOW: 83,000 KG</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card shadow-sm">
+            <img src="images/demo/SU-SKG.jpg" class="card-img-top" alt="SU-SKG">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold">SU-SKG</h5>
+              <p>AIRCRAFT TYPE: A320-232</p>
+              <p>MAX PAYLOAD: 21 TONS | MTOW: 77,000 KG</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+<!-- ===== IMPROVED FOOTER ===== -->
+<footer style="background: linear-gradient(135deg, #0a0a0a, #1a1a1a); color: #ccc; padding: 80px 0 40px;">
   <div class="container">
-    <div class="section-title">
-      <h2>Our Fleet</h2>
-      <p>"Experience the comfort and reliability of our modern, meticulously maintained aircraft fleet."</p>
+    <div class="row" style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:40px;">
+      
+      <!-- Company Info -->
+      <div class="col" style="flex:1 1 300px; min-width:250px;">
+        <div style="display:flex; align-items:center; margin-bottom:15px;">
+          <img src="images/demo/sky-vision-logo.png" alt="Sky Vision Logo" style="width:55px; height:auto; margin-right:10px;">
+          <h4 style="color:#fff; font-weight:700;">Sky Vision Airlines</h4>
+        </div>
+        <p style="color:#aaa; line-height:1.8;">
+          Founded in 2022, Sky Vision Airlines connects Egypt, Europe, and the Middle East — 
+          providing exceptional passenger and cargo air services with safety and excellence.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col" style="flex:1 1 180px; min-width:200px;">
+        <h5 style="color:#fff; font-weight:600; margin-bottom:20px;">Quick Links</h5>
+        <ul style="list-style:none; padding:0; margin:0; line-height:2;">
+          <li><a href="index.html" style="color:#ccc; text-decoration:none;">Home</a></li>
+          <li><a href="fleet.html" style="color:#ccc; text-decoration:none;">Fleet</a></li>
+          <li><a href="certificate.html" style="color:#ccc; text-decoration:none;">Certificate</a></li>
+          <li><a href="service.html" style="color:#ccc; text-decoration:none;">Services</a></li>
+          <li><a href="contact-us.html" style="color:#ccc; text-decoration:none;">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col" style="flex:1 1 220px; min-width:220px;">
+        <h5 style="color:#fff; font-weight:600; margin-bottom:20px;">Contact</h5>
+        <p><i class="fa fa-phone" style="color:#88036a; margin-right:8px;"></i> +20 22679456</p>
+<p>
+  <i class="fa fa-envelope" style="color:#88036a; margin-right:8px;"></i>
+  <a href="mailto:info@skyvisionairline.com" style="color:#ccc; text-decoration:none;">
+    info@skyvisionairline.com
+  </a>
+</p>
+        <p><i class="fa fa-map-marker-alt" style="color:#88036a; margin-right:8px;"></i> Cairo, Egypt</p>
+      </div>
+
+      <!-- Follow Us -->
+      <div class="col" style="flex:1 1 220px; min-width:220px;">
+        <h5 style="color:#fff; font-weight:600; margin-bottom:20px;">Follow Us</h5>
+        <div style="display:flex; gap:15px; margin-bottom:15px;">
+          <a href="https://www.facebook.com/Sky-Vision-Airlines-107785321997316" target="_blank" style="color:#ccc; font-size:1.5rem; transition:0.3s;"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/sky.visions.airlines/" target="_blank" style="color:#ccc; font-size:1.5rem; transition:0.3s;"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/sky-vision-airline/" target="_blank" style="color:#ccc; font-size:1.5rem; transition:0.3s;"><i class="fab fa-linkedin-in"></i></a>
+          <!-- <a href="#" target="_blank" style="color:#ccc; font-size:1.5rem; transition:0.3s;"><i class="fab fa-twitter"></i></a> -->
+        </div>
+        <p style="color:#aaa; font-size:0.9rem;">Stay connected for updates, offers, and travel inspiration.</p>
+      </div>
     </div>
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-      <!-- Plane 1 -->
-      <div class="col">
-        <div class="fleet-box">
-          <img src="images/demo/SU-SKB.jpg" alt="SU-SKB">
-          <h5>SU-SKB</h5>
-          <p>AIRCRAFT TYPE: A320 232</p>
-          <p> AIRCRAFT REG.: SU-SKB</p>
-          <p> A/C CONF.: 180Y</p>
-          <p> MTOW: 77,000 KG</p>
-          <P>PAX</P>
-        </div>
-      </div>
-      <!-- Plane 2 -->
-      <div class="col">
-        <div class="fleet-box">
-          <img src="images/demo/SU-SKC.jpg" alt="SU-SKC">
-          <h5>SU-SKC</h5>
-          <p>AIRCRAFT TYPE: A320 232</p>
-          <p>AIRCRAFT REG.: SU-SKC</p>
-          <p> A/C CONF.: 180Y</p>
-          <p> MTOW: 77,000 KG</p>
-          <P>PAX</P>
-        </div>
-      </div>
-      <!-- Plane 3 -->
-      <div class="col">
-        <div class="fleet-box">
-          <img src="images/demo/SU-SKE.jpg" alt="SU-SKE">
-          <h5>SU-SKE</h5>
-          <p>AIRCRAFT TYPE: A320 232</p>
-          <p> AIRCRAFT REG.: SU-SKE</p>
-          <p>A/C CONF.: 180Y</p>
-          <p> MTOW: 73,500 KG</p>
-          <p>PAX</p>
-        </div>
-      </div>
-      <!-- Plane 4 -->
-      <div class="col">
-        <div class="fleet-box">
-          <img src="images/demo/SU-SKD.jpg" alt="SU-SKD">
-          <h5>SU-SKD</h5>
-          <p>AIRCRAFT TYPE: A320 P2F</p>
-          <p>AIRCRAFT REG.: SU-SKD</p>
-          <p>MAXIMUM PAYLOAD: 21 TONS INCLUDING</p>
-          <p>PALLET'S WEIGHT</p>
-          <p>MTOW: 77,000 KG</p>
-          <p>P2F</p>
-        </div>
-        </div>
-      <!-- Plane 5 -->
-      <div class="col">
-        <div class="fleet-box">
-          <img src="images/demo/SU-SKF.jpg" alt="SU-SKF">
-          <h5>SU-SKF</h5>
-          <p>AIRCRAFT TYPE: A320 232 --</p>
-          <p> AIRCRAFT REG.: SU-SKF --</p>
-          <p>A/C CONF.: 180Y--</p>
-          <p> MTOW: 73,500 KG--</p>
-          <p>P2F</p>
-        </div>
-      </div>
-      <!-- Plane 6 -->
-      <div class="col">
-        <div class="fleet-box">
-          <img src="images/demo/SU-SKE.jpg" alt="SU-SKG">
-          <h5>SU-SKG</h5>
-          <p>AIRCRAFT TYPE: A320 232</p>
-          <p> AIRCRAFT REG.: SU-SKE</p>
-          <p>A/C CONF.: 180Y</p>
-          <p> MTOW: 73,500 KG</p>
-          <p>P2F</p>
-        </div>
-      </div>
+
+    <hr style="border-color:#333; margin:40px 0;">
+    <div style="text-align:center; font-size:0.9rem; color:#aaa;">
+      &copy; 2025 <strong style="color:#fff;">Sky Vision Airlines</strong> — All Rights Reserved.<br>
+      <span style="font-size:0.85rem; color:#777;">Designed & Developed by Sky Vision Web Team</span>
     </div>
   </div>
-</div>
-</div>
-<!-- foooter -->
-<!-- foooter -->
-<!-- foooter -->
-<!-- foooter --><div class="wrapper row4" style="background-image:url('images/demo/backgrounds/images (2).jpg');">
-  <footer id="footer" class="hoc clear"> 
-    <!-- ################################################################################################ -->
-    <article class="one_quarter first">
-      <h6 class="heading">this is sky-vision-airline story</h6>
-      <p>SKY VISION Airlines, established in 2022, currently operates a fleet of 5 aircraft, including 
-        3 passenger aircraft that provide comfortable and safe flights between Egypt, Europe, and the 
-        Middle East, and 2 cargo aircraft dedicated to facilitating Additionally, a third cargo aircraft is 
-        scheduled to join the fleet in the coming days, further enhancing the company's capacity to handle 
-        air freight trade more efficiently.</p>
-      <p>Our focus lies on serving the regional market with narrow-body aircraft, perfectly suited for short-haul and medium-haul flights. We also cater to the needs of large national projects, providing 
-        innovative solutions and exceptional aviation services.&hellip;</p>
-      <p class="nospace"><a href="#">Read More</a></p>
-    </article>
-    <div class="one_quarter">
-      <h6 class="heading">Contact Us</h6>
-      <ul class="nospace btmspace-30 linklist contact">
-        <li><i class="fa fa-map-marker"></i>
-          <address><a href="https://www.google.com/maps/dir/30.096495666704204, 31.38126058441599" target="_blank">  
-            Building 4 extension of Ebad Alrahman St. Off Mustafa Refaat، department، St، قسم النزهة، محافظة القاهرة
-          </a>
-          </address>
-        </li>
-        <li><i class="fa fa-phone"></i> +2020643643</li>
-        <li><i class="fa fa-envelope-o"></i>info@skyvisionairline.com</li>
-      </ul>
-      <ul class="faico clear">
-        <li><a class="faicon-facebook" href="https://www.facebook.com/Sky-Vision-Airlines-107785321997316?_rdc=1&_rdr"><i class="fa fa-facebook" ></i></a></li>
-        <li><a class="faicon-instagram" href="https://www.instagram.com/sky.visions.airlines/"><i class="fa fa-instagram"></i></a></li>
-        <!-- <li><a class="faicon-dribble" href="#"><i class="fa fa-dribbble"></i></a></li> -->
-        <li><a class="faicon-linkedin" href="https://www.linkedin.com/company/sky-vision-airline/"><i class="fa fa-linkedin"></i></a></li>
-      </ul>
-    </div>
-    <div class="one_quarter">
-      <h6 class="heading">policy</h6>
-      <ul class="nospace linklist">
-      <li><a href="SafetyPolicy.html">Safety Policy</a></li>
-      <li><a href="Reporting-Policy.html">Non-Punitive/ Just Culture Reporting Policy</a></li>
-        <li><a href="DrugalcoholPolicy.html">Drug al cohol Policy</a></li>
-        <!-- <li><a href="#">Vel elit eleifend</a></li> -->
-        <!-- <li><a href="#">Sollicitudin morbi feugiat</a></li> -->
-      </ul>
-    </div>
-    <div class="one_quarter">
-      <h6 class="heading">Erat id sem fringilla</h6>
-      <ul class="nospace linklist">
-        <li><a href="certificate.html">Certificate</a></li>
-        <li><a href="service.html">Services</a></li>
-        <li><a href="fleet.html">Fleet</a></li>
-        <li><a href="contact-us.html">Contact Us</a></li>
-        <!-- <li><a href="#">Mi a velit tincidunt</a></li> -->
-        <!-- <li><a href="#">Aliquam vel sit amet</a></li> -->
-      </ul>
-    </div>
-    <!-- ################################################################################################ -->
-  </footer>
-</div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<div class="wrapper row5">
-  <div id="copyright" class="hoc clear"> 
-    <!-- ################################################################################################ -->
-    <p class="fl_left">Copyright &copy; 2025 - All Rights Reserved - <a href="index.html">sky-vision-airline</a></p>
-    <!-- <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p> -->
-    <!-- ################################################################################################ -->
-  </div>
-</div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
-<!-- JAVASCRIPTS -->
-<script src="layout/scripts/jquery.min.js"></script>
-<script src="layout/scripts/jquery.backtotop.js"></script>
-<script src="layout/scripts/jquery.mobilemenu.js"></script>
+</footer>
+
+  <!-- ==================== Scripts ==================== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
 </body>
 </html>

@@ -1,613 +1,625 @@
 <!DOCTYPE html>
-<!--
-Template Name: Oleald
-Author: <a href="https://www.os-templates.com/">OS Templates</a>
-Author URI: https://www.os-templates.com/
-Licence: Free to use under our free template licence terms
-Licence URI: https://www.os-templates.com/template-terms
--->
 <html lang="EN">
-<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
-<title>sky-vision-airline</title>
+<title>Sky Vision Airline</title>
 <meta charset="utf-8">
 <link rel="icon" href="images/demo/sky-vision-logo.png" type="image/png" id="favicon-svg">
-<!-- <link rel="icon" href="images/demo/backgrounds/sky-vision-logo.png" type="image/x-icon"> -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
 <style>
-  /* الزر الثابت في جانب الشاشة */
-  .static-btn {
-      position: fixed;
-      right: 20px;
-      bottom: 100px;
-      background: #88036a;
-      color: white;
-      border: none;
-      padding: 15px 20px;
-      border-radius: 50px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.3s;
-      z-index: 9999;
-  }
+/* زر Contact Us */
+.static-btn {
+  position: fixed;
+  right: 25px;
+  bottom: 100px;
+  background: linear-gradient(135deg, #88036a, #b20089);
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: 0.3s ease;
+  z-index: 9999;
+}
+.static-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #a5057e, #d517a9);
+}
 
-  .static-btn:hover {
-      background: #77035e;
-  }
+/* Popup Style */
+.popup {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 90%;
+  max-width: 700px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.25);
+  padding: 30px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s ease;
+  z-index: 99999;
+}
+.popup.show {
+  transform: translate(-50%, -50%) scale(1);
+  visibility: visible;
+  opacity: 1;
+}
 
-  /* تصميم الـ Popup */
-  .popup {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0);
-      width: 85%;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-      text-align: center;
-      visibility: hidden;
-      transition: transform 0.3s ease-in-out, visibility 0.3s;
-      z-index: 9999;
-  }
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  color: #666;
+  cursor: pointer;
+}
+.close-btn:hover { color: #88036a; }
 
-  .popup.show {
-      transform: translate(-50%, -50%) scale(1);
-      visibility: visible;
-  }
+/* Titles */
+.popup-title {
+  font-size: 1.8rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+.popup-subtitle {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 25px;
+}
 
-  .popup-content {
-      position: relative;
-  }
+/* Buttons */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.form-toggle {
+  background: #f1f1f1;
+  color: #333;
+  border: 2px solid #88036a;
+  border-radius: 8px;
+  padding: 10px 18px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.form-toggle:hover {
+  background: #88036a;
+  color: #fff;
+}
 
-  .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 24px;
-      cursor: pointer;
-  }
+/* Forms */
+.popup-content-item {
+  display: none;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+.popup-content-item textarea {
+  grid-column: span 2;
+  min-height: 100px;
+  resize: vertical;
+}
+.popup-content-item input,
+.popup-content-item textarea {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 0.95rem;
+  width: 100%;
+}
+.submit-btn {
+  grid-column: span 2;
+  background: linear-gradient(135deg, #88036a, #b20089);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.submit-btn:hover {
+  background: linear-gradient(135deg, #a5057e, #d517a9);
+  transform: translateY(-2px);
+}
 
-  /* تصميم العناصر داخل Popup */
-  .popup-content-item {
-      display: none;
-      grid-template-columns: repeat(4, 1fr); /* 4 أعمدة متساوية */
-      gap: 10px; /* مسافة بين العناصر */
-      margin-top: 10px;
-  }
+/* ========== Animation عند التمرير ========== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-  .popup-content-item input,
-  .popup-content-item select,
-  .popup-content-item textarea,
-  .popup-content-item button {
-      width: 100%;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-  }
+/* ========== خريطة العالم ========== */
+#world-map {
+  width: 100%;
+  height: 500px;
+  margin-top: 60px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+.news-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
 
-  .popup-content-item textarea {
-      grid-column: span 4; /* جعل حقل النصوص الطويلة يأخذ الصف بالكامل */
-  }
+.news-card img {
+  transition: transform 0.5s ease;
+}
 
-  .popup-content-item button {
-      grid-column: span 2; /* جعل الزر يأخذ عمودين */
-      background-color: #00a160;
-      color: white;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-  }
+.news-card:hover img {
+  transform: scale(1.05);
+}
 
-  /* ترتيب الأزرار جنب بعض */
-  .button-group {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      margin-top: 10px;
-  }
+/* Animation عند التمرير */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-  .button-group button {
-      width: 45%;
-      padding: 10px;
-      background: #88036a;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-  }
+/* ===== Destinations Slider ===== */
+.destinations-slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
 
-  .button-group button:hover {
-      background: #77035e;
-  }
+.slide-track {
+  display: flex;
+  width: calc(250px * 20); /* عدد الصور × 2 */
+  animation: scroll 30s linear infinite;
+}
+
+.slide {
+  width: 250px;
+  height: 280px;
+  margin: 0 15px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.slide img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.slide p {
+  margin: 10px 0;
+  font-weight: 600;
+  color: #88036a;
+}
+
+.slide:hover img {
+  transform: scale(1.05);
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-250px * 10)); } /* 10 صور */
+}
+ /* ===== FOOTER ===== */
+    footer {
+      background: #0a0a0a;
+      color: #ccc;
+      padding: 60px 0;
+    }
+    footer h5 {
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    footer a:hover {
+      color: #ffcc00;
+    }
+    .faico a {
+      font-size: 1.3rem;
+      margin-right: 10px;
+      color: #ccc;
+      transition: color 0.3s;
+    }
+    .faico a:hover {
+      color: #ffcc00;
+    }
+
 </style>
 </head>
-<!-- ############################################################################################################ -->
+
 <body id="top">
-  <button id="openPopup" class="static-btn">📌 Request a Quote</button>
 
-  <div id="popup" class="popup">
-      <div class="popup-content">
-          <span id="closePopup" class="close-btn">&times;</span>
-          <h2>Request a quote
+<!-- ===== زر ثابت لفتح الفورم ===== -->
+<button id="openPopup" class="static-btn">
+  <i class="fas fa-paper-plane"></i> Contact Us
+</button>
 
-            Select a form</h2>
+<!-- ===== النافذة المنبثقة ===== -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span id="closePopup" class="close-btn">&times;</span>
 
-          <!-- الأزرار التي ستكون جنب بعض -->
-          <div class="button-group">
-              <button id="btn1">Air Cargo Charter</button>
-              <button id="btn2">Aircraft Leasing</button>
-          </div>
+    <h2 class="popup-title">
+      ✈ Get in Touch with <span style="color:#88036a;">Sky Vision Airlines</span>
+    </h2>
+    <p class="popup-subtitle">We’d love to hear from you. Please select your inquiry type below.</p>
 
-          <!-- محتوى الزر الأول -->
-          <div id="content1" class="popup-content-item">
-              <input type="text" placeholder="Name">
-              <input type="text" placeholder="Destination">
-              <input type="date" placeholder="Date">
-              <input type="time" placeholder="Time">
+    <div class="button-group">
+      <button id="btn1" class="form-toggle"><i class="fas fa-box"></i> Cargo Charter</button>
+      <button id="btn2" class="form-toggle"><i class="fas fa-users"></i> Passenger Charter</button>
+    </div>
 
-              <input type="text" placeholder="Aircraft Type">
-              <input type="text" placeholder="Cargo">
-              <input type="email" placeholder="E.mail">
-              <input type="tel" placeholder="Phone-Num.">
+    <!-- ===== Cargo Charter Form ===== -->
+    <form id="content1" class="popup-content-item" action="req.php" method="POST">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="tel" name="phone" placeholder="Phone" required>
+      <input type="email" name="email" placeholder="E-mail" required>
+      <input type="text" name="company" placeholder="Airline / Tour Agent">
+      <input type="date" name="date">
+      <textarea name="notes" placeholder="Your Message..."></textarea>
+      <input type="hidden" name="formType" value="Cargo-Aircraft">
+      <button type="submit" class="submit-btn">Send Request</button>
+    </form>
 
-              <textarea placeholder="Notes"></textarea>
-              <button type="submit">Send</button>
-          </div>
-
-          <!-- محتوى الزر الثاني -->
-          <form action="req.php" method="POST">
-          <div id="content2" class="popup-content-item">
-              <select>
-                  <option value="">Select Rental Type</option>
-                  <option value="1">Long-Term Rental</option>
-                  <option value="2">Short-Term Rental</option>
-              </select>
-
-              <input type="text" placeholder="Company Name">
-              <input type="text" placeholder="Aircraft Type">
-              <input type="email" placeholder="E.mail">
-              <input type="tel" placeholder="Phone Number">
-
-              <input type="text" placeholder="Destination">
-              <select>
-                  <option value="">Select Rental Duration</option>
-                  <option value="1">One month</option>
-                  <option value="2">one year</option>
-              </select>
-
-              <input type="date" placeholder="Start Date ">
-              <input type="date" placeholder="End daye">
-              <input type="text" placeholder="Special Requirements ">
-              <input type="text" placeholder="Notes">
-
-              <button type="submit">send</button>
-            </div>
-          </form>
-          </div>
+    <!-- ===== Passenger Charter Form ===== -->
+    <form id="content2" class="popup-content-item" action="req.php" method="POST">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="tel" name="phone" placeholder="Phone" required>
+      <input type="email" name="email" placeholder="E-mail" required>
+      <input type="text" name="company" placeholder="Airline / Tour Agent">
+      <input type="date" name="date">
+      <textarea name="notes" placeholder="Your Message..."></textarea>
+      <input type="hidden" name="formType" value="Passenger-Charter">
+      <button type="submit" class="submit-btn">Send Request</button>
+    </form>
   </div>
+</div>
 
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- Top Background Image Wrapper -->
-<div class="bgded overlay light" style="background-image:url('images/demo/backgrounds/New-Background-2-1920w.jpg');"> 
-  <!-- ################################################################################################ -->
+<!-- ======== الخلفية ======== -->
+<div class="bgded overlay light" style="background-image:url('images/demo/backgrounds/New-Background-2-1920w.jpg');">
   <div class="wrapper row0">
-    <div id="topbar" class="hoc clear"> 
-      <!-- ################################################################################################ -->
-      <div class="fl_left"> 
-        <!-- ################################################################################################ -->
+    <div id="topbar" class="hoc clear">
+      <div class="fl_left">
         <ul class="nospace">
-<li>
-  <a href="tel:+2020643643">
-    <i class="fa fa-phone"></i> 02-22679456
-  </a>
-</li>
-
-
-          <li>
-            <i class="fa fa-envelope-o"></i> info@skyvisionairline.com</li>
+          <li><a href="tel:+2020643643"><i class="fa fa-phone"></i> 02-22679456</a></li>
+          <li><i class="fa fa-envelope-o"></i> info@skyvisionairline.com</li>
         </ul>
-        <!-- ################################################################################################ -->
       </div>
-      <div class="fl_right"> 
-        <!-- ################################################################################################ -->
+      <div class="fl_right">
         <ul class="nospace">
           <li><a href="index.html"><i class="fa fa-lg fa-home"></i></a></li>
           <li><a href="#" title="Help Centre"><i class="fa fa-life-bouy"></i></a></li>
           <li><a href="#" title="Login"><i class="fa fa-lg fa-sign-in"></i></a></li>
           <li><a href="#" title="Sign Up"><i class="fa fa-lg fa-edit"></i></a></li>
         </ul>
-        <!-- ################################################################################################ -->
       </div>
-      <!-- ################################################################################################ -->
     </div>
   </div>
-  <!-- ################################################################################################ -->
-  <!-- ################################################################################################ -->
-  <!-- ################################################################################################ -->
+
+  <!-- ======= Header ======= -->
   <div class="wrapper row1">
-    <header id="header" class="hoc clear"> 
-      <!-- ################################################################################################ -->
+    <header id="header" class="hoc clear">
       <div id="logo" class="fl_left">
-        <!-- <h1><a href="index.html"><img src="images/demo/sky-vision-logo.png" alt=""> -->
-          Sky Vision Airlines
-        </a></h1>
+        <h1><a href="index.html">Sky Vision Airlines</a></h1>
       </div>
       <nav id="mainav" class="fl_right">
         <ul class="clear">
           <li class="active"><a href="index.html">Home</a></li>
-          <!-- <li><a href="">Air Cargo</a></li> -->
-          <!-- <li><a href="">Aircraft Leasing</a></li> -->
-          <!-- ############################################################################################################ -->
-          <!-- <li><a class="drop" href="#">Dropdown</a>
-          <ul>
-              <li><a href="#">Level 2</a></li>
-              <li><a class="drop" href="#">Level 2 + Drop</a>
-              <ul>
-                  <li><a href="#">Level 3</a></li>
-                  <li><a href="#">Level 3</a></li>
-                  <li><a href="#">Level 3</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Level 2</a></li>
-        </ul> -->
- <li><a class="drop" href="">Policies</a>
-          <ul>
-              <li><a href="SVI Certificates/Airline Policy Statement (1).pdf">Airline Policy Statement</a></li>
-              <li><a href="SVI Certificates/Compliance Monitoring Policy Statement (1).pdf">Compliance Monitoring Policy Statement</a></li>
-              <li><a href="SVI Certificates/Drug alcohol Policy Arabic& English Date 14_01_2025.pdf">Drug alcohol Policy</a></li>
-              <li><a href="SVI Certificates/Non-Punitive _ Just Culture Dec. 2024 Date 13_01_2025.pdf">Non-Punitive _ Just Culture</a></li>
-              <li><a href="SVI Certificates/Safety Policy Dec. 2024 Date 13_01_2025.pdf">Safety Policy</a></li>
-              <li><a href="#">sec Policy</a></li>
-              <!-- <li><a class="drop" href="#">Level 2 + Drop</a>
-              <ul>
-                  <li><a href="#">Level 3</a></li>
-                  <li><a href="#">Level 3</a></li>
-                  <li><a href="#">Level 3</a></li>
-                </ul>
-            </li> -->
-        </ul>
-    </li> 
-
-
-
-        <!-- ####################################################################################################################### -->
           <li><a class="drop" href="fleet.html">Fleet</a>
-          <ul>
-              <li><a href="SU-SKB.html">SU-SKB</a></li>
-              <li><a href="SU-SKC.html">SU-SKC</a></li>
-              <li><a href="SU-SKD.html">SU-SKD</a></li>
-              <li><a href="SU-SKE.html">SU-SKE</a></li>
-              <li><a href="SU-SKF.html">SU-SKF</a></li>
-              <li><a href="SU-SKG.html">SU-SKG</a></li>
-              <!-- <li><a class="drop" href="#">Level 2 + Drop</a>
-              <ul>
-                  <li><a href="#">Level 3</a></li>
-                  <li><a href="#">Level 3</a></li>
-                  <li><a href="#">Level 3</a></li>
-                </ul>
-            </li> -->
-        </ul>
-    </li> 
-    <li><a href="service.html">Services</a></li>
-    <li><a href="certificate.html">Certificate</a></li>
-    <!-- <li><a href="fleet.html">fleet</a></li> -->
-    <li><a href="">About Us</a></li>
-    <!-- <li><a class="drop" href="#">Policies</a>
-      <ul>
-        <li><a href="pages/gallery.html">Gallery</a></li>
-        <li><a href="pages/full-width.html">Full Width</a></li>
-        <li><a href="pages/sidebar-left.html">Sidebar Left</a></li>
-        <li><a href="pages/sidebar-right.html">Sidebar Right</a></li>
-        <li><a href="SafetyPolicy.html">Safety Policy</a></li>
-      </ul>
-    </li>-->
+            <ul>
+              <li><a href="PassengerAircraft.html">Passenger Aircraft</a></li>
+              <li><a href="CargoAircraft.html">Cargo Aircraft</a></li>
+            </ul>
+          </li>
+          <!-- <li><a href="certificate.html">certificate</a></li> -->
+          <li><a href="service.html">Services</a></li>
+          <li><a href="contact-us.html">About Us</a></li>
         </ul>
       </nav>
-      <!-- ################################################################################################ -->
     </header>
   </div>
-  <!-- ################################################################################################ -->
-  <!-- ################################################################################################ -->
-  <!-- ################################################################################################ -->
-  <div id="pageintro" class="hoc clear"> 
-    <!-- ################################################################################################ -->
+
+  <div id="pageintro" class="hoc clear reveal">
     <article>
-      <h3 class="heading"><br>
-       It’s Time to Fly. Life is a Journey—Travel it Well.
-      </h3>
-       <p>
-Fly with Sky Vision—Travel Safely and Soar Toward Your Dreams.
-</p>
-<!-- 
-  Fly With Sky Vision, fly safe and soar towards your vision.  -->
-      <footer><a class="btn" href="service.html">SERVICES DETAILS</a></footer>
+      <h3 class="heading"><br>It’s Time to Fly. Life is a Journey—Travel it Well.</h3>
+      <p>Fly with Sky Vision—Travel Safely and Soar Toward Your Dreams.</p>
+      <div></div><a class="btn" href="service.html">SERVICES DETAILS</a> </div>
     </article>
-    <!-- ################################################################################################ -->
   </div>
-  <!-- ################################################################################################ -->
 </div>
-<!-- End Top Background Image Wrapper -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
+<!-- ======= SECTION: OUR DESTINATIONS ======= -->
+<section class="wrapper row3 reveal" style="background-color:#f8f9fa; padding:80px 0;">
+  <div class="hoc container clear">
+    <div class="sectiontitle" style="text-align:center; margin-bottom:50px;">
+      <h2 class="heading" style="font-size:2.5rem; color:#222; font-weight:700;">🌍 Destinations We Fly To</h2>
+      <p style="color:#666; font-size:1.1rem;">Explore the world with Sky Vision Airlines — connecting continents with comfort and care.</p>
+    </div>
 
-    <!-- #####################################################################? -->
-<div class="wrapper row3">
-  <main class="hoc container clear"> 
-    <!-- main body -->
-    <!-- ################################################################################################ -->
-    <div class="group excerpt">
-      <h2 class="heading">our team</h2>
-      <article class="one_third first"><a class="imgover btmspace-30" href="images/demo/1672647577678.jpg"><img src="images/demo/1672647577678.jpg" alt=""></a>
-        <h6 class="heading">Pilots & Cabin Crew</h6>
-        <p>
-Our team of highly skilled pilots and cabin crew are committed to delivering the highest standards of safety, comfort, and luxury on every flight.
-</p>
-        <footer><a href="ourteam.html">Our team &raquo;</a></footer>
-      </article>
-      <article class="one_third"><a class="imgover btmspace-30" href="images/demo/815.jpg"><img src="images/demo/815.jpg" alt=""></a>
-        <h6 class="heading">Airport Operations Team</h6>
-        <p>Our airport operations team works around the clock to ensure the seamless execution of every flight — from routine aircraft maintenance to comprehensive pre-flight preparations — all to guarantee a smooth and stress-free travel experience.</p>
-        <footer><a href="ourteam.html">Our team &raquo;</a></footer>
-      </article>
-      <article class="one_third"><a class="imgover btmspace-30" href="images/demo/1672647577526.jpg"><img src="images/demo/1672647577526.jpg" alt=""></a>
-        <h6 class="heading">Ground Services Team</h6>
-        <p>
-Our ground services team forms the backbone of an exceptional travel experience, delivering seamless passenger support — from check-in to boarding — with efficiency, courtesy, and professionalism.</p>
-        <footer><a href="ourteam.html">Our team &raquo;</a></footer>
-      </article>
+    <div class="destinations-slider">
+      <div class="slide-track">
+        <!-- يمكنك إضافة أو تعديل الدول كما تحب -->
+        <div class="slide"><img src="images/demo/egypt.jpeg" alt="Egypt"><p>Egypt</p></div>
+        <div class="slide"><img src="images/demo/italy.jpeg" alt="Italy"><p>Italy</p></div>
+        <div class="slide"><img src="images/demo/france.jpeg" alt="France"><p>France</p></div>
+        <div class="slide"><img src="images/demo/uae.jpeg" alt="UAE"><p>UAE</p></div>
+        <div class="slide"><img src="images/demo/saudi.jpg" alt="Saudi Arabia"><p>Saudi Arabia</p></div>
+        <div class="slide"><img src="images/demo/germany.jpg" alt="Germany"><p>Germany</p></div>
+        <div class="slide"><img src="images/demo/qatar.jpeg" alt="Qatar"><p>Qatar</p></div>
+        <div class="slide"><img src="images/demo/spain.jpeg" alt="Spain"><p>Spain</p></div>
+        <div class="slide"><img src="images/demo/kenya.jpeg" alt="Kenya"><p>Kenya</p></div>
+        <div class="slide"><img src="images/demo/southafrica.jpg" alt="South Africa"><p>South Africa</p></div>
+      </div>
     </div>
-    <!-- ################################################################################################ -->
-    <!-- / main body -->
-    <div class="clear"></div>
-  </main>
-</div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<div class="wrapper row3">
-  <figure class="hoc container clear"> 
-    <!-- ################################################################################################ -->
-    <figcaption class="sectiontitle">
-      <h6 class="heading">Certificates</h6>
-      <!-- <p>article head</p> -->
-    </figcaption>
-    <ul class="nospace group center overview">
-      <li class="one_third"><a class="imgover" href="SVI Certificates/AOC Sky Vision No. 94 up to 17 Dec. 2025.pdf"><img src="images/demo/download.jpg" alt=""></a></li>
-      <li class="one_third"><a class="imgover" href="SVI Certificates/250107 ACC3 Sky Vision Airlines Cairo approval letter.pdf"><img src="images/demo/download.png" alt=""></a></li>
-      <li class="one_third"><a class="imgover" href="SVI Certificates/EASA TCO Authorization EGY-0027.01.pdf"><img src="images/demo/download (1).png" alt=""></a></li>
-    </ul>
-    <footer class="center"><a class="btn" href="certificate.html">View Certificate</a></footer>
-    <!-- ################################################################################################ -->
-  </figure>
-</div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<div class="wrapper row2 bgded overlay" style="background-image:url('images/demo/backgrounds/03.png');">
-  <section class="hoc container clear testimonials"> 
-    <!-- ################################################################################################ -->
-    <div class="sectiontitle">
-      <h4 class="heading">Leadership & Excellence in Aviation ✈️</h4>
-      <p> At Sky Vision Airlines, we believe that effective leadership and superior management are the foundation of success and sustainability in the aviation industry. Our executive team is dedicated to innovation, operational excellence, and delivering world-class services.</p>
-    </div>
-    <ul class="nospace group btmspace-80">
-      <li class="one_half first">
-        <blockquote><h3>Amr Elsayed Abdelzaher</h3>
-          Accountable Executive (CEO)<br>Experienced aviation executive with a strong background in airline management, commercial operations, flight scheduling, and regulatory compliance. Over 18 years of expertise in the aviation industry, holding leadership roles in multiple airlines, including CEO, Commercial Director, and Accountable Executive. Proven ability to oversee strategic planning, scheduling, and compliance with international aviation regulations, Skilled in-flight operations, crew rostering, and station coordination across various airports in Egypt. Strong leadership and problem-solving abilities, with a deep understanding of safety management systems (SMS) and aviation security. Committed to operational excellence and efficiency, with a track record of optimizing airline performance while ensuring compliance with regulatory requirements
-       for CAAC and all for CCAR-129.</blockquote>
-        <figure class="clear"><img src="images/demo/amr-abd-el-zaher.jpg" alt="" style="
-          height: 60px;
-          width: 60px;
-      ">
-          <figcaption>
-            <h6 class="heading">AMR Abd El-Zaher</h6>
-            <em>Chief Executive Officer (CEO)</em></figcaption>
-        </figure>
-      </li>
-      <li class="one_half">
-        <blockquote><h3>Assem Abdel Mawla Mansour</h3>
-        Director of operation    <br>                                                                   Experienced and results-driven Director of Operations with over 4 years of expertise in leading and optimizing day-to-day operations across diverse industries.
-Proven track record in streamlining processes, enhancing operational efficiency, and driving cost savings while ensuring high levels of customer satisfaction.
-Strong leadership and team management skills, adept at building high-performing teams, fostering a collaborative environment, and aligning operations with
-strategic company goals. Expertise in budgeting, resource allocation, compliance, and implementing innovative solutions to improve productivity. Passionate
-about delivering operational excellence and contributing to organizational growth
-        </blockquote>
-        <figure class="clear"><img src="" alt=""style="
-          height: 60px;
-          width: 60px;
-      ">
-          <figcaption>
-            <h6 class="heading">C:Assem</h6>
-            <em>Director of Operations</em></figcaption>
-        </figure>
-      </li>
-    </ul>
-    <footer class="center"><a class="btn" href="ourteam.html">View More &raquo;</a></footer>
-    <!-- ################################################################################################ -->
-  </section>
-</div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<div class="wrapper">
+  </div>
+</section>
+
+<!-- ======= SECTION: WORLD MAP ======= -->
+<div class="wrapper row3 reveal">
   <section class="hoc container clear">
-    <!-- ################################################################################################ -->
     <div class="sectiontitle">
-      <!-- <h6 class="heading">header</h6> -->
-      <!-- <p>header to dis</p> -->
+      <h2 class="heading">🌍 Global Presence</h2>
+      <p>We proudly operate across multiple continents — with strong connections in the Middle East and Africa.</p>
     </div>
-    <div class="group excerpt btmspace-80">
-      <article class="one_third first"><a class="imgover btmspace-30" href="images/demo/320x240.png"><img src="images/demo/320x240.png" alt=""
-        ></a>
-        <ul class="nospace meta">
-          <li><i class="fa fa-user"></i> <a href="https://www.linkedin.com/in/msolix/">Chief Pilot </a></li>
-          <li><i class="fa fa-tag"></i> <a href="#">Tag Name</a></li>
-        </ul>
-        <h6 class="heading"> SAMEH NAGY IBRAHIM</h6>
-        <p>Experienced Chief Pilot with 13 Months of leadership in aviation operations, managing flight crews and ensuring the highest standards of safety, compliance,
-and efficiency. Adept at overseeing flight schedules, conducting safety briefings, and training pilots to ensure adherence to company protocols and industry
-regulations. Proven ability to handle operational challenges, maintain smooth communication across departments, and enhance overall flight team
-performance. I am skilled in risk management, aircraft performance analysis, and ensuring the organization’s operational goals are met</p>
-        <!-- <footer><a href="#">Read More</a></footer> -->
-        <!-- style="height:240px;width: 320px;" -->
-      </article>
-      <article class="one_third"><a class="imgover btmspace-30" href="#"><img src="images/demo/Farag Nazmy.jpeg" alt=""
-        style="height:240px;width: 320px;"
-        ></a>
-        <ul class="nospace meta">
-          <li><i class="fa fa-user"></i> <a href="https://www.linkedin.com/in/farag-nazmy-4a986123/">Safety Manager</a></li>
-          <li><i class="fa fa-tag"></i> <a href="#">Tag Name</a></li>
-        </ul>
-        <h6 class="heading">C:Farag Nazmy</h6>
-        <p>responsible for overseeing the implementation and management of safety programs to ensure a safe working environment. Their duties include
-conducting risk assessments, developing safety policies and procedures, leading safety training initiatives, monitoring compliance with safety
-regulations, investigating accidents and incidents, and promoting a culture of safety within the organization. They also collaborate with various
-departments to identify safety issues and implement corrective actions</p>
-        <!-- <footer><a href="#">Read More</a></footer> -->
-      </article>
-      <article class="one_third"><a class="imgover btmspace-30" href="#"><img src="images/demo/320x240.png" alt=""></a>
-        <ul class="nospace meta">
-          <li><i class="fa fa-user"></i> <a href="#">Operation Training Manager</a></li>
-          <li><i class="fa fa-tag"></i> <a href="#">Tag Name</a></li>
-        </ul>
-        <h6 class="heading">Mohamed Azzam</h6>
-        <p>Dedicated and results-driven Operations Training Manager and Captain with extensive experience in aviation training, flight operations, and
-compliance. Proven ability to implement effective training strategies, maintain regulatory compliance (ECAA, ECARs), and enhance operational
-efficiency. Strong expertise in flight training development, instructor management, aviation safety, and operational leadership. Adept at leading
-teams, monitoring third-party training providers, and ensuring adherence to industry best practices.</p>
-        <!-- <footer><a href="#">Read More</a></footer> -->
-      </article>
-    </div>
-    <footer class="center"><a class="btn" href="ourteam.html">go to &raquo;</a></footer>
-    <!-- ################################################################################################ -->
+    <div id="world-map"></div>
   </section>
 </div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- <div class="wrapper row2 bgded overlay" style="background-image:url('images/demo/backgrounds/04.png');"> -->
-  <!-- <section class="hoc cta clear">  -->
-    <!-- ################################################################################################ -->
-    
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<div class="wrapper row4" style="background-image:url('images/demo/backgrounds/images (2).jpg');">
-  <footer id="footer" class="hoc clear"> 
-    <!-- ################################################################################################ -->
-    <article class="one_quarter first">
-      <h6 class="heading">this is sky-vision-airline story</h6>
-      <h3>
-Sky Vision Airlines
-      </h3> 
-      <p>
+<!-- ======= NEWS SECTION ======= -->
+<section id="news" class="wrapper row3 reveal" style="background-color:#f9f9f9; padding:80px 0;">
+  <div class="hoc container clear">
 
-Founded in 2022, SKY VISION Airlines is a dynamic aviation company dedicated to delivering exceptional passenger and cargo services. Our fleet currently comprises Six (6) aircraft — including three modern passenger jets that ensure comfortable and safe travel between Egypt, Europe, and the Middle East, and two cargo aircraft committed to supporting regional and international air freight logistics.
-
-To further strengthen our cargo operations, a fourth cargo aircraft is scheduled to join our fleet in the coming days. This addition will enhance our ability to serve the growing demands of global trade and improve the efficiency of our logistics network.
-
-Our operations are tailored to the regional market, utilizing narrow-body aircraft ideally suited for short- and medium-haul routes. In addition to scheduled services, we proudly support large national projects, offering innovative, flexible, and reliable aviation solutions that meet a wide range of operational needs.
-
-At SKY VISION Airlines, our mission is to be a trusted partner in the air, delivering value through safety, efficiency, and customer-centric service.</p>
-      <!-- <p class="nospace"><a href="#">Read More</a></p> -->
-    </article>
-    <div class="one_quarter">
-      <h6 class="heading">Contact Us</h6>
-      <ul class="nospace btmspace-30 linklist contact">
-        <li><i class="fa fa-map-marker"></i>
-          <address><a href="https://www.google.com/maps/dir/30.096495666704204, 31.38126058441599" target="_blank">  
-          Building 4 Ext. of Ebad AlRahman St., of Mostafa Refaat St., Sheraton, Cairo - Egypt
-          </a>
-          </address>
-        </li>
-        <li><i class="fa fa-phone"></i> +20 2 20643643 </li>
-        <li><i class="fa fa-fax"></i> +20 2 20643644</li>
-        <li><i class="fa fa-envelope-o" aria-hidden="true"></i>info@skyvisionairline.com</li>
-      </ul>
-      <ul class="faico clear">
-        <li><a class="faicon-facebook" href="https://www.facebook.com/Sky-Vision-Airlines-107785321997316?_rdc=1&_rdr"><i class="fa fa-facebook" ></i></a></li>
-        <li><a class="faicon-instagram" href="https://www.instagram.com/sky.visions.airlines/"><i class="fa fa-instagram"></i></a></li>
-        <!-- <li><a class="faicon-dribble" href="#"><i class="fa fa-dribbble"></i></a></li> -->
-        <li><a class="faicon-linkedin" href="https://www.linkedin.com/company/sky-vision-airline/"><i class="fa fa-linkedin"></i></a></li>
-      </ul>
+    <div class="sectiontitle" style="text-align:center; margin-bottom:50px;">
+      <h2 class="heading" style="font-size:2.5rem; color:#222; font-weight:700;">✈ Latest News</h2>
+      <p style="color:#666; font-size:1.1rem;">Stay up to date with the latest updates and announcements from Sky Vision Airlines.</p>
     </div>
-    <div class="one_quarter">
-      <h6 class="heading">policy</h6>
-      <ul class="nospace linklist">
-      <li><a href="SafetyPolicy.html">Safety Policy</a></li>
-      <li><a href="Reporting-Policy.html">Non-Punitive/ Just Culture Reporting Policy</a></li>
-        <li><a href="DrugalcoholPolicy.html">Drug al cohol Policy</a></li>
-        <!-- <li><a href="#">Vel elit eleifend</a></li> -->
-        <!-- <li><a href="#">Sollicitudin morbi feugiat</a></li> -->
-      </ul>
+
+    <div class="row" style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center;">
+
+      <!-- NEWS CARD 1 -->
+      <div class="news-card" style="width:320px; background:white; border-radius:15px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s;">
+        <img src="images/demo/news1.jpg" alt="New Route Announcement" style="width:100%; height:200px; object-fit:cover;">
+        <div style="padding:20px;">
+          <h4 style="color:#88036a; font-weight:700;">Sky Vision Launches New Route to Rome</h4>
+          <p style="color:#444; font-size:0.95rem; margin:10px 0;">We’re expanding our network to Europe — introducing direct flights from Cairo to Rome starting this winter season.</p>
+          <a href="#" style="color:#88036a; font-weight:600; text-decoration:none;">Read More →</a>
+        </div>
+      </div>
+
+      <!-- NEWS CARD 2 -->
+      <div class="news-card" style="width:320px; background:white; border-radius:15px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s;">
+        <img src="images/demo/news1.jpg" alt="Fleet Expansion" style="width:100%; height:200px; object-fit:cover;">
+        <div style="padding:20px;">
+          <h4 style="color:#88036a; font-weight:700;">Fleet Expansion — Adding New A320 Aircraft</h4>
+          <p style="color:#444; font-size:0.95rem; margin:10px 0;">Sky Vision continues its growth with the addition of a new A320 aircraft to strengthen both passenger and cargo operations.</p>
+          <a href="#" style="color:#88036a; font-weight:600; text-decoration:none;">Read More →</a>
+        </div>
+      </div>
+
+      <!-- NEWS CARD 3 -->
+      <div class="news-card" style="width:320px; background:white; border-radius:15px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s;">
+        <img src="images/demo/news1.jpg" alt="Safety Recognition" style="width:100%; height:200px; object-fit:cover;">
+        <div style="padding:20px;">
+          <h4 style="color:#88036a; font-weight:700;">Sky Vision Receives Safety Excellence Award</h4>
+          <p style="color:#444; font-size:0.95rem; margin:10px 0;">Recognized for outstanding safety standards and operational excellence by international aviation authorities.</p>
+          <a href="#" style="color:#88036a; font-weight:600; text-decoration:none;">Read More →</a>
+        </div>
+      </div>
+
     </div>
-    <div class="one_quarter">
-      <h6 class="heading">Erat id sem fringilla</h6>
-      <ul class="nospace linklist">
-        <li><a href="certificate.html">Certificate</a></li>
-        <li><a href="service.html">Services</a></li>
-        <li><a href="fleet.html">Fleet</a></li>
-        <li><a href="contact-us.html">Contact Us</a></li>
-        <!-- <li><a href="#">Mi a velit tincidunt</a></li> -->
-        <!-- <li><a href="#">Aliquam vel sit amet</a></li> -->
-      </ul>
-    </div>
-    <!-- ################################################################################################ -->
-  </footer>
-</div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<div class="wrapper row5">
-  <div id="copyright" class="hoc clear"> 
-    <!-- ################################################################################################ -->
-    <p class="fl_left">Copyright &copy; 2025 - All Rights Reserved - <a href="index.html">sky-vision-airline</a></p>
-    <!-- <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p> -->
-    <!-- ################################################################################################ -->
   </div>
-</div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
+</section>
+
+
+
+ <!-- ===== IMPROVED FOOTER ===== -->
+<footer style="background: linear-gradient(135deg, #0a0a0a, #1a1a1a); color: #ccc; padding: 80px 0 40px;">
+  <div class="container">
+    <div class="row" style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:40px;">
+      
+      <!-- Company Info -->
+      <div class="col" style="flex:1 1 300px; min-width:250px;">
+        <div style="display:flex; align-items:center; margin-bottom:15px;">
+          <img src="images/demo/sky-vision-logo.png" alt="Sky Vision Logo" style="width:55px; height:auto; margin-right:10px;">
+          <h4 style="color:#fff; font-weight:700;">Sky Vision Airlines</h4>
+        </div>
+        <p style="color:#aaa; line-height:1.8;">
+          Founded in 2022, Sky Vision Airlines connects Egypt, Europe, and the Middle East — 
+          providing exceptional passenger and cargo air services with safety and excellence.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col" style="flex:1 1 180px; min-width:200px;">
+        <h5 style="color:#fff; font-weight:600; margin-bottom:20px;">Quick Links</h5>
+        <ul style="list-style:none; padding:0; margin:0; line-height:2;">
+          <li><a href="index.html" style="color:#ccc; text-decoration:none;">Home</a></li>
+          <li><a href="fleet.html" style="color:#ccc; text-decoration:none;">Fleet</a></li>
+          <li><a href="certificate.html" style="color:#ccc; text-decoration:none;">Certificate</a></li>
+          <li><a href="service.html" style="color:#ccc; text-decoration:none;">Services</a></li>
+          <li><a href="contact-us.html" style="color:#ccc; text-decoration:none;">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col" style="flex:1 1 220px; min-width:220px;">
+        <h5 style="color:#fff; font-weight:600; margin-bottom:20px;">Contact</h5>
+        <p><i class="fa fa-phone" style="color:#88036a; margin-right:8px;"></i> +20 22679456</p>
+        <p><i class="fa fa-envelope" style="color:#88036a; margin-right:8px;"></i> info@skyvisionairline.com</p>
+        <p><i class="fa fa-map-marker-alt" style="color:#88036a; margin-right:8px;"></i> Cairo, Egypt</p>
+      </div>
+
+      <!-- Follow Us -->
+      <div class="col" style="flex:1 1 220px; min-width:220px;">
+        <h5 style="color:#fff; font-weight:600; margin-bottom:20px;">Follow Us</h5>
+        <div style="display:flex; gap:15px; margin-bottom:15px;">
+          <a href="https://www.facebook.com/Sky-Vision-Airlines-107785321997316" target="_blank" style="color:#ccc; font-size:1.5rem; transition:0.3s;"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/sky.visions.airlines/" target="_blank" style="color:#ccc; font-size:1.5rem; transition:0.3s;"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/sky-vision-airline/" target="_blank" style="color:#ccc; font-size:1.5rem; transition:0.3s;"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" target="_blank" style="color:#ccc; font-size:1.5rem; transition:0.3s;"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p style="color:#aaa; font-size:0.9rem;">Stay connected for updates, offers, and travel inspiration.</p>
+      </div>
+    </div>
+
+    <hr style="border-color:#333; margin:40px 0;">
+    <div style="text-align:center; font-size:0.9rem; color:#aaa;">
+      &copy; 2025 <strong style="color:#fff;">Sky Vision Airlines</strong> — All Rights Reserved.<br>
+      <span style="font-size:0.85rem; color:#777;">Designed & Developed by Sky Vision Web Team</span>
+    </div>
+  </div>
+</footer>
+
+  <!-- JS Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
-<!-- JAVASCRIPTS -->
+<!-- مكتبات Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- ======= JS SECTION ======= -->
 <script>
-  // فتح وإغلاق النافذة المنبثقة
-  document.getElementById("openPopup").addEventListener("click", function () {
-      document.getElementById("popup").classList.add("show");
-  });
+  // ===== Popup Logic =====
+  const openPopup = document.getElementById('openPopup');
+  const closePopup = document.getElementById('closePopup');
+  const popup = document.getElementById('popup');
+  const btn1 = document.getElementById('btn1');
+  const btn2 = document.getElementById('btn2');
+  const content1 = document.getElementById('content1');
+  const content2 = document.getElementById('content2');
 
-  document.getElementById("closePopup").addEventListener("click", function () {
-      document.getElementById("popup").classList.remove("show");
-  });
+  openPopup.onclick = () => popup.classList.add('show');
+  closePopup.onclick = () => popup.classList.remove('show');
 
-  // تبديل المحتوى بين الزرين
-  document.getElementById("btn1").addEventListener("click", function () {
-      document.getElementById("content1").style.display = "grid";
-      document.getElementById("content2").style.display = "none";
-  });
-
-  document.getElementById("btn2").addEventListener("click", function () {
-      document.getElementById("content1").style.display = "none";
-      document.getElementById("content2").style.display = "grid";
-  });
-
-  // إخفاء المحتويات عند فتح النموذج لأول مرة
-  window.onload = function () {
-      document.getElementById("content1").style.display = "none";
-      document.getElementById("content2").style.display = "none";
+  btn1.onclick = () => {
+    content1.style.display = 'grid';
+    content2.style.display = 'none';
+    btn1.style.background = '#88036a';
+    btn1.style.color = '#fff';
+    btn2.style.background = '#f1f1f1';
+    btn2.style.color = '#333';
   };
+
+  btn2.onclick = () => {
+    content2.style.display = 'grid';
+    content1.style.display = 'none';
+    btn2.style.background = '#88036a';
+    btn2.style.color = '#fff';
+    btn1.style.background = '#f1f1f1';
+    btn1.style.color = '#333';
+  };
+
+  // ===== Scroll Animation =====
+  const reveals = document.querySelectorAll('.reveal');
+  const appearOnScroll = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        appearOnScroll.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  reveals.forEach(rev => appearOnScroll.observe(rev));
 </script>
+
+<!-- ===== World Map ===== -->
+<!-- <div id="world-map" style="height: 500px; width: 100%; border-radius: 10px; margin-top: 40px;"></div> -->
+
+<style>
+  /* تأثير التوهج حول الدول المحددة */
+  .country-glow {
+    animation: glowPulse 2s infinite alternate;
+  }
+  @keyframes glowPulse {
+    from { filter: drop-shadow(0 0 5px #ff66cc); }
+    to { filter: drop-shadow(0 0 20px #ff99dd); }
+  }
+</style>
+
+<script>
+  const map = L.map('world-map').setView([20, 10], 2);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  const highlightCountries = [
+    "Saudi Arabia","United Arab Emirates","South Africa","Kuwait","China","Kenya",
+    "Spain","Italy","Germany","United Kingdom","Romania","Albania","Armenia",
+    "Qatar","Libya","Slovenia","Morocco","Chad","Algeria","Tunisia","Guinea",
+    "Mali","Switzerland","France","Rwanda","Mauritania","Sudan","Ethiopia",
+    "Tanzania","Burkina Faso","Democratic Republic of the Congo","Yemen",
+    "Malawi","India","Bangladesh","Netherlands","Austria","Egypt"
+  ];
+
+  fetch("https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json")
+    .then(res => res.json())
+    .then(data => {
+      L.geoJSON(data, {
+        style: feature => {
+          if (highlightCountries.includes(feature.properties.name)) {
+            return {
+              color: "#0000", // إطار بنفسجي 
+              weight: 2.5, 
+              opacity: 1,
+               fillColor: "#88036a",
+                fillOpacity: .6
+               };
+               } // باقي الدول بلون باهت 
+               return { 
+                color: "#88036a",
+                 weight: 1,
+                  opacity: 1, 
+                  fillOpacity: .3
+                };
+        },
+        onEachFeature: (feature, layer) => {
+          if (highlightCountries.includes(feature.properties.name)) {
+            layer.bindPopup(`<b>${feature.properties.name}</b>`);
+            layer.on('add', () => {
+              const path = layer.getElement();
+              if (path) path.classList.add('country-glow');
+            });
+          }
+        }
+      }).addTo(map);
+    });
+</script>
+
 <script src="layout/scripts/jquery.min.js"></script>
 <script src="layout/scripts/jquery.backtotop.js"></script>
 <script src="layout/scripts/jquery.mobilemenu.js"></script>
