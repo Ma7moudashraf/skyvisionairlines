@@ -1,57 +1,113 @@
 <!DOCTYPE html>
-<html lang="EN">
-<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<html lang="en">
 <head>
-<title>sky-vision-airline</title>
 <meta charset="utf-8">
-<link rel="icon" href="images/demo/sky-vision-logo.png" type="image/png" id="favicon-svg">
-<!-- <link rel="icon" href="images/demo/backgrounds/sky-vision-logo.png" type="image/x-icon"> -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Sky Vision Airlines - About Us</title>
+<link rel="icon" href="images/demo/sky-vision-logo.png" type="image/png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.8;
+  }
+
+  /* ===== ABOUT HERO ===== */
+  .about-hero {
+    background: url('images/demo/backgrounds/New-Background-2-1920w.jpg') center/cover no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 120px 20px;
+    position: relative;
+  }
+  .about-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+  }
+  .about-hero h1 {
+    position: relative;
+    font-size: 3rem;
+    font-weight: 700;
+    z-index: 2;
+  }
+  .about-hero p {
+    position: relative;
+    z-index: 2;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 15px auto 0;
+  }
+
+  /* ===== SECTION GENERAL ===== */
+  .about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 80px 10%;
+  }
+  .about-section:nth-child(even) {
+    background: #f8f9fa;
+  }
+  .about-text {
+    flex: 1 1 50%;
+  }
+  .about-text h2 {
+    color: #88036a;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  .about-text p {
+    font-size: 1rem;
+    color: #555;
+  }
+  .about-image {
+    flex: 1 1 40%;
+  }
+  .about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .about-section {
+      flex-direction: column;
+      text-align: center;
+    }
+    .about-text, .about-image {
+      flex: 1 1 100%;
+    }
+    .about-image img {
+      max-width: 90%;
+      margin: 0 auto;
+    }
+  }
+</style>
 </head>
+
 <body id="top">
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- Top Background Image Wrapper -->
-<div class="bgded overlay light" style="background-image:url('images/demo/backgrounds/New-Background-2-1920w.jpg');"> 
-  <!-- ################################################################################################ -->
-  <div class="wrapper row0">
-    <div id="topbar" class="hoc clear"> 
-      <!-- ################################################################################################ -->
-      <div class="fl_left"> 
-        <!-- ################################################################################################ -->
-        <ul class="nospace">
-          <li><i class="fa fa-phone"></i> +2020643643</li>
-          <li><i class="fa fa-envelope-o"></i> info@skyvisionairline.com</li>
-        </ul>
-        <!-- ################################################################################################ -->
-      </div>
-      <div class="fl_right"> 
-        <!-- ################################################################################################ -->
-        <ul class="nospace">
-          <li><a href="index.html"><i class="fa fa-lg fa-home"></i></a></li>
-          <li><a href="#" title="Help Centre"><i class="fa fa-life-bouy"></i></a></li>
-          <li><a href="#" title="Login"><i class="fa fa-lg fa-sign-in"></i></a></li>
-          <li><a href="#" title="Sign Up"><i class="fa fa-lg fa-edit"></i></a></li>
-        </ul>
-        <!-- ################################################################################################ -->
-      </div>
-      <!-- ################################################################################################ -->
-    </div>
-  </div>
-  <!-- ################################################################################################ -->
-  <!-- ################################################################################################ -->
-  <!-- ################################################################################################ -->
- <div class="wrapper row1">
+
+<!-- ======= Header ======= -->
+  <div class="wrapper row1">
     <header id="header" class="hoc clear">
-      <div id="logo" class="fl_left">
-        <h1><a href="index.html">Sky Vision Airlines</a></h1>
-      </div>
+     <div id="logo" class="fl_left" style="display:flex; align-items:center;">
+  <a href="index.html" style="display:flex; align-items:center; text-decoration:none;">
+    <img src="sky-vision-logo.png" alt="Sky Vision Airlines Logo" style="height:55px; width:auto; margin-right:10px;">
+    <h1 style="color:#fff; font-size:1.8rem; margin:0;">Sky Vision Airlines</h1>
+  </a>
+</div>
+
       <nav id="mainav" class="fl_right">
         <ul class="clear">
-          <li ><a href="index.html">Home</a></li>
+          <li class="active"><a href="index.html">Home</a></li>
           <li><a class="drop" href="fleet.html">Fleet</a>
             <ul>
               <li><a href="PassengerAircraft.html">Passenger Aircraft</a></li>
@@ -59,125 +115,108 @@
             </ul>
           </li>
           <!-- <li><a href="certificate.html">certificate</a></li> -->
-          <li><a href="service.html">Services</a></li>
-          <li class="active"><a href="contact-us.html">About Us</a></li>
+          <li><a class="drop" href="service.html">Services</a>
+            <ul>
+              <li><a href="Passenger-services.html">Passenger Services</a></li>
+              <li><a href="Cargo-services.html">Cargo Services</a></li>
+            </ul>
+          </li>
+          <li><a href="contact-us.html">About Us</a></li>
         </ul>
       </nav>
     </header>
   </div>
-<div id="breadcrumb" class="hoc clear"> 
-    <!-- يمكن إضافة محتوى الـ Breadcrumb هنا -->
-</div>
-</div>
-
-<div class="wrapper row3">
-  <figure class="hoc container clear"> 
-    <!-- العنوان والقسم الرئيسي -->
-    <figcaption class="sectiontitle">
-      <h6 class="heading">Find Us</h6>
-      <p>We are located at Sky Vision Airlines, providing you with the best services in the airline industry.</p>
-      
-      <!-- تضمين خريطة جوجل -->
-     <!-- تضمين خريطة جوجل -->
-     <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13807.684824864702!2d31.399789898427933!3d30.096442875946373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145817e4cd9969d5%3A0x6ad0075f86a8592e!2sSky%20Vision%20Airlines!5e0!3m2!1sar!2seg!4v1737536682492!5m2!1sar!2seg" 
-        width="100%" 
-        height="450" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </figcaption>
-    
-    <!-- إضافة معلومات التواصل -->
-    <div class="contact-details" style="margin-top: 20px;">
-      <h6 class="heading">Contact Information</h6>
-      <p><strong>Address:</strong> Building 4 Ext. of Ebad AlRahman St., of Mostafa Refaat St., Sheraton, Cairo - Egypt</p>
-      <p><strong>Phone:</strong> +2020643643</p>
-      
-      <!-- إدخال روابط السوشيال ميديا -->
-      <div class="social-media">
-        <p><strong>Follow Us:</strong></p>
-        <ul style="list-style: none; padding: 0; display: flex; gap: 15px;">
-          <li><a href="https://www.facebook.com/Sky-Vision-Airlines-107785321997316?_rdc=1&_rdr" style="text-decoration: none;"><i class="fab fa-facebook" style="font-size: 30px; color: #3b5998;"></i></a></li>
-          <!-- <li><a href="#" style="text-decoration: none;"><i class="fab fa-twitter" style="font-size: 30px; color: #1da1f2;"></i></a></li> -->
-          <li><a href="https://www.instagram.com/sky.visions.airlines/" style="text-decoration: none;"><i class="fab fa-instagram" style="font-size: 30px; color: #e1306c;"></i></a></li>
-          <li><a href="https://www.linkedin.com/company/sky-vision-airline/" style="text-decoration: none;"><i class="fab fa-linkedin" style="font-size: 30px; color: #0077b5;"></i></a></li>
-        </ul>
-      </div>
-    </div>
-  </figure>
-</div>
 
 
-<!-- ===== IMPROVED FOOTER ===== -->
+<!-- ===== HERO SECTION ===== -->
+<section class="about-hero">
+  <h1>About Sky Vision Airlines</h1>
+  <p>Connecting people, markets, and opportunities with excellence and safety since 2022.</p>
+</section>
+
+<!-- ===== SECTION 1 ===== -->
+<section class="about-section">
+  <div class="about-text">
+    <h2>Who We Are</h2>
+    <p><strong>Sky Vision Airlines</strong>, an emerging leader among Egyptian airlines, was established in 2022 with a clear vision to deliver exceptional passenger and cargo air services across Africa, Europe, and the Middle East.</p>
+    <p>The airline currently operates a modern fleet of six aircraft, comprising three passenger planes that ensure a comfortable, reliable, and safe travel experience, and three dedicated cargo aircraft that facilitate the efficient transport of goods through our advanced air freight services.</p>
+  </div>
+  <div class="about-image">
+    <img src="images/demo/sky-vision-logo-01-270w.png" alt="Sky Vision Fleet">
+  </div>
+</section>
+
+<!-- ===== SECTION 2 ===== -->
+<section class="about-section">
+  <div class="about-image">
+    <img src="images/demo/sky-vision-logo.png" alt="Sky Vision Operations">
+  </div>
+  <div class="about-text">
+    <h2>Our Role and Dedication</h2>
+    <p>The company also plays an active role in supporting large national projects, offering innovative aviation solutions tailored to the diverse needs of our partners and clients.</p>
+    <p>Driven by a commitment to safety, performance, and customer satisfaction, Sky Vision Airlines continues to strengthen its presence in the regional aviation market, connecting people, businesses, and opportunities with precision and professionalism.</p>
+  </div>
+</section>
+
+<!-- ===== SECTION 3 ===== -->
+<section class="about-section">
+  <div class="about-text">
+    <h2>Our Mission</h2>
+    <p>Sky Vision Airlines is committed to delivering safe, reliable, and innovative air transport solutions that connect people and strengthen trade across regions. Through a dedication to excellence, advanced technology, and customer-focused service, we aim to exceed expectations in every flight. Guided by our core values of safety, integrity, and progress, we strive to contribute to sustainable growth and create lasting value for our passengers, partners, and the communities we serve.</p>
+  </div>
+  <div class="about-image">
+    <img src="images/demo/sky-vision-logo.png" alt="Sky Vision Mission">
+  </div>
+</section>
+
+<!-- ===== SECTION 4 ===== -->
+<section class="about-section">
+  <div class="about-image">
+    <img src="images/demo/sky-vision-logo.png" alt="Sky Vision Safety">
+  </div>
+  <div class="about-text">
+    <h2>Our Vision & Commitment to Safety</h2>
+    <p>To become the leading regional airline in Africa, Europe and the Middle East, recognized for excellence in passenger and cargo aviation, operational reliability, and innovative air transport solutions that connect people, markets, and opportunities with trust and precision.</p>
+    <p>Safety is our highest priority. Every flight is operated under the strict oversight of the Egyptian Civil Aviation Authority (ECAA) and in alignment with EASA and ICAO standards.</p>
+    <p>Our Safety Management System (SMS), Crew Training Programs, and Compliance Monitoring processes are continuously reviewed to meet international benchmarks.</p>
+    <p>We are actively progressing toward IOSA (IATA Operational Safety Audit) registration — a milestone that underscores our dedication to global aviation excellence.</p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
 <footer style="background: linear-gradient(135deg, #0a0a0a, #1a1a1a); color: #ccc; padding: 80px 0 40px;">
   <div class="container">
     <div class="row" style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:40px;">
-      
-      <!-- Company Info -->
       <div class="col" style="flex:1 1 300px; min-width:250px;">
         <div style="display:flex; align-items:center; margin-bottom:15px;">
-          <img src="images/demo/sky-vision-logo.png" alt="Sky Vision Logo" style="width:55px; height:auto; margin-right:10px;">
-          <h4 style="color:#fff; font-weight:700;">Sky Vision Airlines</h4>
+          <img src="images/demo/sky-vision-logo.png" alt="Sky Vision Logo" style="width:55px; margin-right:10px;">
+          <h4 style="color:#fff;">Sky Vision Airlines</h4>
         </div>
-        <p style="color:#aaa; line-height:1.8;">
-          Founded in 2022, Sky Vision Airlines connects Egypt, Europe, and the Middle East — 
-          providing exceptional passenger and cargo air services with safety and excellence.
-        </p>
+        <p style="color:#aaa;">Founded in 2022, Sky Vision Airlines connects Egypt, Europe, and the Middle East — providing exceptional passenger and cargo air services with safety and excellence.</p>
       </div>
-
-      <!-- Quick Links -->
       <div class="col" style="flex:1 1 180px; min-width:200px;">
-        <h5 style="color:#fff; font-weight:600; margin-bottom:20px;">Quick Links</h5>
-        <ul style="list-style:none; padding:0; margin:0; line-height:2;">
-          <li><a href="index.html" style="color:#ccc; text-decoration:none;">Home</a></li>
-          <li><a href="fleet.html" style="color:#ccc; text-decoration:none;">Fleet</a></li>
-          <li><a href="certificate.html" style="color:#ccc; text-decoration:none;">Certificate</a></li>
-          <li><a href="service.html" style="color:#ccc; text-decoration:none;">Services</a></li>
-          <li><a href="contact-us.html" style="color:#ccc; text-decoration:none;">Contact Us</a></li>
+        <h5 style="color:#fff;">Quick Links</h5>
+        <ul style="list-style:none; padding:0;">
+          <li><a href="index.html" style="color:#ccc;">Home</a></li>
+          <li><a href="fleet.html" style="color:#ccc;">Fleet</a></li>
+          <li><a href="service.html" style="color:#ccc;">Services</a></li>
+          <li><a href="contact-us.html" style="color:#ccc;">Contact Us</a></li>
         </ul>
       </div>
-
-      <!-- Contact Info -->
       <div class="col" style="flex:1 1 220px; min-width:220px;">
-        <h5 style="color:#fff; font-weight:600; margin-bottom:20px;">Contact</h5>
+        <h5 style="color:#fff;">Contact</h5>
         <p><i class="fa fa-phone" style="color:#88036a; margin-right:8px;"></i> +20 22679456</p>
-<p>
-  <i class="fa fa-envelope" style="color:#88036a; margin-right:8px;"></i>
-  <a href="mailto:info@skyvisionairline.com" style="color:#ccc; text-decoration:none;">
-    info@skyvisionairline.com
-  </a>
-</p>
+        <p><i class="fa fa-envelope" style="color:#88036a; margin-right:8px;"></i> 
+          <a href="mailto:info@skyvisionairline.com" style="color:#ccc;">info@skyvisionairline.com</a></p>
         <p><i class="fa fa-map-marker-alt" style="color:#88036a; margin-right:8px;"></i> Cairo, Egypt</p>
       </div>
-
-      <!-- Follow Us -->
-      <div class="col" style="flex:1 1 220px; min-width:220px;">
-        <h5 style="color:#fff; font-weight:600; margin-bottom:20px;">Follow Us</h5>
-        <div style="display:flex; gap:15px; margin-bottom:15px;">
-          <a href="https://www.facebook.com/Sky-Vision-Airlines-107785321997316" target="_blank" style="color:#ccc; font-size:1.5rem; transition:0.3s;"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/sky.visions.airlines/" target="_blank" style="color:#ccc; font-size:1.5rem; transition:0.3s;"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/company/sky-vision-airline/" target="_blank" style="color:#ccc; font-size:1.5rem; transition:0.3s;"><i class="fab fa-linkedin-in"></i></a>
-          <!-- <a href="#" target="_blank" style="color:#ccc; font-size:1.5rem; transition:0.3s;"><i class="fab fa-twitter"></i></a> -->
-        </div>
-        <p style="color:#aaa; font-size:0.9rem;">Stay connected for updates, offers, and travel inspiration.</p>
-      </div>
     </div>
-
     <hr style="border-color:#333; margin:40px 0;">
-    <div style="text-align:center; font-size:0.9rem; color:#aaa;">
-      &copy; 2025 <strong style="color:#fff;">Sky Vision Airlines</strong> — All Rights Reserved.<br>
-      <span style="font-size:0.85rem; color:#777;">Designed & Developed by Sky Vision Web Team</span>
-    </div>
+    <div style="text-align:center; color:#aaa;">&copy; 2025 <strong style="color:#fff;">Sky Vision Airlines</strong> — All Rights Reserved.</div>
   </div>
 </footer>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
+
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
-<!-- JAVASCRIPTS -->
 <script src="layout/scripts/jquery.min.js"></script>
 <script src="layout/scripts/jquery.backtotop.js"></script>
 <script src="layout/scripts/jquery.mobilemenu.js"></script>

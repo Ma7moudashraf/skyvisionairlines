@@ -4,10 +4,12 @@
 <title>Sky Vision Airline</title>
 <meta charset="utf-8">
 <link rel="icon" href="images/demo/sky-vision-logo.png" type="image/png" id="favicon-svg">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
+<link rel="preload" as="video" href="fly-it.mp4" type="video/mp4">
 <style>
 /* زر Contact Us */
 .static-btn {
@@ -186,8 +188,8 @@
 
 .slide-track {
   display: flex;
-  width: calc(250px * 20); /* عدد الصور × 2 */
-  animation: scroll 30s linear infinite;
+  width: calc(450px * 20); /* عدد الصور × 2 */
+  animation: scroll 60s linear infinite;
 }
 
 .slide {
@@ -221,7 +223,7 @@
 
 @keyframes scroll {
   0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-250px * 10)); } /* 10 صور */
+  100% { transform: translateX(calc(-250px * 25)); } /* 10 صور */
 }
  /* ===== FOOTER ===== */
     footer {
@@ -340,24 +342,6 @@
     <source src="fly-it.mp4" type="video/mp4">
     متصفحك لا يدعم عرض الفيديو 😢
   </video>
-  <div class="wrapper row0">
-    <div id="topbar" class="hoc clear">
-      <div class="fl_left">
-        <ul class="nospace">
-          <li><a href="tel:+2020643643"><i class="fa fa-phone"></i> 02-22679456</a></li>
-          <li><i class="fa fa-envelope-o"></i> info@skyvisionairline.com</li>
-        </ul>
-      </div>
-      <div class="fl_right">
-        <ul class="nospace">
-          <li><a href="index.html"><i class="fa fa-lg fa-home"></i></a></li>
-          <li><a href="#" title="Help Centre"><i class="fa fa-life-bouy"></i></a></li>
-          <li><a href="#" title="Login"><i class="fa fa-lg fa-sign-in"></i></a></li>
-          <li><a href="#" title="Sign Up"><i class="fa fa-lg fa-edit"></i></a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
 
   <!-- ======= Header ======= -->
   <div class="wrapper row1">
@@ -379,7 +363,12 @@
             </ul>
           </li>
           <!-- <li><a href="certificate.html">certificate</a></li> -->
-          <li><a href="service.html">Services</a></li>
+          <li><a class="drop" href="service.html">Services</a>
+            <ul>
+              <li><a href="Passenger-services.html">Passenger Services</a></li>
+              <li><a href="Cargo-services.html">Cargo Services</a></li>
+            </ul>
+          </li>
           <li><a href="contact-us.html">About Us</a></li>
         </ul>
       </nav>
@@ -388,7 +377,7 @@
 
   <div id="pageintro" class="hoc clear reveal">
     <article>
-      <h3 class="heading"><br>It’s Time to Fly. Life is a Journey—Travel it Well.</h3>
+      <h3 class="heading"><br>Driven by Vision, Powered by Sky</h3>
       <p>Fly with Sky Vision—Travel Safely and Soar Toward Your Dreams.</p>
       <div></div><a class="btn" href="service.html">SERVICES DETAILS</a> </div>
     </article>
@@ -399,13 +388,17 @@
   <div class="hoc container clear">
     <div class="sectiontitle" style="text-align:center; margin-bottom:50px;">
       <h2 class="heading" style="font-size:2.5rem; color:#222; font-weight:700;">🌍 Destinations We Fly To</h2>
-      <p style="color:#666; font-size:1.1rem;">Explore the world with Sky Vision Airlines — connecting continents with comfort and care.</p>
+      <p style="color:#000000; font-size:1.1rem;">Explore the world with Sky Vision Airlines — connecting continents with comfort and care.</p>
     </div>
 
     <div class="destinations-slider">
       <div class="slide-track">
         <!-- يمكنك إضافة أو تعديل الدول كما تحب -->
-        <div class="slide"><img src="images/demo/egypt.jpeg" alt="Egypt"><p>Egypt</p></div>
+    <!-- ,"Libya","","","","Algeria","Tunisia","", -->
+    <!-- "Mali","",,"","Mauritania","Sudan","Ethiopia", -->
+    <!-- "","Burkina Faso","Democratic Republic of the Congo","", -->
+    <!-- "","","Bangladesh","","" -->
+        <!-- <div class="slide"><img src="images/demo/egypt.jpeg" alt="Egypt"><p>Egypt</p></div> -->
         <div class="slide"><img src="images/demo/italy.jpeg" alt="Italy"><p>Italy</p></div>
         <div class="slide"><img src="images/demo/france.jpeg" alt="France"><p>France</p></div>
         <div class="slide"><img src="images/demo/uae.jpeg" alt="UAE"><p>UAE</p></div>
@@ -415,13 +408,29 @@
         <div class="slide"><img src="images/demo/spain.jpeg" alt="Spain"><p>Spain</p></div>
         <div class="slide"><img src="images/demo/kenya.jpeg" alt="Kenya"><p>Kenya</p></div>
         <div class="slide"><img src="images/demo/southafrica.jpg" alt="South Africa"><p>South Africa</p></div>
+        <div class="slide"><img src="images/demo/Albania.jpeg" alt="Albania"><p>Albania</p></div>
+        <div class="slide"><img src="images/demo/Romania.jpg" alt="Romania"><p>Romania</p></div>
+        <div class="slide"><img src="images/demo/Armenia.jpg" alt="Armenia"><p>Armenia</p></div>
+        <div class="slide"><img src="images/demo/China.jpeg" alt="China"><p>China</p></div>
+        <div class="slide"><img src="images/demo/Morocco.jpg" alt="Morocco"><p>Morocco</p></div>
+        <div class="slide"><img src="images/demo/Switzerland.jpeg" alt="Switzerland"><p>Switzerland</p></div>
+        <div class="slide"><img src="images/demo/India.jpg" alt="India"><p>India</p></div>
+        <div class="slide"><img src="images/demo/Tanzania.png" alt="Tanzania"><p>Tanzania</p></div>
+        <div class="slide"><img src="images/demo/Yemen.jpg" alt="Yemen"><p>Yemen</p></div>
+        <div class="slide"><img src="images/demo/Rwanda.jpeg" alt="Rwanda"><p>Rwanda</p></div>
+        <div class="slide"><img src="images/demo/Austria.jpeg" alt="Austria"><p>Austria</p></div>
+        <div class="slide"><img src="images/demo/Netherlands.jpg" alt="Netherlands"><p>Netherlands</p></div>
+        <div class="slide"><img src="images/demo/Chad.jpeg" alt="Chad"><p>Chad</p></div>
+        <div class="slide"><img src="images/demo/Guinea.jpg" alt="Guinea"><p>Guinea</p></div>
+        <div class="slide"><img src="images/demo/Bangladesh.jpg" alt="Bangladesh"><p>Bangladesh</p></div>
+        <div class="slide"><img src="images/demo/Slovenia.jpg" alt="Slovenia"><p>Slovenia</p></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ======= SECTION: WORLD MAP ======= -->
-<div class="wrapper row3 reveal">
+<!-- <div class="wrapper row3 reveal">
   <section class="hoc container clear">
     <div class="sectiontitle">
       <h2 class="heading">🌍 Global Presence</h2>
@@ -429,7 +438,142 @@
     </div>
     <div id="world-map"></div>
   </section>
-</div>
+</div> -->
+
+
+<!-- ===================================================================================================================== -->
+<!-- ===================================================================================================================== -->
+<!-- ===================================================================================================================== -->
+ <!-- ======= SECTION: WORLD MAP ======= -->
+<section id="world-map-section" class="wrapper row3 reveal" style="background-color:#f9f9f9; padding:80px 0;">
+  <div class="hoc container clear" style="text-align:center;">
+    
+    <!-- ======= العنوان ======= -->
+    <div class="sectiontitle" style="margin-bottom:50px;">
+      <h2 class="heading" style="font-size:2.5rem; color:#222; font-weight:700;">🌍 Global Presence</h2>
+      <p style="color:#666; font-size:1.1rem;">
+        We proudly operate across multiple continents — with strong connections in the Middle East and Africa.
+      </p>
+    </div>
+
+    <!-- ======= خريطة بصورة ======= -->
+    <div class="map-container" 
+         style="position:relative; display:inline-block; max-width:250%; border-radius:10px; overflow:hidden;">
+      
+      <!-- صورة الخريطة -->
+      <img src="Map.png" alt="World Map" style="width:200%; height:auto; display:block;">
+
+        <!-- ======= نقاط الدول ======= -->
+  <div class="map-main-text" style="top:40%; left:30%;">
+        From Passengers to Cargo, We Move the World.
+      </div>
+          <div class="map-point" style="top:48%; left:59%;" data-country="Egypt"></div>
+    <div class="map-point" style="top:52%; left:61%;" data-country="Saudi Arabia"></div>
+    <div class="map-point" style="top:50%; left:63%;" data-country="United Arab Emirates"></div>
+    <div class="map-point" style="top:58%; left:55%;" data-country="South Africa"></div>
+    <div class="map-point" style="top:50%; left:61%;" data-country="Kuwait"></div>
+    <div class="map-point" style="top:43%; left:73%;" data-country="China"></div>
+    <div class="map-point" style="top:65%; left:61%;" data-country="Kenya"></div>
+    <div class="map-point" style="top:41%; left:49%;" data-country="Spain"></div>
+    <div class="map-point" style="top:41%; left:54%;" data-country="Italy"></div>
+    <div class="map-point" style="top:39%; left:57%;" data-country="Germany"></div>
+    <div class="map-point" style="top:37%; left:50%;" data-country="United Kingdom"></div>
+    <div class="map-point" style="top:39%; left:58%;" data-country="Romania"></div>
+    <div class="map-point" style="top:42%; left:57%;" data-country="Albania"></div>
+    <div class="map-point" style="top:43%; left:65%;" data-country="Armenia"></div>
+    <div class="map-point" style="top:53%; left:63%;" data-country="Qatar"></div>
+    <div class="map-point" style="top:46%; left:53%;" data-country="Libya"></div>
+    <div class="map-point" style="top:41%; left:55%;" data-country="Slovenia"></div>
+    <div class="map-point" style="top:45%; left:50%;" data-country="Morocco"></div>
+    <div class="map-point" style="top:51%; left:56%;" data-country="Chad"></div>
+    <div class="map-point" style="top:45%; left:51%;" data-country="Algeria"></div>
+    <div class="map-point" style="top:47%; left:49%;" data-country="Tunisia"></div>
+    <div class="map-point" style="top:50%; left:47%;" data-country="Guinea"></div>
+    <div class="map-point" style="top:49%; left:46%;" data-country="Mali"></div>
+    <div class="map-point" style="top:40%; left:57%;" data-country="Switzerland"></div>
+    <div class="map-point" style="top:40%; left:53%;" data-country="France"></div>
+    <div class="map-point" style="top:63%; left:60%;" data-country="Rwanda"></div>
+    <div class="map-point" style="top:49%; left:45%;" data-country="Mauritania"></div>
+    <div class="map-point" style="top:52%; left:58%;" data-country="Sudan"></div>
+    <div class="map-point" style="top:56%; left:61%;" data-country="Ethiopia"></div>
+    <div class="map-point" style="top:65%; left:62%;" data-country="Tanzania"></div>
+    <div class="map-point" style="top:52%; left:51%;" data-country="Burkina Faso"></div>
+    <div class="map-point" style="top:58%; left:56%;" data-country="Democratic Republic of the Congo"></div>
+    <div class="map-point" style="top:55%; left:63%;" data-country="Yemen"></div>
+    <div class="map-point" style="top:67%; left:59%;" data-country="Malawi"></div>
+    <div class="map-point" style="top:55%; left:66%;" data-country="India"></div>
+    <div class="map-point" style="top:56%; left:68%;" data-country="Bangladesh"></div>
+    <div class="map-point" style="top:39%; left:52%;" data-country="Netherlands"></div>
+    <div class="map-point" style="top:40%; left:55%;" data-country="Austria"></div>
+  </div>
+</section>
+
+<!-- ======= CSS ======= -->
+<style>
+  .map-main-text {
+      position: absolute;
+      color: rgb(159, 1, 151);;
+      font-size: 1.5rem;
+      font-weight: 600;
+      transform: translate(-50%, -50%);
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.61);
+      max-width: 250px;
+      line-height: 1.4;
+      text-align: left;
+      pointer-events: none;
+      animation: fadeInUp 2s ease;
+    }
+  .map-point {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/15889/15889443.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translate(-50%, -100%);
+    cursor: pointer;
+    transition: transform 0.25s, filter 0.25s;
+  }
+
+  .map-point:hover {
+    transform: translate(-50%, -100%) scale(1.2);
+    filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.7));
+  }
+
+  .map-point::after {
+    content: attr(data-country);
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(195, 0, 255, 0.9);
+    color: white;
+    font-size: 0.85rem;
+    padding: 4px 8px;
+    border-radius: 5px;
+    opacity: 0;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+
+  .map-point:hover::after {
+    opacity: 1;
+  }
+
+  /* موبايل */
+  @media (max-width: 768px) {
+    .map-point {
+      width: 16px;
+      height: 16px;
+    }
+    .map-point::after {
+      font-size: 0.75rem;
+    }
+  }
+</style>
+
 <!-- ======= NEWS SECTION ======= -->
 <section id="news" class="wrapper row3 reveal" style="background-color:#f9f9f9; padding:80px 0;">
   <div class="hoc container clear">
@@ -439,43 +583,48 @@
       <p style="color:#666; font-size:1.1rem;">Stay up to date with the latest updates and announcements from Sky Vision Airlines.</p>
     </div>
 
-    <div class="row" style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center;">
+    <!-- ✅ صف واحد فيه 3 أعمدة -->
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
 
       <!-- NEWS CARD 1 -->
-      <div class="news-card" style="width:320px; background:white; border-radius:15px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s;">
-        <img src="images/demo/news1.jpg" alt="New Route Announcement" style="width:100%; height:200px; object-fit:cover;">
-        <div style="padding:20px;">
-          <h4 style="color:#88036a; font-weight:700;">Sky Vision Launches New Route to Rome</h4>
-          <p style="color:#444; font-size:0.95rem; margin:10px 0;">We’re expanding our network to Europe — introducing direct flights from Cairo to Rome starting this winter season.</p>
-          <a href="#" style="color:#88036a; font-weight:600; text-decoration:none;">Read More →</a>
+      <div class="col">
+        <div class="news-card" style="background:white; border-radius:15px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s;">
+          <img src="images/demo/news1.jpg" alt="New Route Announcement" style="width:100%; height:200px; object-fit:cover;">
+          <div style="padding:20px;">
+            <h4 style="color:#88036a; font-weight:700;">Sky Vision Launches New Route to Rome</h4>
+            <p style="color:#444; font-size:0.95rem; margin:10px 0;">We’re expanding our network to Europe — introducing direct flights from Cairo to Rome starting this winter season.</p>
+            <a href="#" style="color:#88036a; font-weight:600; text-decoration:none;">Read More →</a>
+          </div>
         </div>
       </div>
 
       <!-- NEWS CARD 2 -->
-      <div class="news-card" style="width:320px; background:white; border-radius:15px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s;">
-        <img src="images/demo/news1.jpg" alt="Fleet Expansion" style="width:100%; height:200px; object-fit:cover;">
-        <div style="padding:20px;">
-          <h4 style="color:#88036a; font-weight:700;">Fleet Expansion — Adding New A320 Aircraft</h4>
-          <p style="color:#444; font-size:0.95rem; margin:10px 0;">Sky Vision continues its growth with the addition of a new A320 aircraft to strengthen both passenger and cargo operations.</p>
-          <a href="#" style="color:#88036a; font-weight:600; text-decoration:none;">Read More →</a>
+      <div class="col">
+        <div class="news-card" style="background:white; border-radius:15px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s;">
+          <img src="images/demo/news1.jpg" alt="Fleet Expansion" style="width:100%; height:200px; object-fit:cover;">
+          <div style="padding:20px;">
+            <h4 style="color:#88036a; font-weight:700;">Fleet Expansion — Adding New A320 Aircraft</h4>
+            <p style="color:#444; font-size:0.95rem; margin:10px 0;">Sky Vision continues its growth with the addition of a new A320 aircraft to strengthen both passenger and cargo operations.</p>
+            <a href="#" style="color:#88036a; font-weight:600; text-decoration:none;">Read More →</a>
+          </div>
         </div>
       </div>
 
       <!-- NEWS CARD 3 -->
-      <div class="news-card" style="width:320px; background:white; border-radius:15px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s;">
-        <img src="images/demo/news1.jpg" alt="Safety Recognition" style="width:100%; height:200px; object-fit:cover;">
-        <div style="padding:20px;">
-          <h4 style="color:#88036a; font-weight:700;">Sky Vision Receives Safety Excellence Award</h4>
-          <p style="color:#444; font-size:0.95rem; margin:10px 0;">Recognized for outstanding safety standards and operational excellence by international aviation authorities.</p>
-          <a href="#" style="color:#88036a; font-weight:600; text-decoration:none;">Read More →</a>
+      <div class="col">
+        <div class="news-card" style="background:white; border-radius:15px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s;">
+          <img src="images/demo/news1.jpg" alt="Safety Recognition" style="width:100%; height:200px; object-fit:cover;">
+          <div style="padding:20px;">
+            <h4 style="color:#88036a; font-weight:700;">Sky Vision Receives Safety Excellence Award</h4>
+            <p style="color:#444; font-size:0.95rem; margin:10px 0;">Recognized for outstanding safety standards and operational excellence by international aviation authorities.</p>
+            <a href="#" style="color:#88036a; font-weight:600; text-decoration:none;">Read More →</a>
+          </div>
         </div>
       </div>
 
     </div>
   </div>
 </section>
-
-
 
  <!-- ===== IMPROVED FOOTER ===== -->
 <footer style="background: linear-gradient(135deg, #0a0a0a, #1a1a1a); color: #ccc; padding: 80px 0 40px;">
@@ -597,7 +746,7 @@
 
 <!-- ===== World Map ===== -->
 <!-- <div id="world-map" style="height: 500px; width: 100%; border-radius: 10px; margin-top: 40px;"></div> -->
-
+<!-- 
 <style>
   /* تأثير التوهج حول الدول المحددة */
   .country-glow {
@@ -640,10 +789,10 @@
                };
                } // باقي الدول بلون باهت 
                return { 
-                color: "#000000",
+                color: "#00000000",
                  weight: 1,
-                  opacity: .1, 
-                  fillOpacity: .3
+                  opacity: 1, 
+                  fillOpacity: 1
                 };
         },
         onEachFeature: (feature, layer) => {
@@ -657,7 +806,7 @@
         }
       }).addTo(map);
     });
-</script>
+</script> -->
 
 <script src="layout/scripts/jquery.min.js"></script>
 <script src="layout/scripts/jquery.backtotop.js"></script>

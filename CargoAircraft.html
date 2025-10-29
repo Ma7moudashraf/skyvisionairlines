@@ -78,12 +78,13 @@
     }
 
     .fleet-box img {
-      width: 100%;
-      border-radius: 10px;
-      height: 250px;
-      object-fit: cover;
-      transition: transform 0.4s ease, filter 0.4s ease;
-    }
+  width: 100%;
+  border-radius: 10px;
+  height: 250px;
+  object-fit: contain; /* 👈 بدّل cover بـ contain */
+  background-color: #f9f9f9; /* خلفية خفيفة علشان المساحات الفاضية */
+}
+
     .fleet-box:hover img {
       transform: scale(1.05);
       filter: brightness(1.15);
@@ -96,9 +97,13 @@
       font-weight: bold;
     }
 
+  .section-title p{
+   margin-bottom: 5px;
+      color: #000000;
+}
     .fleet-box p {
       margin-bottom: 5px;
-      color: #555;
+      color: #000000;
     }
 
     /* ===== تأثير Scroll Reveal ===== */
@@ -149,28 +154,38 @@
     </div>
   </div>
 
-<div class="wrapper row1">
+<!-- ======= Header ======= -->
+  <div class="wrapper row1">
     <header id="header" class="hoc clear">
-      <div id="logo" class="fl_left">
-        <h1><a href="index.html">Sky Vision Airlines</a></h1>
-      </div>
+     <div id="logo" class="fl_left" style="display:flex; align-items:center;">
+  <a href="index.html" style="display:flex; align-items:center; text-decoration:none;">
+    <img src="sky-vision-logo.png" alt="Sky Vision Airlines Logo" style="height:55px; width:auto; margin-right:10px;">
+    <h1 style="color:#fff; font-size:1.8rem; margin:0;">Sky Vision Airlines</h1>
+  </a>
+</div>
+
       <nav id="mainav" class="fl_right">
         <ul class="clear">
-          <li ><a href="index.html">Home</a></li>
+          <li class="active"><a href="index.html">Home</a></li>
           <li><a class="drop" href="fleet.html">Fleet</a>
             <ul>
               <li><a href="PassengerAircraft.html">Passenger Aircraft</a></li>
-              <li class="active"><a href="CargoAircraft.html">Cargo Aircraft</a></li>
+              <li><a href="CargoAircraft.html">Cargo Aircraft</a></li>
             </ul>
           </li>
           <!-- <li><a href="certificate.html">certificate</a></li> -->
-          <li><a href="service.html">Services</a></li>
+          <li><a class="drop" href="service.html">Services</a>
+            <ul>
+              <li><a href="Passenger-services.html">Passenger Services</a></li>
+              <li><a href="Cargo-services.html">Cargo Services</a></li>
+            </ul>
+          </li>
           <li><a href="contact-us.html">About Us</a></li>
         </ul>
       </nav>
     </header>
   </div>
-</div>
+
 
 <!-- ===== Cargo Fleet Section ===== -->
 <div class="fleet-section reveal">
@@ -180,11 +195,11 @@
       <p>"Efficient, reliable, and powerful — our cargo aircraft are the backbone of Sky Vision's global logistics."</p>
     </div>
 
-    <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
       <!-- Plane 4 -->
       <div class="col">
         <div class="fleet-box">
-          <img src="svi-c-fleet.jpeg" alt="SU-SKD">
+          <img src="images/demo/FHQ2.png" alt="SU-SKD">
           <h5>SU-SKD</h5>
           <p>AIRCRAFT TYPE: A320 P2F</p>
           <p>REGISTRATION: SU-SKD</p>
@@ -197,7 +212,7 @@
       <!-- Plane 5 -->
       <div class="col">
         <div class="fleet-box">
-          <img src="svi-c-fleet.jpeg" alt="SU-SKF">
+          <img src="images/demo/FHQ2.png" alt="SU-SKF">
           <h5>SU-SKF</h5>
           <p>AIRCRAFT TYPE: A320 232 P2F</p>
           <p>REGISTRATION: SU-SKF</p>
@@ -210,7 +225,7 @@
       <!-- Plane 6 -->
       <div class="col">
         <div class="fleet-box">
-          <img src="svi-c-fleet.jpeg" alt="SU-SKG">
+          <img src="images/demo/FHQ2.png" alt="SU-SKG">
           <h5>SU-SKG</h5>
           <p>AIRCRAFT TYPE: A320 232</p>
           <p>REGISTRATION: SU-SKG</p>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sky Vision Airlines - Passenger Transport</title>
+  <link rel="icon" href="images/demo/sky-vision-logo.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap & Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar, .row1 {
+      background-color: rgb(136, 3, 106) !important;
+      padding: 15px 20px;
+    }
+    .navbar-brand, #logo h1 a {
+      font-weight: 700;
+      color: #fff !important;
+      letter-spacing: 1px;
+    }
+    .navbar-nav .nav-link, #mainav ul li a {
+      color: #eee !important;
+      margin-right: 15px;
+      transition: color 0.3s ease;
+    }
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active,
+    #mainav ul li a:hover {
+      color: #ffcc00 !important;
+    }
+
+    /* ===== HERO ===== */
+    .hero-section {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
+                  url('images/demo/backgrounds/New-Background-2-1920w.jpg') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 140px 20px;
+    }
+    .hero-section h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    /* ===== TRANSPORT SECTION ===== */
+    .transport-section {
+      padding: 80px 0;
+      background-color: #f8f9fa;
+    }
+    .transport-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 70px;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .transport-box img {
+      width: 48%;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.4s;
+    }
+    .transport-box img:hover {
+      transform: scale(1.03);
+    }
+    .transport-box .text {
+      width: 48%;
+    }
+    .transport-box:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    .transport-box h3 {
+      color: #003366;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .transport-box p {
+      color: #555;
+      line-height: 1.7;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #0a0a0a;
+      color: #ccc;
+      padding: 60px 0;
+    }
+    footer h5 {
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    footer a:hover {
+      color: #ffcc00;
+    }
+    .faico a {
+      font-size: 1.3rem;
+      margin-right: 10px;
+      color: #ccc;
+      transition: color 0.3s;
+    }
+    .faico a:hover {
+      color: #ffcc00;
+    }
+  </style>
+</head>
+
+<body>
+<!-- ======= Header ======= -->
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear">
+     <div id="logo" class="fl_left" style="display:flex; align-items:center;">
+  <a href="index.html" style="display:flex; align-items:center; text-decoration:none;">
+    <img src="sky-vision-logo.png" alt="Sky Vision Airlines Logo" style="height:55px; width:auto; margin-right:10px;">
+    <h1 style="color:#fff; font-size:1.8rem; margin:0;">Sky Vision Airlines</h1>
+  </a>
+</div>
+
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a class="drop" href="fleet.html">Fleet</a>
+            <ul>
+              <li><a href="PassengerAircraft.html">Passenger Aircraft</a></li>
+              <li><a href="CargoAircraft.html">Cargo Aircraft</a></li>
+            </ul>
+          </li>
+          <!-- <li><a href="certificate.html">certificate</a></li> -->
+          <li><a class="drop" href="service.html">Services</a>
+            <ul>
+              <li><a href="Passenger-services.html">Passenger Services</a></li>
+              <li><a href="Cargo-services.html">Cargo Services</a></li>
+            </ul>
+          </li>
+          <li><a href="contact-us.html">About Us</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+
+<!-- ===== HERO ===== -->
+<section class="hero-section">
+  <div class="container">
+    <h1 data-aos="fade-down">Passenger Transport</h1>
+    <p data-aos="fade-up" data-aos-delay="200">Experience the freedom and flexibility of air travel with Sky Vision Airlines.</p>
+  </div>
+</section>
+
+<!-- ===== TRANSPORT SECTION ===== -->
+<section class="transport-section">
+  <div class="container">
+
+    <!-- 1 -->
+    <div class="transport-box" data-aos="fade-up">
+      <img src="images/demo/Passenger Transport.jpg" alt="Passenger Comfort">
+      <div class="text">
+        <h3>Passenger Transport</h3>
+        <p>Our passenger charter flight service is designed for corporate groups, government delegations, tour operators, and private travelers seeking a personalized, efficient, and comfortable journey.</p>
+<p>
+With a modern fleet of aircraft, we offer safe, reliable, and punctual flights tailored to your schedule and destination. Each charter is managed with precision and care, ensuring every detail—from ground handling to in-flight comfort—is perfectly executed.
+
+</p>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="transport-box" data-aos="fade-up" data-aos-delay="200">
+      <img src="images/demo/Passenger Transport.jpg" alt="Safety Standards">
+      <div class="text">
+        <h3>Passenger Transport</h3>
+        <p>At Sky Vision Airlines, safety and service excellence come first. Our experienced crew and dedicated operations team deliver a seamless travel experience built on trust,
+             efficiency, and world-class standards.
+        </p>
+        <p>
+    Whether you’re planning a business mission, a group trip, or a special event, 
+    Sky Vision Airlines provides customized charter solutions that connect you to your destination with confidence and convenience.</p>
+      </div>
+    </div>
+
+    <!-- 3
+    <div class="transport-box" data-aos="fade-up" data-aos-delay="400">
+      <img src="images/demo/Passenger Transport.jpg" alt="Global Connectivity">
+      <div class="text">
+        <h3>Global Connectivity</h3>
+        <p>Sky Vision Airlines connects passengers across continents with efficient schedules, convenient routes, and premium service quality. Our operations link Egypt, Europe, and the Middle East to bring the world closer together.</p>
+      </div>
+    </div> -->
+
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-md-4">
+        <h5>Sky Vision Airlines</h5>
+        <p>Founded in 2022, we connect Egypt, Europe, and the Middle East — offering world-class passenger and cargo air services.</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="fleet.html">Fleet</a></li>
+          <li><a href="certificate.html">Certificate</a></li>
+          <li><a href="SafetyPolicy.html">Safety Policy</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Follow Us</h5>
+        <div class="faico">
+          <a href="https://www.facebook.com/Sky-Vision-Airlines-107785321997316" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/sky.visions.airlines/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/sky-vision-airline/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr class="mt-4" style="border-color:#555;">
+    <div class="text-center small">
+      &copy; 2025 Sky Vision Airlines — All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+
+</body>
+</html>

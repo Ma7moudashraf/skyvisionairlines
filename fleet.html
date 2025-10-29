@@ -5,8 +5,10 @@
   <title>Sky Vision Airlines - Fleet</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="images/demo/sky-vision-logo.png" type="image/png">
+<link rel="preload" as="video" href="fly-it.mp4" type="video/mp4">
 
   <!-- Bootstrap -->
+  <link rel="stylesheet" href="st.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
@@ -19,6 +21,7 @@
   <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 
   <style>
+    
     /* === General Styles === */
     body {
       font-family: 'Poppins', sans-serif;
@@ -37,10 +40,31 @@
       color: white;
     }
 
-    /* === Fleet Intro === */
+    /* === Hero Video Section === */
+    .hero-video-section {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    #background-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: translate(-50%, -50%);
+      filter: brightness(0.6);
+      z-index: 1;
+    }
+
     .fleet-intro {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                  url('images/demo/backgrounds/New-Background-2-1920w.jpg') center/cover;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 100px 0;
       color: white;
     }
 
@@ -71,8 +95,7 @@
       font-weight: 700;
       text-transform: uppercase;
     }
-
-    /* === Footer === */
+     /* === Footer === */
     footer {
       color: #fff;
     }
@@ -86,50 +109,110 @@
 </head>
 
 <body id="top">
-  <!-- ==================== Navbar ==================== -->
-  <div class="bgded overlay light" style="background-color: #001f3f;">
- <div class="wrapper row1">
+  <!-- ======= Header ======= -->
+  <div class="wrapper row1">
     <header id="header" class="hoc clear">
-      <div id="logo" class="fl_left">
-        <h1><a href="index.html">Sky Vision Airlines</a></h1>
-      </div>
+     <div id="logo" class="fl_left" style="display:flex; align-items:center;">
+  <a href="index.html" style="display:flex; align-items:center; text-decoration:none;">
+    <img src="sky-vision-logo.png" alt="Sky Vision Airlines Logo" style="height:55px; width:auto; margin-right:10px;">
+    <h1 style="color:#fff; font-size:1.8rem; margin:0;">Sky Vision Airlines</h1>
+  </a>
+</div>
+
       <nav id="mainav" class="fl_right">
         <ul class="clear">
-          <li><a href="index.html">Home</a></li>
-          <li class="active"><a class="drop" href="fleet.html">Fleet</a>
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a class="drop" href="fleet.html">Fleet</a>
             <ul>
               <li><a href="PassengerAircraft.html">Passenger Aircraft</a></li>
               <li><a href="CargoAircraft.html">Cargo Aircraft</a></li>
             </ul>
           </li>
           <!-- <li><a href="certificate.html">certificate</a></li> -->
-          <li><a href="service.html">Services</a></li>
+          <li><a class="drop" href="service.html">Services</a>
+            <ul>
+              <li><a href="Passenger-services.html">Passenger Services</a></li>
+              <li><a href="Cargo-services.html">Cargo Services</a></li>
+            </ul>
+          </li>
           <li><a href="contact-us.html">About Us</a></li>
         </ul>
       </nav>
     </header>
   </div>
+
+
+  <!-- ======== Hero Video Section ======== -->
+  <div class="hero-video-section">
+    <video autoplay muted loop playsinline id="background-video">
+      <source src="fly-it.mp4" type="video/mp4">
+      Your browser does not support video playback.
+    </video>
+
+    <section class="fleet-intro d-flex align-items-center justify-content-center h-100">
+      <div class="container" data-aos="fade-up">
+        <h2 class="display-5 fw-bold">Our Fleet</h2>
+        <p class="lead mb-4">
+          Sky Vision Airlines currently operates a modern fleet of six aircraft,
+          comprising three passenger planes that ensure a comfortable, reliable, and safe travel experience,
+          and three dedicated cargo aircraft that facilitate efficient transport of goods through advanced air freight services.
+        </p>
+
+        <h4 class="fw-semibold mb-3">Sky Vision Aircraft — Modern Aviation Excellence</h4>
+        <p class="mb-4">
+          Our fleet comprises six modern aircraft, including three passenger jets ensuring comfortable and safe travel between 
+          Egypt, Europe, and the Middle East. We also operate three cargo aircraft supporting regional and international air freight logistics.
+        </p>
+
+        <div class="row mt-4 justify-content-center">
+          <div class="col-md-3" data-aos="zoom-in"><h3 class="text-warning fw-bold">6</h3><p>Total Fleet Size</p></div>
+          <div class="col-md-3" data-aos="zoom-in"><h3 class="text-success fw-bold">3</h3><p>Passenger Jets</p></div>
+          <div class="col-md-3" data-aos="zoom-in"><h3 class="text-danger fw-bold">3</h3><p>Cargo Aircraft</p></div>
+        </div>
+
+        <a href="#fleet-table" class="btn btn-outline-light mt-4 px-4 py-2">View Detailed Fleet Information</a>
+      </div>
+    </section>
   </div>
 
-  <!-- ==================== Fleet Intro ==================== -->
-  <section class="fleet-intro py-5 text-center">
+  <!-- ==================== Fleet Details Table ==================== -->
+  <section class="py-5 bg-light" id="fleet-table">
     <div class="container" data-aos="fade-up">
-      <h2 class="display-5 fw-bold">Our Fleet</h2>
-      <p class="lead mb-4">Modern aircraft equipped with the latest technology to ensure safe and comfortable flights.</p>
-
-      <h4 class="fw-semibold mb-3">Sky Vision Aircraft — Modern Aviation Excellence</h4>
-      <p class="mb-4">
-        Our fleet comprises six modern aircraft, including three passenger jets ensuring comfortable and safe travel between 
-        Egypt, Europe, and the Middle East. We also operate three cargo aircraft supporting regional and international air freight logistics.
+      <h3 class="text-center fw-bold mb-4">Fleet Overview</h3>
+      <p class="text-center mb-5" style="max-width: 850px; margin: auto;">
+        Sky Vision Airlines operates a balanced fleet of six Airbus A320 aircraft, maintained and certified under
+        <strong>ECAA oversight</strong> and <strong>EASA-aligned standards</strong>.
+        Each aircraft is supported by advanced safety management systems, ensuring mission reliability for both passenger and cargo operations.
       </p>
 
-      <div class="row mt-4 justify-content-center">
-        <div class="col-md-3" data-aos="zoom-in"><h3 class="text-warning fw-bold">6</h3><p>Total Fleet Size</p></div>
-        <div class="col-md-3" data-aos="zoom-in"><h3 class="text-success fw-bold">3</h3><p>Passenger Jets</p></div>
-        <div class="col-md-3" data-aos="zoom-in"><h3 class="text-danger fw-bold">3</h3><p>Cargo Aircraft</p></div>
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered align-middle text-center">
+          <thead class="table-dark">
+            <tr>
+              <th>Aircraft</th>
+              <th>Type</th>
+              <th>Registration</th>
+              <th>Configuration</th>
+              <th>MTOW</th>
+              <th>Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>SU-SKB</td><td>A320-232</td><td>SU-SKB</td><td>180Y</td><td>77,000 kg</td><td>Passenger</td></tr>
+            <tr><td>SU-SKC</td><td>A320-232</td><td>SU-SKC</td><td>180Y</td><td>77,000 kg</td><td>Passenger</td></tr>
+            <tr><td>SU-SKE</td><td>A320-232</td><td>SU-SKE</td><td>180Y</td><td>73,500 kg</td><td>Passenger</td></tr>
+            <tr><td>SU-SKD</td><td>A320 P2F</td><td>SU-SKD</td><td>—</td><td>77,000 kg</td><td>Cargo</td></tr>
+            <tr><td>SU-SKF</td><td>A321 P2F</td><td>SU-SKF</td><td>—</td><td>93,000 kg</td><td>Cargo</td></tr>
+            <tr><td>SU-SKG</td><td>A321 P2F</td><td>SU-SKG</td><td>—</td><td>93,000 kg</td><td>Cargo</td></tr>
+          </tbody>
+        </table>
       </div>
 
-      <a href="#" class="btn btn-outline-light mt-4 px-4 py-2">View Detailed Fleet Information</a>
+      <p class="text-center mt-4" style="max-width: 850px; margin: auto;">
+        Our cargo aircraft are fully certified for the transport of <strong>live animals</strong>,
+        <strong>dangerous goods</strong>, and <strong>perishable materials</strong>,
+        ensuring compliance, containment, and care for every load.
+      </p>
     </div>
   </section>
 
@@ -144,7 +227,7 @@
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col" data-aos="zoom-in">
           <div class="card shadow-sm">
-            <img src="images/demo/SU-SKB.jpg" class="card-img-top" alt="SU-SKB">
+            <img src="images/demo/FHQ.png" class="card-img-top" alt="SU-SKB">
             <div class="card-body text-center">
               <h5 class="card-title fw-bold">SU-SKB</h5>
               <p>AIRCRAFT TYPE: A320-232</p>
@@ -155,7 +238,7 @@
 
         <div class="col" data-aos="zoom-in" data-aos-delay="100">
           <div class="card shadow-sm">
-            <img src="images/demo/SU-SKC.jpg" class="card-img-top" alt="SU-SKC">
+            <img src="images/demo/FHQ.png" class="card-img-top" alt="SU-SKC">
             <div class="card-body text-center">
               <h5 class="card-title fw-bold">SU-SKC</h5>
               <p>AIRCRAFT TYPE: A320-232</p>
@@ -166,7 +249,7 @@
 
         <div class="col" data-aos="zoom-in" data-aos-delay="200">
           <div class="card shadow-sm">
-            <img src="images/demo/SU-SKE.jpg" class="card-img-top" alt="SU-SKE">
+            <img src="images/demo/FHQ.png" class="card-img-top" alt="SU-SKE">
             <div class="card-body text-center">
               <h5 class="card-title fw-bold">SU-SKE</h5>
               <p>AIRCRAFT TYPE: A320-232</p>
@@ -189,7 +272,7 @@
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col" data-aos="zoom-in">
           <div class="card shadow-sm">
-            <img src="images/demo/SU-SKD.jpg" class="card-img-top" alt="SU-SKD">
+            <img src="images/demo/FHQ2.png" class="card-img-top" alt="SU-SKD">
             <div class="card-body text-center">
               <h5 class="card-title fw-bold">SU-SKD</h5>
               <p>AIRCRAFT TYPE: A320 P2F</p>
@@ -200,22 +283,22 @@
 
         <div class="col" data-aos="zoom-in" data-aos-delay="100">
           <div class="card shadow-sm">
-            <img src="images/demo/SU-SKF.jpg" class="card-img-top" alt="SU-SKF">
+            <img src="images/demo/FHQ2.png" class="card-img-top" alt="SU-SKF">
             <div class="card-body text-center">
               <h5 class="card-title fw-bold">SU-SKF</h5>
               <p>AIRCRAFT TYPE: A321 P2F</p>
-              <p>MAX PAYLOAD: 23 TONS | MTOW: 83,000 KG</p>
+              <p>MAX PAYLOAD: 23 TONS | MTOW: 93,000 KG</p>
             </div>
           </div>
         </div>
 
         <div class="col" data-aos="zoom-in" data-aos-delay="200">
           <div class="card shadow-sm">
-            <img src="images/demo/SU-SKG.jpg" class="card-img-top" alt="SU-SKG">
+            <img src="images/demo/FHQ2.png" class="card-img-top" alt="SU-SKG">
             <div class="card-body text-center">
               <h5 class="card-title fw-bold">SU-SKG</h5>
-              <p>AIRCRAFT TYPE: A320-232</p>
-              <p>MAX PAYLOAD: 21 TONS | MTOW: 77,000 KG</p>
+              <p>AIRCRAFT TYPE: A321 P2F</p>
+              <p>MAX PAYLOAD: 23 TONS | MTOW: 93,000 KG</p>
             </div>
           </div>
         </div>
@@ -223,78 +306,58 @@
     </div>
   </section>
 
-  
-<!-- ===== IMPROVED FOOTER ===== -->
-<footer style="background: linear-gradient(135deg, #0a0a0a, #1a1a1a); color: #ccc; padding: 80px 0 40px;">
-  <div class="container">
-    <div class="row" style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:40px;">
-      
-      <!-- Company Info -->
-      <div class="col" style="flex:1 1 300px; min-width:250px;">
-        <div style="display:flex; align-items:center; margin-bottom:15px;">
-          <img src="images/demo/sky-vision-logo.png" alt="Sky Vision Logo" style="width:55px; height:auto; margin-right:10px;">
-          <h4 style="color:#fff; font-weight:700;">Sky Vision Airlines</h4>
+  <!-- ===== Footer ===== -->
+  <footer style="background: linear-gradient(135deg, #0a0a0a, #1a1a1a); color: #ccc; padding: 80px 0 40px;">
+    <div class="container">
+      <div class="row" style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:40px;">
+        <div class="col" style="flex:1 1 300px; min-width:250px;">
+          <div style="display:flex; align-items:center; margin-bottom:15px;">
+            <img src="images/demo/sky-vision-logo.png" alt="Sky Vision Logo" style="width:55px; margin-right:10px;">
+            <h4 style="color:#fff;">Sky Vision Airlines</h4>
+          </div>
+          <p style="color:#aaa;">Founded in 2022, Sky Vision Airlines connects Egypt, Europe, and the Middle East — providing exceptional passenger and cargo air services with safety and excellence.</p>
         </div>
-        <p style="color:#aaa; line-height:1.8;">
-          Founded in 2022, Sky Vision Airlines connects Egypt, Europe, and the Middle East — 
-          providing exceptional passenger and cargo air services with safety and excellence.
-        </p>
-      </div>
 
-      <!-- Quick Links -->
-      <div class="col" style="flex:1 1 180px; min-width:200px;">
-        <h5 style="color:#fff; font-weight:600; margin-bottom:20px;">Quick Links</h5>
-        <ul style="list-style:none; padding:0; margin:0; line-height:2;">
-          <li><a href="index.html" style="color:#ccc; text-decoration:none;">Home</a></li>
-          <li><a href="fleet.html" style="color:#ccc; text-decoration:none;">Fleet</a></li>
-          <li><a href="certificate.html" style="color:#ccc; text-decoration:none;">Certificate</a></li>
-          <li><a href="service.html" style="color:#ccc; text-decoration:none;">Services</a></li>
-          <li><a href="contact-us.html" style="color:#ccc; text-decoration:none;">Contact Us</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact Info -->
-      <div class="col" style="flex:1 1 220px; min-width:220px;">
-        <h5 style="color:#fff; font-weight:600; margin-bottom:20px;">Contact</h5>
-        <p><i class="fa fa-phone" style="color:#88036a; margin-right:8px;"></i> +20 22679456</p>
-<p>
-  <i class="fa fa-envelope" style="color:#88036a; margin-right:8px;"></i>
-  <a href="mailto:info@skyvisionairline.com" style="color:#ccc; text-decoration:none;">
-    info@skyvisionairline.com
-  </a>
-</p>
-        <p><i class="fa fa-map-marker-alt" style="color:#88036a; margin-right:8px;"></i> Cairo, Egypt</p>
-      </div>
-
-      <!-- Follow Us -->
-      <div class="col" style="flex:1 1 220px; min-width:220px;">
-        <h5 style="color:#fff; font-weight:600; margin-bottom:20px;">Follow Us</h5>
-        <div style="display:flex; gap:15px; margin-bottom:15px;">
-          <a href="https://www.facebook.com/Sky-Vision-Airlines-107785321997316" target="_blank" style="color:#ccc; font-size:1.5rem; transition:0.3s;"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/sky.visions.airlines/" target="_blank" style="color:#ccc; font-size:1.5rem; transition:0.3s;"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/company/sky-vision-airline/" target="_blank" style="color:#ccc; font-size:1.5rem; transition:0.3s;"><i class="fab fa-linkedin-in"></i></a>
-          <!-- <a href="#" target="_blank" style="color:#ccc; font-size:1.5rem; transition:0.3s;"><i class="fab fa-twitter"></i></a> -->
+        <div class="col" style="flex:1 1 180px; min-width:200px;">
+          <h5 style="color:#fff;">Quick Links</h5>
+          <ul style="list-style:none; padding:0;">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="fleet.html">Fleet</a></li>
+            <li><a href="certificate.html">Certificate</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+          </ul>
         </div>
-        <p style="color:#aaa; font-size:0.9rem;">Stay connected for updates, offers, and travel inspiration.</p>
+
+        <div class="col" style="flex:1 1 220px; min-width:220px;">
+          <h5 style="color:#fff;">Contact</h5>
+          <p><i class="fa fa-phone" style="color:#88036a; margin-right:8px;"></i> +20 22679456</p>
+          <p><i class="fa fa-envelope" style="color:#88036a; margin-right:8px;"></i>
+            <a href="mailto:info@skyvisionairline.com" style="color:#ccc;">info@skyvisionairline.com</a></p>
+          <p><i class="fa fa-map-marker-alt" style="color:#88036a; margin-right:8px;"></i> Cairo, Egypt</p>
+        </div>
+
+        <div class="col" style="flex:1 1 220px; min-width:220px;">
+          <h5 style="color:#fff;">Follow Us</h5>
+          <div style="display:flex; gap:15px;">
+            <a href="https://www.facebook.com/Sky-Vision-Airlines-107785321997316" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/sky.visions.airlines/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/sky-vision-airline/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr style="border-color:#333; margin:40px 0;">
+      <div style="text-align:center; font-size:0.9rem; color:#aaa;">
+        &copy; 2025 <strong style="color:#fff;">Sky Vision Airlines</strong> — All Rights Reserved.
       </div>
     </div>
+  </footer>
 
-    <hr style="border-color:#333; margin:40px 0;">
-    <div style="text-align:center; font-size:0.9rem; color:#aaa;">
-      &copy; 2025 <strong style="color:#fff;">Sky Vision Airlines</strong> — All Rights Reserved.<br>
-      <span style="font-size:0.85rem; color:#777;">Designed & Developed by Sky Vision Web Team</span>
-    </div>
-  </div>
-</footer>
-
-  <!-- ==================== Scripts ==================== -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({
-      duration: 800,
-      once: true
-    });
+    AOS.init({ duration: 800, once: true });
   </script>
 </body>
 </html>
