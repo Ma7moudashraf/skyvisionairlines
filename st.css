@@ -1,0 +1,47 @@
+    /* ===== NAVBAR CUSTOM STYLE ===== */
+.navbar {
+  transition: all 0.4s ease;
+  max-height: 70px;
+}
+
+.navbar-brand span {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.navbar-nav .nav-link {
+  color: #f1f1f1 !important;
+  margin: 0 8px;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #ffcc00 !important;
+  transform: translateY(-2px);
+}
+
+.dropdown-menu {
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.dropdown-menu .dropdown-item {
+  font-weight: 500;
+  color: #333;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: rgb(136, 3, 106);
+  color: #fff;
+}
+
+/* Navbar background fade effect on scroll */
+.navbar.scrolled {
+  background-color: rgba(136, 3, 106, 0.95) !important;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}

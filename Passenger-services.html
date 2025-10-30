@@ -124,37 +124,7 @@
 </head>
 
 <body>
-<!-- ======= Header ======= -->
-  <div class="wrapper row1">
-    <header id="header" class="hoc clear">
-     <div id="logo" class="fl_left" style="display:flex; align-items:center;">
-  <a href="index.html" style="display:flex; align-items:center; text-decoration:none;">
-    <img src="sky-vision-logo.png" alt="Sky Vision Airlines Logo" style="height:55px; width:auto; margin-right:10px;">
-    <h1 style="color:#fff; font-size:1.8rem; margin:0;">Sky Vision Airlines</h1>
-  </a>
-</div>
-
-      <nav id="mainav" class="fl_right">
-        <ul class="clear">
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a class="drop" href="fleet.html">Fleet</a>
-            <ul>
-              <li><a href="PassengerAircraft.html">Passenger Aircraft</a></li>
-              <li><a href="CargoAircraft.html">Cargo Aircraft</a></li>
-            </ul>
-          </li>
-          <!-- <li><a href="certificate.html">certificate</a></li> -->
-          <li><a class="drop" href="service.html">Services</a>
-            <ul>
-              <li><a href="Passenger-services.html">Passenger Services</a></li>
-              <li><a href="Cargo-services.html">Cargo Services</a></li>
-            </ul>
-          </li>
-          <li><a href="contact-us.html">About Us</a></li>
-        </ul>
-      </nav>
-    </header>
-  </div>
+  <div id="navbar-container"></div>
 
 
 <!-- ===== HERO ===== -->
@@ -249,6 +219,13 @@ With a modern fleet of aircraft, we offer safe, reliable, and punctual flights t
     duration: 1000,
     once: true
   });
+
+   fetch("ts/nav.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar-container").innerHTML = data;
+    })
+    .catch(error => console.error("Error loading navbar:", error));
 </script>
 
 </body>
