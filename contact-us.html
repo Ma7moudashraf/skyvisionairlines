@@ -5,13 +5,23 @@
 <title>Sky Vision Airlines - About Us</title>
 <link rel="icon" href="images/demo/sky-vision-logo.png" type="image/png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <!-- Bootstrap & Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+  <link rel="preload" as="video" href="fly-it.mp4" type="video/mp4">
+  
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <!-- JS Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
 <style>
   body {
     font-family: 'Poppins', sans-serif;
-    color: #333;
+    color: #ffffff;
     line-height: 1.8;
   }
 
@@ -90,48 +100,67 @@
       margin: 0 auto;
     }
   }
+  .navbar {
+  transition: all 0.4s ease;
+  max-height: 70px;
+}
+
+.navbar-brand span {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.navbar-nav .nav-link {
+  color: #f1f1f1 !important;
+  margin: 0 8px;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #ffcc00 !important;
+  transform: translateY(-2px);
+}
+
+.dropdown-menu {
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.dropdown-menu .dropdown-item {
+  font-weight: 500;
+  color: #333;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: rgb(136, 3, 106);
+  color: #fff;
+}
+
+/* Navbar background fade effect on scroll */
+.navbar.scrolled {
+  background-color: rgba(136, 3, 106, 0.95) !important;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
 </style>
+
+  <!-- JS Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 </head>
 
 <body id="top">
-
-<!-- ======= Header ======= -->
-  <div class="wrapper row1">
-    <header id="header" class="hoc clear">
-     <div id="logo" class="fl_left" style="display:flex; align-items:center;">
-  <a href="index.html" style="display:flex; align-items:center; text-decoration:none;">
-    <img src="sky-vision-logo.png" alt="Sky Vision Airlines Logo" style="height:55px; width:auto; margin-right:10px;">
-    <h1 style="color:#fff; font-size:1.8rem; margin:0;">Sky Vision Airlines</h1>
-  </a>
-</div>
-
-      <nav id="mainav" class="fl_right">
-        <ul class="clear">
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a class="drop" href="fleet.html">Fleet</a>
-            <ul>
-              <li><a href="PassengerAircraft.html">Passenger Aircraft</a></li>
-              <li><a href="CargoAircraft.html">Cargo Aircraft</a></li>
-            </ul>
-          </li>
-          <!-- <li><a href="certificate.html">certificate</a></li> -->
-          <li><a class="drop" href="service.html">Services</a>
-            <ul>
-              <li><a href="Passenger-services.html">Passenger Services</a></li>
-              <li><a href="Cargo-services.html">Cargo Services</a></li>
-            </ul>
-          </li>
-          <li><a href="contact-us.html">About Us</a></li>
-        </ul>
-      </nav>
-    </header>
-  </div>
-
+  <div id="navbar-container"></div>
+  
 
 <!-- ===== HERO SECTION ===== -->
 <section class="about-hero">
   <h1>About Sky Vision Airlines</h1>
-  <p>Connecting people, markets, and opportunities with excellence and safety since 2022.</p>
+  <p>Connecting People. Powering Trade</p>
 </section>
 
 <!-- ===== SECTION 1 ===== -->
@@ -142,14 +171,14 @@
     <p>The airline currently operates a modern fleet of six aircraft, comprising three passenger planes that ensure a comfortable, reliable, and safe travel experience, and three dedicated cargo aircraft that facilitate the efficient transport of goods through our advanced air freight services.</p>
   </div>
   <div class="about-image">
-    <img src="images/demo/sky-vision-logo-01-270w.png" alt="Sky Vision Fleet">
+    <img src="airplane-aircraft-travel-trip.jpg" alt="Sky Vision Fleet">
   </div>
 </section>
 
 <!-- ===== SECTION 2 ===== -->
 <section class="about-section">
   <div class="about-image">
-    <img src="images/demo/sky-vision-logo.png" alt="Sky Vision Operations">
+    <img src="airplane-captain-throttling-engine-takeoff-fly-jet-cockpit-flying-plane-using-dashboard-command-control-panel-buttons-looking-windscreen-radar-compass-taking-off-close-up.jpg" alt="Sky Vision Operations">
   </div>
   <div class="about-text">
     <h2>Our Role and Dedication</h2>
@@ -165,14 +194,14 @@
     <p>Sky Vision Airlines is committed to delivering safe, reliable, and innovative air transport solutions that connect people and strengthen trade across regions. Through a dedication to excellence, advanced technology, and customer-focused service, we aim to exceed expectations in every flight. Guided by our core values of safety, integrity, and progress, we strive to contribute to sustainable growth and create lasting value for our passengers, partners, and the communities we serve.</p>
   </div>
   <div class="about-image">
-    <img src="images/demo/sky-vision-logo.png" alt="Sky Vision Mission">
+    <img src="view-air-plane-wing-take-off-landing.jpg" alt="Sky Vision Mission">
   </div>
 </section>
 
 <!-- ===== SECTION 4 ===== -->
 <section class="about-section">
   <div class="about-image">
-    <img src="images/demo/sky-vision-logo.png" alt="Sky Vision Safety">
+    <img src="images (1).jpeg" alt="Sky Vision Safety">
   </div>
   <div class="about-text">
     <h2>Our Vision & Commitment to Safety</h2>
@@ -220,5 +249,27 @@
 <script src="layout/scripts/jquery.min.js"></script>
 <script src="layout/scripts/jquery.backtotop.js"></script>
 <script src="layout/scripts/jquery.mobilemenu.js"></script>
+<!-- JS Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+  fetch("ts/nav.html") // غيّر المسار لو في مجلد مختلف
+    .then(response => {
+      if (!response.ok) throw new Error("Navbar not found");
+      return response.text();
+    })
+    .then(html => {
+      document.getElementById("navbar-container").innerHTML = html;
+
+      // ✅ فعل كود التمرير بعد التحميل
+      const navbar = document.querySelector(".navbar");
+      if (navbar) {
+        window.addEventListener("scroll", () => {
+          navbar.classList.toggle("scrolled", window.scrollY > 50);
+        });
+      }
+    })
+    .catch(err => console.error("Error loading navbar:", err));
+</script>
 </body>
 </html>
