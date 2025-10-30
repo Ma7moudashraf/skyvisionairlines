@@ -4,17 +4,12 @@
 <title>Sky Vision Airline</title>
 <meta charset="utf-8">
 <link rel="icon" href="images/demo/sky-vision-logo.png" type="image/png" id="favicon-svg">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-<link rel="preload" as="video" href="fly-it.mp4" type="video/mp4">
 
   <!-- Bootstrap & Font Awesome -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-  <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
   <link rel="preload" as="video" href="fly-it.mp4" type="video/mp4">
   
   <!-- AOS Animation -->
@@ -323,7 +318,7 @@
     </div>
 
     <!-- ===== Cargo Charter Form ===== -->
-    <form id="content1" class="popup-content-item" action="req.php" method="POST">
+    <form id="content1" class="popup-content-item" action="send_mail.php" method="POST">
       <input type="text" name="name" placeholder="Full Name" required>
       <input type="tel" name="phone" placeholder="Phone" required>
       <input type="email" name="email" placeholder="E-mail" required>
@@ -335,7 +330,7 @@
     </form>
 
     <!-- ===== Passenger Charter Form ===== -->
-    <form id="content2" class="popup-content-item" action="req.php" method="POST">
+    <form id="content2" class="popup-content-item" action="send_mail.php" method="POST">
       <input type="text" name="name" placeholder="Full Name" required>
       <input type="tel" name="phone" placeholder="Phone" required>
       <input type="email" name="email" placeholder="E-mail" required>
@@ -447,47 +442,49 @@
       <img src="Map.png" alt="World Map" style="width:200%; height:auto; display:block;">
 
         <!-- ======= نقاط الدول ======= -->
-  <div class="map-main-text" style="top:40%; left:30%;">
+  <div class="map-main-text" style="top:70%; left:17%;">
         From Passengers to Cargo, We Move the World.
       </div>
-          <div class="map-point" style="top:48%; left:59%;" data-country="Egypt"></div>
-    <div class="map-point" style="top:52%; left:61%;" data-country="Saudi Arabia"></div>
-    <div class="map-point" style="top:50%; left:63%;" data-country="United Arab Emirates"></div>
-    <div class="map-point" style="top:58%; left:55%;" data-country="South Africa"></div>
-    <div class="map-point" style="top:50%; left:61%;" data-country="Kuwait"></div>
-    <div class="map-point" style="top:43%; left:73%;" data-country="China"></div>
-    <div class="map-point" style="top:65%; left:61%;" data-country="Kenya"></div>
-    <div class="map-point" style="top:41%; left:49%;" data-country="Spain"></div>
-    <div class="map-point" style="top:41%; left:54%;" data-country="Italy"></div>
-    <div class="map-point" style="top:39%; left:57%;" data-country="Germany"></div>
-    <div class="map-point" style="top:37%; left:50%;" data-country="United Kingdom"></div>
-    <div class="map-point" style="top:39%; left:58%;" data-country="Romania"></div>
-    <div class="map-point" style="top:42%; left:57%;" data-country="Albania"></div>
-    <div class="map-point" style="top:43%; left:65%;" data-country="Armenia"></div>
-    <div class="map-point" style="top:53%; left:63%;" data-country="Qatar"></div>
-    <div class="map-point" style="top:46%; left:53%;" data-country="Libya"></div>
-    <div class="map-point" style="top:41%; left:55%;" data-country="Slovenia"></div>
-    <div class="map-point" style="top:45%; left:50%;" data-country="Morocco"></div>
-    <div class="map-point" style="top:51%; left:56%;" data-country="Chad"></div>
-    <div class="map-point" style="top:45%; left:51%;" data-country="Algeria"></div>
-    <div class="map-point" style="top:47%; left:49%;" data-country="Tunisia"></div>
-    <div class="map-point" style="top:50%; left:47%;" data-country="Guinea"></div>
-    <div class="map-point" style="top:49%; left:46%;" data-country="Mali"></div>
-    <div class="map-point" style="top:40%; left:57%;" data-country="Switzerland"></div>
-    <div class="map-point" style="top:40%; left:53%;" data-country="France"></div>
-    <div class="map-point" style="top:63%; left:60%;" data-country="Rwanda"></div>
-    <div class="map-point" style="top:49%; left:45%;" data-country="Mauritania"></div>
-    <div class="map-point" style="top:52%; left:58%;" data-country="Sudan"></div>
-    <div class="map-point" style="top:56%; left:61%;" data-country="Ethiopia"></div>
-    <div class="map-point" style="top:65%; left:62%;" data-country="Tanzania"></div>
-    <div class="map-point" style="top:52%; left:51%;" data-country="Burkina Faso"></div>
-    <div class="map-point" style="top:58%; left:56%;" data-country="Democratic Republic of the Congo"></div>
-    <div class="map-point" style="top:55%; left:63%;" data-country="Yemen"></div>
-    <div class="map-point" style="top:67%; left:59%;" data-country="Malawi"></div>
-    <div class="map-point" style="top:55%; left:66%;" data-country="India"></div>
-    <div class="map-point" style="top:56%; left:68%;" data-country="Bangladesh"></div>
-    <div class="map-point" style="top:39%; left:52%;" data-country="Netherlands"></div>
-    <div class="map-point" style="top:40%; left:55%;" data-country="Austria"></div>
+      <div class="map-point" style="top:46%; left:58%;" data-country="Egypt"></div> 
+      <div class="map-point" style="top:50%; left:62%;" data-country="Saudi Arabia"></div>
+      <div class="map-point" style="top:49.5%; left:65%;" data-country="United Arab Emirates"></div>
+      <div class="map-point" style="top:78%; left:57%;" data-country="South Africa"></div>
+      <div class="map-point" style="top:46%; left:63.5%;" data-country="Kuwait"></div>
+      <div class="map-point" style="top:43%; left:78%;" data-country="China"></div>
+      <div class="map-point" style="top:62%; left:61%;" data-country="Kenya"></div>
+      <div class="map-point" style="top:39%; left:49%;" data-country="Spain"></div>
+      <div class="map-point" style="top:37%; left:52.5%;" data-country="Italy"></div>
+      <div class="map-point" style="top:32%; left:53%;" data-country="Germany"></div>
+      <div class="map-point" style="top:31%; left:49.5%;" data-country="United Kingdom"></div>
+      <div class="map-point" style="top:36%; left:57%;" data-country="Romania"></div>
+      <div class="map-point" style="top:39%; left:55.5%;" data-country="Albania"></div>
+      <div class="map-point" style="top:40%; left:62.5%;" data-country="Armenia"></div>
+      <div class="map-point" style="top:49.2%; left:64.7%;" data-country="Qatar"></div>
+      <div class="map-point" style="top:47%; left:55%;" data-country="Libya"></div>
+      <div class="map-point" style="top:39%; left:56%;" data-country="Slovenia"></div>
+      <div class="map-point" style="top:45%; left:48%;" data-country="Morocco"></div>
+      <div class="map-point" style="top:53%; left:55.5%;" data-country="Chad"></div>
+      <div class="map-point" style="top:46%; left:51%;" data-country="Algeria"></div>
+      <div class="map-point" style="top:43%; left:53%;" data-country="Tunisia"></div>
+      <div class="map-point" style="top:56.2%; left:47%;" data-country="Guinea"></div>
+      <div class="map-point" style="top:52%; left:49.3%;" data-country="Mali"></div>
+      <div class="map-point" style="top:35.5%; left:52%;" data-country="Switzerland"></div>
+      <div class="map-point" style="top:35%; left:51%;" data-country="France"></div>
+      <div class="map-point" style="top:63.2%; left:58.5%;" data-country="Rwanda"></div>
+      <div class="map-point" style="top:50%; left:47%;" data-country="Mauritania"></div>
+      <div class="map-point" style="top:53%; left:58%;" data-country="Sudan"></div>
+      <div class="map-point" style="top:57.5%; left:61%;" data-country="Ethiopia"></div>
+      <div class="map-point" style="top:65%; left:60%;" data-country="Tanzania"></div>
+      <div class="map-point" style="top:55%; left:49.5%;" data-country="Burkina Faso"></div>
+      <div class="map-point" style="top:63%; left:56%;" data-country="Democratic Republic of the Congo"></div>
+      <div class="map-point" style="top:54%; left:63%;" data-country="Yemen"></div>
+      <div class="map-point" style="top:68.5%; left:59.3%;" data-country="Malawi"></div>
+      <div class="map-point" style="top:50%; left:72%;" data-country="India"></div>
+      <div class="map-point" style="top:48.4%; left:74.7%;" data-country="Bangladesh"></div>
+      <div class="map-point" style="top:32.2%; left:51.5%;" data-country="Netherlands"></div>
+      
+      
+    <div class="map-point" style="top:75%; left:87%;" data-country="Austria"></div> 
   </div>
 </section>
 
