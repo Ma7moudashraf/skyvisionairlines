@@ -3,25 +3,48 @@
 <head>
 <title>Sky Vision Airline</title>
 <meta charset="utf-8">
+<!-- ==============================
+     الروابط والسكريبتات المنظّفة
+================================= -->
+
+<!-- الأيقونة -->
 <link rel="icon" href="images/demo/sky-vision-logo.png" type="image/png" id="favicon-svg">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- إعدادات العرض -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome (أحدث نسخة فقط) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+
+<!-- ملفات التنسيق الخاصة بالموقع -->
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+<!-- تحميل مسبق للفيديو -->
 <link rel="preload" as="video" href="fly-it.mp4" type="video/mp4">
 
-  <!-- Bootstrap & Font Awesome -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-  <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
-  <link rel="preload" as="video" href="fly-it.mp4" type="video/mp4">
-  
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  
+<!-- مكتبة AOS للحركات -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<!-- ==============================
+     ملفات السكريبت
+================================= -->
+
+<!-- jQuery -->
+<script src="layout/scripts/jquery.min.js"></script>
+
+<!-- إضافات jQuery -->
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- مكتبة AOS للحركات -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
   
 <style>
 /* زر Contact Us */
@@ -383,10 +406,7 @@ window.addEventListener("load", () => {
     <div class="destinations-slider">
       <div class="slide-track">
         <!-- يمكنك إضافة أو تعديل الدول كما تحب -->
-    <!-- ,"Libya","","","","Algeria","Tunisia","", -->
-    <!-- "Mali","",,"","Mauritania","Sudan","Ethiopia", -->
-    <!-- "","Burkina Faso","Democratic Republic of the Congo","", -->
-    <!-- "","","Bangladesh","","" -->
+    
         <!-- <div class="slide"><img src="images/demo/egypt.jpeg" alt="Egypt"><p>Egypt</p></div> -->
         <div class="slide"><img src="images/demo/italy.jpeg" alt="Italy" loading="lazy"><p>Italy</p></div>
         <div class="slide"><img src="images/demo/france.jpeg" alt="France" loading="lazy"><p>France</p></div>
@@ -417,18 +437,6 @@ window.addEventListener("load", () => {
     </div>
   </div>
 </section>
-
-<!-- ======= SECTION: WORLD MAP ======= -->
-<!-- <div class="wrapper row3 reveal">
-  <section class="hoc container clear">
-    <div class="sectiontitle">
-      <h2 class="heading">🌍 Global Presence</h2>
-      <p>We proudly operate across multiple continents — with strong connections in the Middle East and Africa.</p>
-    </div>
-    <div id="world-map"></div>
-  </section>
-</div> -->
-
 
 <!-- ===================================================================================================================== -->
 <!-- ===================================================================================================================== -->
@@ -679,8 +687,7 @@ window.addEventListener("load", () => {
 </footer>
 
   <!-- JS Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+ 
   <script>
     AOS.init({
       duration: 1000,
@@ -746,72 +753,8 @@ window.addEventListener("load", () => {
     .catch(error => console.error("Error loading navbar:", error));
 </script>
 
-<!-- ===== World Map ===== -->
-<!-- <div id="world-map" style="height: 500px; width: 100%; border-radius: 10px; margin-top: 40px;"></div> -->
-<!-- 
-<style>
-  /* تأثير التوهج حول الدول المحددة */
-  .country-glow {
-    animation: glowPulse 2s infinite alternate;
-  }
-  @keyframes glowPulse {
-    from { filter: drop-shadow(0 0 5px #ff66cc); }
-    to { filter: drop-shadow(0 0 20px #ff99dd); }
-  }
-</style>
 
-<script>
-  const map = L.map('world-map').setView([20, 10], 2);
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors'
-  }).addTo(map);
 
-  const highlightCountries = [
-    "Saudi Arabia","United Arab Emirates","South Africa","Kuwait","China","Kenya",
-    "Spain","Italy","Germany","United Kingdom","Romania","Albania","Armenia",
-    "Qatar","Libya","Slovenia","Morocco","Chad","Algeria","Tunisia","Guinea",
-    "Mali","Switzerland","France","Rwanda","Mauritania","Sudan","Ethiopia",
-    "Tanzania","Burkina Faso","Democratic Republic of the Congo","Yemen",
-    "Malawi","India","Bangladesh","Netherlands","Austria","Egypt"
-  ];
-
-  fetch("https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json")
-    .then(res => res.json())
-    .then(data => {
-      L.geoJSON(data, {
-        style: feature => {
-          if (highlightCountries.includes(feature.properties.name)) {
-            return {
-              color: "#0000", // إطار بنفسجي 
-              weight: 2.5, 
-              opacity: 1,
-               fillColor: "#88036a",
-                fillOpacity: .6
-               };
-               } // باقي الدول بلون باهت 
-               return { 
-                color: "#00000000",
-                 weight: 1,
-                  opacity: 1, 
-                  fillOpacity: 1
-                };
-        },
-        onEachFeature: (feature, layer) => {
-          if (highlightCountries.includes(feature.properties.name)) {
-            layer.bindPopup(`<b>${feature.properties.name}</b>`);
-            layer.on('add', () => {
-              const path = layer.getElement();
-              if (path) path.classList.add('country-glow');
-            });
-          }
-        }
-      }).addTo(map);
-    });
-</script> -->
-
-<script src="layout/scripts/jquery.min.js"></script>
-<script src="layout/scripts/jquery.backtotop.js"></script>
-<script src="layout/scripts/jquery.mobilemenu.js"></script>
 </body>
 </html>
