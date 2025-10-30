@@ -4,12 +4,17 @@
 <title>Sky Vision Airline</title>
 <meta charset="utf-8">
 <link rel="icon" href="images/demo/sky-vision-logo.png" type="image/png" id="favicon-svg">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<link rel="preload" as="video" href="fly-it.mp4" type="video/mp4">
 
   <!-- Bootstrap & Font Awesome -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
   <link rel="preload" as="video" href="fly-it.mp4" type="video/mp4">
   
   <!-- AOS Animation -->
@@ -346,8 +351,14 @@
 <!-- ======== الخلفية ======== -->
 <div class="bgded overlay light">
   <!-- خلفية الفيديو -->
-  <video autoplay muted loop playsinline id="background-video">
-    <source src="fly-it.mp4" type="video/mp4">
+  <video autoplay muted loop playsinline  preload="none" poster="images/demo/bg-poster.jpg"id="background-video">
+    <script>
+window.addEventListener("load", () => {
+  const video = document.getElementById("background-video");
+  video.innerHTML = '<source src="fly-it.mp4" type="video/mp4">';
+});
+</script>
+    <source src="fly-it.mp4" type="video/webm">
     متصفحك لا يدعم عرض الفيديو 😢
   </video>
 
@@ -377,31 +388,31 @@
     <!-- "","Burkina Faso","Democratic Republic of the Congo","", -->
     <!-- "","","Bangladesh","","" -->
         <!-- <div class="slide"><img src="images/demo/egypt.jpeg" alt="Egypt"><p>Egypt</p></div> -->
-        <div class="slide"><img src="images/demo/italy.jpeg" alt="Italy"><p>Italy</p></div>
-        <div class="slide"><img src="images/demo/france.jpeg" alt="France"><p>France</p></div>
-        <div class="slide"><img src="images/demo/uae.jpeg" alt="UAE"><p>UAE</p></div>
-        <div class="slide"><img src="images/demo/saudi.jpg" alt="Saudi Arabia"><p>Saudi Arabia</p></div>
-        <div class="slide"><img src="images/demo/germany.jpg" alt="Germany"><p>Germany</p></div>
-        <div class="slide"><img src="images/demo/qatar.jpeg" alt="Qatar"><p>Qatar</p></div>
-        <div class="slide"><img src="images/demo/spain.jpeg" alt="Spain"><p>Spain</p></div>
-        <div class="slide"><img src="images/demo/kenya.jpeg" alt="Kenya"><p>Kenya</p></div>
-        <div class="slide"><img src="images/demo/southafrica.jpg" alt="South Africa"><p>South Africa</p></div>
-        <div class="slide"><img src="images/demo/Albania.jpeg" alt="Albania"><p>Albania</p></div>
-        <div class="slide"><img src="images/demo/Romania.jpg" alt="Romania"><p>Romania</p></div>
-        <div class="slide"><img src="images/demo/Armenia.jpg" alt="Armenia"><p>Armenia</p></div>
-        <div class="slide"><img src="images/demo/China.jpeg" alt="China"><p>China</p></div>
-        <div class="slide"><img src="images/demo/Morocco.jpg" alt="Morocco"><p>Morocco</p></div>
-        <div class="slide"><img src="images/demo/Switzerland.jpeg" alt="Switzerland"><p>Switzerland</p></div>
-        <div class="slide"><img src="images/demo/India.jpg" alt="India"><p>India</p></div>
-        <div class="slide"><img src="images/demo/Tanzania.png" alt="Tanzania"><p>Tanzania</p></div>
-        <div class="slide"><img src="images/demo/Yemen.jpg" alt="Yemen"><p>Yemen</p></div>
-        <div class="slide"><img src="images/demo/Rwanda.jpeg" alt="Rwanda"><p>Rwanda</p></div>
-        <div class="slide"><img src="images/demo/Austria.jpeg" alt="Austria"><p>Austria</p></div>
-        <div class="slide"><img src="images/demo/Netherlands.jpg" alt="Netherlands"><p>Netherlands</p></div>
-        <div class="slide"><img src="images/demo/Chad.jpeg" alt="Chad"><p>Chad</p></div>
-        <div class="slide"><img src="images/demo/Guinea.jpg" alt="Guinea"><p>Guinea</p></div>
-        <div class="slide"><img src="images/demo/Bangladesh.jpg" alt="Bangladesh"><p>Bangladesh</p></div>
-        <div class="slide"><img src="images/demo/Slovenia.jpg" alt="Slovenia"><p>Slovenia</p></div>
+        <div class="slide"><img src="images/demo/italy.jpeg" alt="Italy" loading="lazy"><p>Italy</p></div>
+        <div class="slide"><img src="images/demo/france.jpeg" alt="France"loading="lazy"><p>France</p></div>
+        <div class="slide"><img src="images/demo/uae.jpeg" alt="UAE"loading="lazy"><p>UAE</p></div>
+        <div class="slide"><img src="images/demo/saudi.jpg" alt="Saudi Arabia"loading="lazy"><p>Saudi Arabia</p></div>
+        <div class="slide"><img src="images/demo/germany.jpg" alt="Germany"loading="lazy"><p>Germany</p></div>
+        <div class="slide"><img src="images/demo/qatar.jpeg" alt="Qatar"loading="lazy"><p>Qatar</p></div>
+        <div class="slide"><img src="images/demo/spain.jpeg" alt="Spain"loading="lazy"><p>Spain</p></div>
+        <div class="slide"><img src="images/demo/kenya.jpeg" alt="Kenya"loading="lazy"><p>Kenya</p></div>
+        <div class="slide"><img src="images/demo/southafrica.jpg" alt="South Africa"loading="lazy"><p>South Africa</p></div>
+        <div class="slide"><img src="images/demo/Albania.jpeg" alt="Albania"loading="lazy"><p>Albania</p></div>
+        <div class="slide"><img src="images/demo/Romania.jpg" alt="Romania"loading="lazy"><p>Romania</p></div>
+        <div class="slide"><img src="images/demo/Armenia.jpg" alt="Armenia"loading="lazy"><p>Armenia</p></div>
+        <div class="slide"><img src="images/demo/China.jpeg" alt="China"loading="lazy"><p>China</p></div>
+        <div class="slide"><img src="images/demo/Morocco.jpg" alt="Morocco"loading="lazy"><p>Morocco</p></div>
+        <div class="slide"><img src="images/demo/Switzerland.jpeg" alt="Switzerland">loading="lazy"<p>Switzerland</p></div>
+        <div class="slide"><img src="images/demo/India.jpg" alt="India"loading="lazy"><p>India</p></div>
+        <div class="slide"><img src="images/demo/Tanzania.png" alt="Tanzania"loading="lazy"><p>Tanzania</p></div>
+        <div class="slide"><img src="images/demo/Yemen.jpg" alt="Yemen"loading="lazy"><p>Yemen</p></div>
+        <div class="slide"><img src="images/demo/Rwanda.jpeg" alt="Rwanda"loading="lazy"><p>Rwanda</p></div>
+        <div class="slide"><img src="images/demo/Austria.jpeg" alt="Austria"loading="lazy"><p>Austria</p></div>
+        <div class="slide"><img src="images/demo/Netherlands.jpg" alt="Netherlands"loading="lazy"><p>Netherlands</p></div>
+        <div class="slide"><img src="images/demo/Chad.jpeg" alt="Chad"loading="lazy"><p>Chad</p></div>
+        <div class="slide"><img src="images/demo/Guinea.jpg" alt="Guinea"loading="lazy"><p>Guinea</p></div>
+        <div class="slide"><img src="images/demo/Bangladesh.jpg" alt="Bangladesh"loading="lazy"><p>Bangladesh</p></div>
+        <div class="slide"><img src="images/demo/Slovenia.jpg" alt="Slovenia"loading="lazy"><p>Slovenia</p></div>
       </div>
     </div>
   </div>
