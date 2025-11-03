@@ -333,6 +333,142 @@
       color: #333;
       /* padding: 40px; */
     }
+    /* =======================
+   📱 MOBILE RESPONSIVE FIXES
+======================= */
+
+/* الخلفية والفيديو */
+@media (max-width: 768px) {
+  #background-video {
+    object-fit: cover;
+    height: 100vh;
+  }
+
+  #pageintro h3 {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  #pageintro p {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  #pageintro a.btn {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+  }
+}
+
+/* وجهات السفر */
+@media (max-width: 768px) {
+  .destinations-slider .slide {
+    width: 180px;
+    height: 220px;
+  }
+
+  .destinations-slider .slide p {
+    font-size: 0.9rem;
+  }
+
+  .sectiontitle h2 {
+    font-size: 1.6rem !important;
+  }
+
+  .sectiontitle p {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* خريطة العالم */
+@media (max-width: 768px) {
+  #world-map-section img {
+    width: 100%;
+    height: auto;
+  }
+
+  .map-container {
+    max-width: 100% !important;
+  }
+
+  .map-main-text {
+    font-size: 1rem;
+    top: 90% !important;
+    left: 50% !important;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+
+  .map-point {
+    width: 14px;
+    height: 14px;
+  }
+
+  .map-point::after {
+    font-size: 0.7rem;
+  }
+}
+
+/* قسم الأخبار */
+@media (max-width: 768px) {
+  .news-card {
+    margin-bottom: 20px;
+  }
+
+  .news-card img {
+    height: 180px !important;
+  }
+
+  .news-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .news-card p {
+    font-size: 0.9rem;
+  }
+
+  /* الصور الجانبية في كارت دبي */
+  .news-card div[style*="display:flex"] {
+    flex-direction: column !important;
+    height: auto !important;
+  }
+  .news-card div[style*="display:flex"] img {
+    width: 100% !important;
+    height: 150px !important;
+  }
+}
+
+/* زر Contact Us */
+@media (max-width: 768px) {
+  .static-btn {
+    bottom: 70px;
+    right: 15px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* الفوتر */
+@media (max-width: 768px) {
+  footer .row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  footer .col {
+    flex: 1 1 100%;
+    min-width: unset;
+    margin-bottom: 25px;
+  }
+
+  footer img {
+    margin: 0 auto 10px;
+  }
+}
+
 
 </style>
 </head>
