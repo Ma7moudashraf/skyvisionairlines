@@ -44,9 +44,12 @@
 
 <!-- مكتبة AOS للحركات -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   
 <style>
+
+
 /* زر Contact Us */
 .static-btn {
   position: fixed;
@@ -256,6 +259,12 @@
 .slide:hover img {
   transform: scale(1.05);
 }
+ body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      /* padding: 40px; */
+    }
 
 @keyframes scroll {
   0% { transform: translateX(0); }
@@ -318,7 +327,12 @@
   z-index: 2; /* النصوص فوق الفيديو */
   color: #fff; /* تأكد إن النص أبيض */
 }
-
+ body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      /* padding: 40px; */
+    }
 
 </style>
 </head>
@@ -464,8 +478,9 @@ window.addEventListener("load", () => {
   <div class="map-main-text" style="top:70%; left:15%;">
         From Passengers to Cargo, We Move the World.
       </div>
-  <div class="map-main-text" style="top:97%; left:92%;">
-        ــــــــــــــــــــــــــــــ
+  <div class="map-main-text" style="top:108%; left:92%; font-size: 100px; color: white; text-shadow: none;" >
+ـــــــــــــ
+        <!-- ـــــــــــــــــــــــــــــــــ -->
       </div>
       <div class="map-point" style="top:46%; left:58%;" data-country="Egypt"></div> 
       <div class="map-point" style="top:50%; left:62%;" data-country="Saudi Arabia"></div>
@@ -595,22 +610,38 @@ window.addEventListener("load", () => {
           <div style="padding:20px;">
             <h4 style="color:#88036a; font-weight:700;">Sky Vision Launches New Route to Rome</h4>
             <p style="color:#444; font-size:0.95rem; margin:10px 0;">We’re expanding our network to Europe — introducing direct flights from Cairo to Rome starting this winter season.</p>
-            <a href="#" style="color:#88036a; font-weight:600; text-decoration:none;">Read More →</a>
+            <a href="https://www.linkedin.com/company/sky-vision-airline/" style="color:#88036a; font-weight:600; text-decoration:none;">Read More →</a>
           </div>
         </div>
       </div>
 
-      <!-- NEWS CARD 2 -->
-      <div class="col">
-        <div class="news-card" style="background:white; border-radius:15px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s;">
-          <img src="images/demo/news1.jpg" alt="Fleet Expansion" style="width:100%; height:200px; object-fit:cover;">
-          <div style="padding:20px;">
-            <h4 style="color:#88036a; font-weight:700;">Fleet Expansion — Adding New A320 Aircraft</h4>
-            <p style="color:#444; font-size:0.95rem; margin:10px 0;">Sky Vision continues its growth with the addition of a new A320 aircraft to strengthen both passenger and cargo operations.</p>
-            <a href="#" style="color:#88036a; font-weight:600; text-decoration:none;">Read More →</a>
-          </div>
-        </div>
-      </div>
+   <!-- NEWS CARD 2 — Dubai Airshow -->
+<div class="col">
+  <div class="news-card" style="background:white; border-radius:15px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s;">
+    
+    <!-- ✅ صورتين جنب بعض -->
+    <div style="display:flex; width:100%; height:200px; background:#fff;">
+  <div style="width:50%; display:flex; justify-content:center; align-items:center; background:#fff;">
+    <img src="d-a-s.jpeg" alt="Dubai Airshow Event" style="max-width:100%; max-height:100%; object-fit:contain;">
+  </div>
+  <div style="width:50%; display:flex; justify-content:center; align-items:center; background:#fff;">
+    <img src="sky-vision-logo.png" alt="Sky Vision Airline Team" style="max-width:100%; max-height:100%; object-fit:contain;">
+  </div>
+</div>
+
+    <!-- ✅ محتوى الخبر -->
+    <div style="padding:20px;">
+      <h4 style="color:#88036a; font-weight:700;">Sky Vision at Dubai Airshow 2025</h4>
+      <p style="color:#444; font-size:0.95rem; margin:10px 0;">
+        Sky Vision Airlines is proud to participate in the <strong>Dubai Airshow </strong>2025, one of the world’s leading aviation events.
+During the exhibition, our team will present the full range of Sky Vision’s aviation services, including passenger operations, air cargo solutions.
+Visitors will also have the chance to learn more about our unique advantages in flexibility, reliability, and customer experience.
+      </p>
+      <a href="https://www.linkedin.com/company/sky-vision-airline/" style="color:#88036a; font-weight:600; text-decoration:none;">Read More →</a>
+    </div>
+  </div>
+</div>
+
 
       <!-- NEWS CARD 3 -->
       <div class="col">
@@ -619,7 +650,7 @@ window.addEventListener("load", () => {
           <div style="padding:20px;">
             <h4 style="color:#88036a; font-weight:700;">Sky Vision Receives Safety Excellence Award</h4>
             <p style="color:#444; font-size:0.95rem; margin:10px 0;">Recognized for outstanding safety standards and operational excellence by international aviation authorities.</p>
-            <a href="#" style="color:#88036a; font-weight:600; text-decoration:none;">Read More →</a>
+            <a href="https://www.linkedin.com/company/sky-vision-airline/" style="color:#88036a; font-weight:600; text-decoration:none;">Read More →</a>
           </div>
         </div>
       </div>
@@ -672,7 +703,6 @@ window.addEventListener("load", () => {
           <a href="https://www.facebook.com/Sky-Vision-Airlines-107785321997316" target="_blank" style="color:#ccc; font-size:1.5rem; transition:0.3s;"><i class="fab fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/sky.visions.airlines/" target="_blank" style="color:#ccc; font-size:1.5rem; transition:0.3s;"><i class="fab fa-instagram"></i></a>
           <a href="https://www.linkedin.com/company/sky-vision-airline/" target="_blank" style="color:#ccc; font-size:1.5rem; transition:0.3s;"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" target="_blank" style="color:#ccc; font-size:1.5rem; transition:0.3s;"><i class="fab fa-twitter"></i></a>
         </div>
         <p style="color:#aaa; font-size:0.9rem;">Stay connected for updates, offers, and travel inspiration.</p>
       </div>
@@ -681,7 +711,10 @@ window.addEventListener("load", () => {
     <hr style="border-color:#333; margin:40px 0;">
     <div style="text-align:center; font-size:0.9rem; color:#aaa;">
       &copy; 2025 <strong style="color:#fff;">Sky Vision Airlines</strong> — All Rights Reserved.<br>
-      <span style="font-size:0.85rem; color:#777;">Designed & Developed by Sky Vision Web Team</span>
+      <span style="font-size:0.85rem; color:#777;">Designed & Developed by  
+        <a href="https://www.linkedin.com/in/mahmoud-asharf/  " target="_blank" style="color:#fff; text-decoration:none; font-weight:600;">
+      Mahmoud Ashraf
+    </a></span>
     </div>
   </div>
 </footer>

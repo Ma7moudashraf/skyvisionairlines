@@ -27,6 +27,8 @@
       font-family: 'Poppins', sans-serif;
       background-color: #fff;
       color: #333;
+        scroll-behavior: smooth;
+
     }
 
     /* === Navbar === */
@@ -113,7 +115,8 @@
 
   <!-- ======== Hero Video Section ======== -->
   <div class="hero-video-section">
-    <video autoplay muted loop playsinline id="background-video">
+   <video autoplay muted loop playsinline id="background-video">
+      <source src="fly-it.webm" type="video/webm">
       <source src="fly-it.mp4" type="video/mp4">
       Your browser does not support video playback.
     </video>
@@ -142,56 +145,16 @@
           <div class="col-md-3" data-aos="zoom-in"><h3 class="text-danger fw-bold">3</h3><p>Cargo Aircraft</p></div>
         </div>
 
-        <a href="#fleet-table" class="btn btn-outline-light mt-4 px-4 py-2">View Detailed Fleet Information</a>
+        <a href="#passenger-fleet" class="btn btn-outline-light mt-4 px-4 py-2">View Detailed Fleet Information</a>
       </div>
     </section>
   </div>
 
-  <!-- ==================== Fleet Details Table ====================
-  <section class="py-5 bg-light" id="fleet-table">
-    <div class="container" data-aos="fade-up">
-      <h3 class="text-center fw-bold mb-4">Fleet Overview</h3>
-      <p class="text-center mb-5" style="max-width: 850px; margin: auto;">
-        Sky Vision Airlines operates a balanced fleet of six Airbus A320 aircraft, maintained and certified under
-        <strong>ECAA oversight</strong> and <strong>EASA-aligned standards</strong>.
-        Each aircraft is supported by advanced safety management systems, ensuring mission reliability for both passenger and cargo operations.
-      </p>
-
-      <div class="table-responsive">
-        <table class="table table-striped table-bordered align-middle text-center">
-          <thead class="table-dark">
-            <tr>
-              <th>Aircraft</th>
-              <th>Type</th>
-              <th>Registration</th>
-              <th>Configuration</th>
-              <th>MTOW</th>
-              <th>Role</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>SU-SKB</td><td>A320-232</td><td>SU-SKB</td><td>180Y</td><td>77,000 kg</td><td>Passenger</td></tr>
-            <tr><td>SU-SKC</td><td>A320-232</td><td>SU-SKC</td><td>180Y</td><td>77,000 kg</td><td>Passenger</td></tr>
-            <tr><td>SU-SKE</td><td>A320-232</td><td>SU-SKE</td><td>180Y</td><td>73,500 kg</td><td>Passenger</td></tr>
-            <tr><td>SU-SKD</td><td>A320 P2F</td><td>SU-SKD</td><td>—</td><td>77,000 kg</td><td>Cargo</td></tr>
-            <tr><td>SU-SKF</td><td>A321 P2F</td><td>SU-SKF</td><td>—</td><td>93,000 kg</td><td>Cargo</td></tr>
-            <tr><td>SU-SKG</td><td>A321 P2F</td><td>SU-SKG</td><td>—</td><td>93,000 kg</td><td>Cargo</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p class="text-center mt-4" style="max-width: 850px; margin: auto;">
-        Our cargo aircraft are fully certified for the transport of <strong>live animals</strong>,
-        <strong>dangerous goods</strong>, and <strong>perishable materials</strong>,
-        ensuring compliance, containment, and care for every load.
-      </p>
-    </div>
-  </section> -->
 
   <!-- ==================== Passenger Aircraft ==================== -->
-  <section class="fleet-section py-5 bg-white">
+  <section class="fleet-section py-5 bg-white" id="passenger-fleet">
     <div class="container">
-      <div class="text-center mb-5" data-aos="fade-up">
+      <div class="text-center mb-5" data-aos="fade-up" >
         <h2 style="color: #88036a;">✈️ Passenger Aircraft</h2>
         <p>Comfortable, efficient, and reliable aircraft serving Egypt, Europe, and the Middle East.</p>
       </div>
@@ -259,7 +222,7 @@
             <div class="card-body text-center">
               <h5 class="card-title fw-bold">SU-SKF</h5>
               <p>AIRCRAFT TYPE: A321 P2F</p>
-              <p>MAX PAYLOAD: 23 TONS | MTOW: 93,000 KG</p>
+              <p>MAX PAYLOAD: 27 TONS | MTOW: 93,000 KG</p>
             </div>
           </div>
         </div>
@@ -270,7 +233,7 @@
             <div class="card-body text-center">
               <h5 class="card-title fw-bold">SU-SKG</h5>
               <p>AIRCRAFT TYPE: A321 P2F</p>
-              <p>MAX PAYLOAD: 23 TONS | MTOW: 93,000 KG</p>
+              <p>MAX PAYLOAD: 27 TONS | MTOW: 93,000 KG</p>
             </div>
           </div>
         </div>
@@ -278,52 +241,66 @@
     </div>
   </section>
 
-  <!-- ===== Footer ===== -->
-  <footer style="background: linear-gradient(135deg, #0a0a0a, #1a1a1a); color: #ccc; padding: 80px 0 40px;">
-    <div class="container">
-      <div class="row" style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:40px;">
-        <div class="col" style="flex:1 1 300px; min-width:250px;">
-          <div style="display:flex; align-items:center; margin-bottom:15px;">
-            <img src="images/demo/sky-vision-logo.png" alt="Sky Vision Logo" style="width:55px; margin-right:10px;">
-            <h4 style="color:#fff;">Sky Vision Airlines</h4>
-          </div>
-          <p style="color:#aaa;">Founded in 2022, Sky Vision Airlines connects Egypt, Europe, and the Middle East — providing exceptional passenger and cargo air services with safety and excellence.</p>
+  <!-- ===== IMPROVED FOOTER ===== -->
+<footer style="background: linear-gradient(135deg, #0a0a0a, #1a1a1a); color: #ccc; padding: 80px 0 40px;">
+  <div class="container">
+    <div class="row" style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:40px;">
+      
+      <!-- Company Info -->
+      <div class="col" style="flex:1 1 300px; min-width:250px;">
+        <div style="display:flex; align-items:center; margin-bottom:15px;">
+          <img src="images/demo/sky-vision-logo.png" alt="Sky Vision Logo" style="width:55px; height:auto; margin-right:10px;">
+          <h4 style="color:#fff; font-weight:700;">Sky Vision Airlines</h4>
         </div>
-
-        <div class="col" style="flex:1 1 180px; min-width:200px;">
-          <h5 style="color:#fff;">Quick Links</h5>
-          <ul style="list-style:none; padding:0;">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="fleet.html">Fleet</a></li>
-            <li><a href="certificate.html">Certificate</a></li>
-            <li><a href="service.html">Services</a></li>
-            <li><a href="contact-us.html">Contact Us</a></li>
-          </ul>
-        </div>
-
-        <div class="col" style="flex:1 1 220px; min-width:220px;">
-          <h5 style="color:#fff;">Contact</h5>
-          <p><i class="fa fa-phone" style="color:#88036a; margin-right:8px;"></i> +20 22679456</p>
-          <p><i class="fa fa-envelope" style="color:#88036a; margin-right:8px;"></i>
-            <a href="mailto:info@skyvisionairline.com" style="color:#ccc;">info@skyvisionairline.com</a></p>
-          <p><i class="fa fa-map-marker-alt" style="color:#88036a; margin-right:8px;"></i> Cairo, Egypt</p>
-        </div>
-
-        <div class="col" style="flex:1 1 220px; min-width:220px;">
-          <h5 style="color:#fff;">Follow Us</h5>
-          <div style="display:flex; gap:15px;">
-            <a href="https://www.facebook.com/Sky-Vision-Airlines-107785321997316" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/sky.visions.airlines/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/company/sky-vision-airline/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-        </div>
+        <p style="color:#aaa; line-height:1.8;">
+          Founded in 2022, Sky Vision Airlines connects Egypt, Europe, and the Middle East — 
+          providing exceptional passenger and cargo air services with safety and excellence.
+        </p>
       </div>
-      <hr style="border-color:#333; margin:40px 0;">
-      <div style="text-align:center; font-size:0.9rem; color:#aaa;">
-        &copy; 2025 <strong style="color:#fff;">Sky Vision Airlines</strong> — All Rights Reserved.
+
+      <!-- Quick Links -->
+      <div class="col" style="flex:1 1 180px; min-width:200px;">
+        <h5 style="color:#fff; font-weight:600; margin-bottom:20px;">Quick Links</h5>
+        <ul style="list-style:none; padding:0; margin:0; line-height:2;">
+          <li><a href="index.html" style="color:#ccc; text-decoration:none;">Home</a></li>
+          <li><a href="fleet.html" style="color:#ccc; text-decoration:none;">Fleet</a></li>
+          <li><a href="certificate.html" style="color:#ccc; text-decoration:none;">Certificate</a></li>
+          <li><a href="service.html" style="color:#ccc; text-decoration:none;">Services</a></li>
+          <li><a href="contact-us.html" style="color:#ccc; text-decoration:none;">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col" style="flex:1 1 220px; min-width:220px;">
+        <h5 style="color:#fff; font-weight:600; margin-bottom:20px;">Contact</h5>
+        <p><i class="fa fa-phone" style="color:#88036a; margin-right:8px;"></i> +20 22679456</p>
+        <p><i class="fa fa-envelope" style="color:#88036a; margin-right:8px;"></i> info@skyvisionairline.com</p>
+        <p><i class="fa fa-map-marker-alt" style="color:#88036a; margin-right:8px;"></i> Cairo, Egypt</p>
+      </div>
+
+      <!-- Follow Us -->
+      <div class="col" style="flex:1 1 220px; min-width:220px;">
+        <h5 style="color:#fff; font-weight:600; margin-bottom:20px;">Follow Us</h5>
+        <div style="display:flex; gap:15px; margin-bottom:15px;">
+          <a href="https://www.facebook.com/Sky-Vision-Airlines-107785321997316" target="_blank" style="color:#ccc; font-size:1.5rem; transition:0.3s;"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/sky.visions.airlines/" target="_blank" style="color:#ccc; font-size:1.5rem; transition:0.3s;"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/sky-vision-airline/" target="_blank" style="color:#ccc; font-size:1.5rem; transition:0.3s;"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p style="color:#aaa; font-size:0.9rem;">Stay connected for updates, offers, and travel inspiration.</p>
       </div>
     </div>
-  </footer>
+
+    <hr style="border-color:#333; margin:40px 0;">
+    <div style="text-align:center; font-size:0.9rem; color:#aaa;">
+      &copy; 2025 <strong style="color:#fff;">Sky Vision Airlines</strong> — All Rights Reserved.<br>
+      <span style="font-size:0.85rem; color:#777;">Designed & Developed by  
+        <a href="https://www.linkedin.com/in/mahmoud-asharf/  " target="_blank" style="color:#fff; text-decoration:none; font-weight:600;">
+      Mahmoud Ashraf
+    </a></span>
+    </div>
+  </div>
+</footer>
+
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
